@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.姓名案例</title>
+</head>
+
+<body>
+    
+    <div id="e">
+        <div>姓氏:</div><input type="text" v-model:value="firstname">
+        <div>名字:</div><input type="text" v-model:value="lastname">
+        <br>
+        <p>{{firstname.slice(0,3)}}{{lastname}}</p>
+        <p>{{fullname()}}</p>
+
+    </div>
+
+
+
+    
+
+
+
+    <script src="js/vue.js"></script>
+
+
+    
+
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+
+
+
+                data:{
+                    firstname:"",
+                    lastname:""
+                },
+
+
+
+                // 事件绑定
+                methods:{
+                   fullname(){
+                    return this.firstname.slice(0,3)+this.lastname
+                   }
+                   
+                    },
+                },
+            
+            
+            
+        );
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-节点操作</title>
+</head>
+<body>
+    <div class="father" id="father">
+        父亲
+        <div class="son" id="son">儿子
+            <div></div>
+        </div>
+    </div>
+
+
+    <script>
+        var father=document.getElementById('father');
+        var son=document.getElementById('son');
+
+        console.log(son.parentNode);
+        console.log(father.childNodes);
+        // 文本也是子元素，可以通过遍历排除掉文本元素，不提倡childNodes
+        console.log(father.children,father.children[0]);
+    </script>
+
+
+
+
+
+
+   
+        <div class="box1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+
+    
+    <script>
+    // 第一个和最后一个
+        var box1=document.querySelector('.box1');
+        // 包含文本节点
+        console.log(box1);
+        console.log(box1.firstChild);
+        console.log(box1.lastChild);
+
+
+        // 不包含文本
+        console.log(box1.firstElementChild);
+        console.log(box1.lastElementChild);
+
+
+        
+
+    </script>
+
+
+    <!-- 兄弟节点 -->
+    <div id="father1">
+        <div id="son1"></div>
+        <div id="son2"></div>
+        <div id="son3"></div>
+    </div>
+
+    <script>
+        var father1=document.getElementById('father1');
+        var son1=document.getElementById('son1');
+        var son2=document.getElementById('son2');
+        var son3=document.getElementById('son3');
+
+        // 包含文本
+        console.log(son1.nextSibling);
+        console.log(son2.previousSibling);
+
+
+        // 不包含文本
+        console.log(son1.nextElementSibling);
+        console.log(son2.previousElementSibling);
+       
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li class="xiala" index="1">下拉1</li>
+    <li class="xiala" index="2">下拉2</li>
+    <li class="xiala" index="3">下拉3</li>
+
+    <div class="caidan"  index="1">
+        <p>1</p>
+        <br>
+        <p>2</p>
+        <br>
+        <p>3</p>
+    </div>
+
+    <div class="caidan"  index="2">
+        <p>4</p>
+        <br>
+        <p>5</p>
+        <br>
+        <p>6</p>
+    </div>
+    <div class="caidan"  index="3">
+        <p>7</p>
+        <br>
+        <p>8</p>
+        <br>
+        <p>9</p>
+    </div>
+
+
+    <style>
+        .xiala{
+            
+            margin: 0;
+            margin-top: 100px;
+            background-color: yellowgreen;
+            display: inline-block;
+    
+            width: 100px;
+    
+            color: white;
+    
+            text-decoration: none;
+        }
+        .caidan{
+            position: absolute;
+            visibility:hidden;
+            width: 100px;
+    
+            background-color: brown;
+            color: white;
+        }
+        
+    </style>
+    
+        <script>
+            var x=document.getElementsByClassName('xiala');
+            var c=document.getElementsByClassName('caidan');
+    
+            for(var j=0;j<x.length;j++){
+                x[j].onmouseover=function(){
+                for(var i=0;i<c.length;i++){
+                    if(this.getAttribute('index')==c[i].getAttribute('index'))
+                    {
+                        
+                        c[i].style.visibility='visible';
+                    }
+                }
+                
+                
+                
+                
+            }
+            }
+            
+            for(var j=0;j<x.length;j++){
+                x[j].onmouseout=function(){
+                    for(var i=0;i<c.length;i++){
+                    if(this.getAttribute('index')==c[i].getAttribute('index'))
+                    {
+                        
+                        c[i].style.visibility='hidden';
+                    }
+                }
+                }
+            }
+            
+        </script>
+
+
+
+
+
+
+
+
+
+
+        <!-- 创建元素节点 -->
+
+        <div id="box11" style="margin-top: 300px;"></div>
+
+        <script>
+            var box11=document.getElementById('box11');
+
+            var l1=document.createElement('li')
+            l1.style.width='100px';
+            l1.style.height='100px';
+            l1.style.backgroundColor='red';
+            // l1.insertBefore(li,box11.children[0]);
+
+            box11.appendChild(l1);
+        </script>
+
+
+
+
+        <br><br><br><br><br>
+
+        <!-- 留言板案例 -->
+    
+        <textarea name="" id="text" cols="30" rows="10"></textarea><br>
+        <button id="tbtn">发布</button>
+        <button id="dbtn">删除</button>
+        <div id="box12">
+
+        </div>
+
+        <script>
+            var text=document.getElementById('text');
+            var tbtn=document.getElementById('tbtn');
+            var dbtn=document.getElementById('dbtn');
+            var box12=document.getElementById('box12');
+            
+            
+            
+            
+
+
+            tbtn.onclick=function(){
+                var l2=document.createElement('li');
+                l2.innerHTML=text.value + "<a href='javascript:;'>删除</a>" ;
+                // box12.appendChild(l2);
+                box12.insertBefore(l2,box12.children[0]);
+                text.value='';
+
+                for(var i=0;i<box12.children.length;i++){
+                    box12.children[i].children[0].onclick=function(){
+                        box12.removeChild(this.parentNode);
+                    }
+                }
+                
+                
+            }
+
+            // 删除操作
+            dbtn.onclick=function(){
+                box12.removeChild(box12.children[0])
+            }
+        </script>
+
+
+<br><br><br><br><br><br><br>
+
+        <!-- 克隆节点 -->
+        <div id="box13">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+
+        <script>
+            var box13=document.getElementById('box13');
+            //true 才能包含内容，空或者false不包含
+            var cl=box13.children[0].cloneNode(true)
+            box13.appendChild(cl);
+            var cl2=box13.children[0].cloneNode(true)
+            box13.appendChild(cl2);
+
+            box13.appendChild(box13.children[1].cloneNode(true));
+            box13.appendChild(box13.children[1].cloneNode(true));
+            box13.appendChild(box13.children[1].cloneNode(true));
+            
+
+        </script>
+    
+    </body>
+
+</body><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</html>

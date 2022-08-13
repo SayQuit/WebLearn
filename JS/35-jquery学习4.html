@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习4</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        
+
+
+        *{
+            padding: 0;
+        }
+        div{
+            cursor: pointer;
+            background-color: lightcoral;
+            width: 100px;
+            height: 100px;
+
+            display: inline-block;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        /* .box2{
+            width: 50px;
+            height: 50px;
+        } */
+       
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+<script>
+    // 链式编程
+    $('div').click(function(){
+        // console.log(this);
+
+        $(this).css('background','tomato').siblings('div').css('background','lightcoral');
+        
+        
+    })
+
+
+    // css不加值，不修改返回当前值
+    console.log($('div:first').css('background'));
+
+
+    // css对象形式一次修改多个属性
+    $('div:first').css({'width':'300px','height':'300px'})
+
+    // addClass,和classList一样？
+    $('div:eq(1)').addClass('box');
+    // $('div:eq(1)').removeClass('box');
+    // $('div:eq(1)').toggleClass('box')    切换类
+
+</script>
+</html>

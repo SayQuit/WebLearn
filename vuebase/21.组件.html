@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21.组件</title>
+</head>
+<body>
+    <div id="root">
+
+
+        
+        
+
+
+        <!-- <div>学校名称---{{schoolname}}</div>
+        <div>学校地址---{{address}}</div>
+        <div>学生姓名---{{stuname}}</div>
+        <div>学生年龄---{{stuage}}</div> -->
+    </div>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+
+
+     
+
+       
+
+
+        const teacher=Vue.extend(
+            {
+                data(){
+                    return{
+                        tname:'张老师',
+                        tage:40,
+                    }
+                },
+
+                template:`
+                <div>
+                    <div>老师姓名---{{tname}}</div>
+                    <div>老师姓名---{{tage}}</div>
+                </div>
+                `
+            }
+        )
+
+
+
+        const school=Vue.extend(
+        {
+            data(){
+                return{
+                    schoolname:'平远中学',
+                    address:'平远县',
+                }
+            },
+
+            
+            components:{
+                teacher
+            },
+            template:`
+            <div>
+                <div>学校名称---{{schoolname}}</div>
+                <div>学校地址---{{address}}</div>
+
+                <teacher></teacher><br>
+            </div>
+            `,
+        })
+        // 嵌套组件
+        const stu=Vue.extend(
+        {
+            data(){
+                return{
+                    stuname:'小明',
+                    stuage:18
+                }
+            },
+            template:`
+            <div>
+                <div>学生姓名---{{stuname}}</div>
+                <div>学生年龄---{{stuage}}</div>
+            </div>
+            `
+        })
+
+
+
+        // app
+        const app=Vue.extend(
+            {
+                components:{
+                    Mysc:school,
+                    'my-st':stu,
+                },
+                template:`
+                <div>
+                    <Mysc></Mysc><br><br>
+                    <my-st></my-st><br><br>
+                </div>
+                `
+            }
+        )
+
+
+        // Vue.components('hello',hello);
+
+
+        const vm=new Vue(
+            
+            {
+                el:'#root',
+                components:{
+             
+
+                    app
+          
+                },
+                template:`<app></app>`,
+            },
+            
+        );
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习14todolist</title>
+    <script src="jquery.min.js"></script>
+    <script src="echarts.js"></script>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main" style="width: 400px;height:400px;" class="box"></div>
+    <div id="bing" style="width: 1400px;height:1400px;" class="box"></div>
+    <div id="yibing" style="width: 800px;height:800px;" class="box"></div>
+
+</body>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    var bing = echarts.init(document.getElementById('bing'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data: ['销量']
+        },
+        xAxis: {
+            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+            {
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }
+        ]
+    };
+
+
+
+
+
+
+
+
+    const data = [
+        {
+            name: 'Apples',
+            value: 70
+        },
+        {
+            name: 'Strawberries',
+            value: 68
+        },
+        {
+            name: 'Bananas',
+            value: 48
+        },
+        {
+            name: 'Oranges',
+            value: 40
+        },
+        {
+            name: 'Pears',
+            value: 32
+        },
+        {
+            name: 'Pineapples',
+            value: 27
+        },
+        {
+            name: 'Grapes',
+            value: 18
+        }
+    ];
+    bingOption = {
+        title: [
+            {
+                text: 'Pie label alignTo',
+                left: 'center'
+            },
+            {
+                subtext: 'alignTo: "none" (default)',
+                left: '16.67%',
+                top: '75%',
+                textAlign: 'center'
+            },
+            {
+                subtext: 'alignTo: "labelLine"',
+                left: '50%',
+                top: '75%',
+                textAlign: 'center'
+            },
+            {
+                subtext: 'alignTo: "edge"',
+                left: '83.33%',
+                top: '75%',
+                textAlign: 'center'
+            }
+        ],
+        series: [
+            {
+                type: 'pie',
+                radius: '25%',
+                center: ['50%', '50%'],
+                data: data,
+                label: {
+                    position: 'outer',
+                    alignTo: 'none',
+                    bleedMargin: 5
+                },
+                left: 0,
+                right: '66.6667%',
+                top: 0,
+                bottom: 0
+            },
+            {
+                type: 'pie',
+                radius: '25%',
+                center: ['50%', '50%'],
+                data: data,
+                label: {
+                    position: 'outer',
+                    alignTo: 'labelLine',
+                    bleedMargin: 5
+                },
+                left: '33.3333%',
+                right: '33.3333%',
+                top: 0,
+                bottom: 0
+            },
+            {
+                type: 'pie',
+                radius: '25%',
+                center: ['50%', '50%'],
+                data: data,
+                label: {
+                    position: 'outer',
+                    alignTo: 'edge',
+                    margin: 20
+                },
+                left: '66.6667%',
+                right: 0,
+                top: 0,
+                bottom: 0
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+    bing.setOption(bingOption);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var yibing = echarts.init(document.getElementById('yibing'));
+    yibingoption = {
+        legend: {
+            top: 'bottom'
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                mark: { show: true },
+                dataView: { show: true, readOnly: false },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        series: [
+            {
+                name: 'Nightingale Chart',
+                type: 'pie',
+                radius: [50, 250],
+                center: ['50%', '50%'],
+                roseType: 'area',
+                itemStyle: {
+                    borderRadius: 8
+                },
+                data: [
+                    { value: 40, name: 'rose 1' },
+                    { value: 38, name: 'rose 2' },
+                    { value: 32, name: 'rose 3' },
+                    { value: 30, name: 'rose 4' },
+                    { value: 28, name: 'rose 5' },
+                    { value: 26, name: 'rose 6' },
+                    { value: 22, name: 'rose 7' },
+                    { value: 18, name: 'rose 8' }
+                ]
+            }
+        ]
+    };
+    yibing.setOption(yibingoption);
+</script>
+
+</html>

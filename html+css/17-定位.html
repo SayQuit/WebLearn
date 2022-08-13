@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+
+    <style>
+        /* 静态定位 */
+        .staticdingwei{
+            position: static;
+            background-color: yellowgreen;
+
+            width: 300px;
+            height: 200px;
+            margin-bottom: 100px;
+
+
+        }
+
+
+
+
+
+
+
+        /* 相对定位 */
+        .relativedingwei{
+            position: relative;
+            background-color: yellowgreen;
+
+            width: 300px;
+            height: 200px;
+
+            margin-bottom: 100px;
+
+
+            /* 原位置保留 */
+
+            
+        }
+
+        .relativedingwei:hover{
+            top: 100px;
+            left:100px ;
+        }
+
+
+
+
+
+
+
+
+
+
+        /* 绝对定位 */
+        .father{
+            background-color: skyblue;
+            width: 800px;
+            height: 600px;
+            position: relative;
+
+            margin-bottom: 100px;
+
+
+        }
+        .absolutedingwei{
+            position: absolute;
+            background-color: yellowgreen;
+
+            width: 300px;
+            height: 200px;
+
+            margin-bottom: 100px;
+
+            top: 100px;
+            left:50%;
+            margin-left: -150px;
+
+            
+            /* 以父类原来的位置对齐，没有父类位置则以浏览器为准 */
+
+            /* 子绝父相 */
+
+            /* 绝对定位会压住文字，float不会 */
+
+            
+        }
+
+
+
+        /* 固定定位 */
+        .fixedDW{
+            position: fixed;
+            background-color: yellowgreen;
+
+            width: 300px;
+            height: 200px;
+
+            margin-bottom: 100px;
+
+            top: 100px;
+            left:90%;
+        }
+
+
+        .blue{
+            position: absolute;
+            background-color: blue;
+            width: 700px;
+            height: 200px;
+
+            z-index: 1;
+        }
+        .red{
+            position: absolute;
+            background-color: red;
+            width: 200px;
+            height: 700px;
+            
+            z-index: 2;
+        }
+        /* 粘性定位 */
+    </style>
+</head>
+<body>
+    <div class="staticdingwei">静态定位</div>
+    <div class="relativedingwei">相对定位</div>
+    
+    <div class="father">父类
+        <div class="absolutedingwei">绝对定位</div>
+    </div>
+
+    <div class="fixedDW">固定定位</div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="red">红色</div>
+    <div class="blue">蓝色</div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

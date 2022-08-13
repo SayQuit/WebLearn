@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动案例2</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .BigBlock{
+            margin-top: 100px;
+            margin-left: 100px;
+
+            display: inline-block;
+
+            width: 1725px;
+            height: 450px;
+
+
+
+            background-color: grey;
+
+        }
+
+        .oneBlock{
+            float: left;
+            width: 400px;
+            height: 400px;
+
+
+
+            background-color: white;
+
+            margin-left: 25px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+
+
+
+
+
+
+
+        .oneBlock>.blue{
+            width: 400px;
+            height: 250px;
+
+            display: block;
+            float: left;
+
+            background-image: url("img/深蓝星球.jpeg@wm_2\,t_55m+5a625Y+3L+aZuueUtee9kQ==\,fc_ffffff\,ff_U2ltSGVp\,sz_1");
+            background-position: center;
+
+            /*删掉边框会出问题*/
+
+            
+            
+
+        
+        }
+
+        .oneBlock>.redmi7{
+            width: 400px;
+            height: 250px;
+
+            display: block;
+            float: left;
+            
+            background-image: url("img/redminode7.jfif");
+            background-position: center;
+
+        
+        }
+        .oneBlock>.heisha{
+            width: 400px;
+            height: 250px;
+
+            display: block;
+            float: left;
+
+            
+            background-image: url("img/heisha.jfif");
+            background-position: center;
+
+        
+        }
+        .oneBlock>.shouhuan{
+            width: 400px;
+            height: 250px;
+
+            display: block;
+            float: left;
+
+            
+            background-image: url("img/shouhuan.jfif");
+            background-position: center;
+
+        
+        }
+
+
+
+
+
+
+
+
+
+        .oneBlock>div>div{
+            width: 55px;
+            height: 30px;
+            border-radius: 19px;
+
+            margin-left: 25px;
+            margin-top: 200px;
+
+            background-color: black;
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+
+           
+
+        }
+        
+        .oneBlock>div>div:hover{
+            background-color:orange
+        }
+
+
+
+
+
+
+
+
+
+        
+        .oneBlock>h1{
+            font-size:20px;
+            font-weight:400;
+            font-style: normal;
+
+            text-align: center;
+            margin-top: 280px;
+
+        }
+        .oneBlock>p{
+            font-size:15px;
+            font-weight:400;
+            font-style: normal;
+
+            text-align: center;
+            margin-top: 20px;
+            color:grey
+        }
+
+    </style>
+</head>
+
+<body class="grey">
+    <div class="BigBlock">
+        <div class="oneBlock">
+            <div class="blue"><div></div></div>
+            <h1>小米CC9</h1>
+            <p>深蓝星球</p>
+        </div>
+
+        <div class="oneBlock">
+            <div class="redmi7"><div></div></div>
+            <h1>RedMi Node 7系列</h1>
+            <p>镜花水月</p>
+        </div>
+
+        <div class="oneBlock">
+            <div class="heisha"><div></div></div>
+            <h1>黑鲨游戏手机2 Pro</h1>
+            <p>指尖主宰 发布会</p>
+        </div>
+
+        <div class="oneBlock">
+            <div class="shouhuan"><div></div></div>
+            <h1>小米手环4</h1>
+            <p>改变从零开始</p>
+        </div>
+    </div>
+</body>
+
+
+</html>

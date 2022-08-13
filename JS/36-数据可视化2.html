@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36-数据可视化2</title>
+    <script src="jquery.min.js"></script>
+    <script src="echarts.js"></script>
+    <script src="flexible.js"></script>
+
+    <link rel="stylesheet" href="fonts/style.css">
+    <link rel="stylesheet" href="36-数据可视化2.css">
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="viewport"></div>
+    <div class="f">
+        <div class="column">
+            <div class="left panel">
+                <div class="inner">
+                    <div>
+                        <div class="num">2190</div>
+                        <div>
+                            <div class="blue round"></div>
+                            <p>设备总数</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="num">190</div>
+                        <div>
+                            <div class="deepgreen round"></div>
+                            <p>设备总数</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="num">3001</div>
+                        <div>
+                            <div class="lightgreen round"></div>
+                            <p>设备总数</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="num">108</div>
+                        <div>
+                            <div class="red round"></div>
+                            <p>设备总数</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="left panel">
+                <div class="inner" style="flex-direction:column;">
+                    <div style="flex:2 ;" class="error" id="error">
+                        <div class="currentError">故障设备监控</div>
+                        |
+                        <div>异常设备监控</div>
+                    </div>
+                    <div style="flex:8 ;"></div>
+                </div>
+            </div>
+
+
+            <div class="left panel">
+                <div class="inner" style="flex-direction:column;">
+                    <div  style="flex:2 ;" class="font">点位分布统计</div>
+                    <div  style="flex:6;display: flex;">
+                        <div style="flex: 4;"></div>
+                        <div style="flex: 3;">
+                            <div class="font">320,11</div>
+                            <div class="red round"></div>
+                            <p>点位总数</p>
+                            <div class="font">418</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="mid panel"></div>
+            <div class="mid panel">
+                <div class="inner" style="flex-direction:column;">
+                    <div  style="flex:2 ;" class="font">全国用户总量统计</div>
+                    <div  style="flex:6;display: flex;">
+                        <div style="flex: 4;"></div>
+                        <div style="flex: 1;">
+                            <div class="font">120,899</div>
+                            <div class="red round"></div>
+                            <p>点位总数</p>
+                            <div class="font">248</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="right panel">
+                <div class="inner" style="flex-direction:column;">
+                    <div style="flex:1;margin-bottom: .125rem;" class="day" >
+                        <div>365天</div>
+                        |
+                        <div>90天</div>
+                        |
+                        <div>30天</div>
+                        |
+                        <div class="currentDay">24小时</div>
+                    </div>
+
+
+                    <div style="flex:3 ;">
+                        <div style="display:inline-block; margin-right: 1.5rem;">
+                            <div class="num" style="margin:0 ;">2190</div>
+                            <div style="margin:0 ;">
+                                <div class="blue round" style="margin:0 ;"></div>
+                                <p style="margin:0 ;">订单量</p>
+                            </div>
+                        </div>
+                        <div style="display:inline-block;">
+                            <div class="num" style="margin:0 ;">190</div>
+                            <div>
+                                <div class="yellow round" style="margin:0 ;"></div>
+                                <p style="margin:0 ;">销售额</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="right panel">
+                <div class="inner" style="flex-direction:column;">
+                    <div style="flex:3 ;" class="error">
+                        <div class="currentError">销售额统计</div>
+                        
+                        <div>年</div>
+                        |
+                        <div>季</div>
+                        
+                        <div>月</div>
+                        
+                        <div>日</div>
+                    </div>
+                    <div style="flex:8 ;"></div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="right" style="display:flex;flex-direction:row;">
+                <div class="panel" style="flex: 1;position: relative;margin: .125rem;">
+                    <div class="inner">
+                        <div class="font">渠道发布</div>
+                    </div>
+                </div>
+                <div class="panel" style="flex: 1;position: relative;margin: .125rem;">
+                    <div class="inner">
+                        <div class="font">一季度销售进度</div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+
+
+            <div class="right panel">
+                <div class="inner" style="flex-direction:column;">
+                    <div style="flex:3;display: flex;" class="hot">
+                        <div>
+                            <span class="font">全国热榜</span>
+                        </div>
+                        <div>
+                            <span class="font">各省热销</span>
+                        </div>
+                        <div>
+                            <span class="font mouth">// 近30日 //</span>
+                        </div>
+                    </div>
+                    <div style="flex:8 ;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    
+</script>
+
+</html>

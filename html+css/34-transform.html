@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34-transform</title>
+
+
+    <style>
+        /* 转换transform */
+
+        .box1{
+            margin: 100px;
+            width: 300px;
+            height: 200px;
+
+            background-color: royalblue;
+        }
+        .box2{
+            margin: 250px;
+            width: 300px;
+            height: 200px;
+
+            background-color: yellowgreen;
+        }
+        .box3{
+            margin: 250px;
+            width: 300px;
+            height: 200px;
+
+            background-color: tomato;
+        }
+        .yidong{
+            transform: translate(100px,100px);
+
+            /* 加百分号则为盒子自身的高度或者宽度 这种方法可以用于盒子居中时*/
+        }
+        .xuanzhuan{
+            transition: all 0.5s linear 0s;
+
+
+        }
+        .xuanzhuan:hover{
+            transform: rotate(360deg);
+        }
+        .suofang{
+            transform: scale(2,1);
+        }
+
+
+        .sanjiaoxin{
+            margin: 100px;
+            width: 300px;
+            height: 300px;
+
+            
+            border-bottom: 1px solid;
+            border-right: 1px solid;
+
+            transform: rotate(45deg);
+            transition: all 0.4s linear 0s;
+        }
+        .sanjiaoxin:hover{
+            transform: rotate(225deg);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box1 yidong"></div>
+    <div class="box2 xuanzhuan">鼠标移到这里</div>
+    <div class="sanjiaoxin"></div>
+    <div class="box2"></div>
+    <div class="box3 suofang"></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.计算属性</title>
+</head>
+
+<body>
+    
+    <div id="e">
+        <div>姓氏:</div><input type="text" v-model:value="firstname">
+        <div>名字:</div><input type="text" v-model:value="lastname">
+        <br>
+        <p>{{fullname}}</p>
+
+    </div>
+
+
+
+
+    <!-- 
+        computed和watch之间的区别
+        1.computed不能完成异步操作，watch可以，但是使用watch可能需要在data里面增加一个数据项
+     -->
+    
+
+
+
+    <script src="js/vue.js"></script>
+
+
+    
+
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+
+
+
+                data:{
+                    firstname:"",
+                    lastname:""
+
+                },
+
+                computed:{
+                    fullname:{
+                        // 只要调用fullname get就会被调用
+                        get(){
+                            return this.firstname.silce(0,2)+this.lastname
+                        },
+                        set(){
+
+                        }
+                    },
+                     // 简写
+                     fullname1:function(){
+                        // 相当于get
+                    }
+                }
+            }
+            
+            
+        );
+
+
+
+        
+    </script>
+</body>
+</html>

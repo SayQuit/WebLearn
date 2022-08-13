@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-自定义属性</title>
+</head>
+<body>
+    <div id="t1" index='1'></div>
+    <script>
+        var t1=document.getElementById('t1');
+        console.log(t1.getAttribute('index'));
+        t1.setAttribute('index','2');
+        console.log(t1.getAttribute('index'));
+        t1.removeAttribute('index');
+        console.log(t1.getAttribute('index'));
+    </script>
+
+    <style>
+        li{
+            list-style:none;
+            display: inline-block;
+        }
+        .head{
+            background-color: lightgrey;
+
+            height: 60px;
+
+
+            border: 1px solid gray;
+            box-sizing: border-box;
+
+        }
+        .switch{
+            width: 120px;
+
+            text-align: center;
+            line-height: 60px;
+
+            cursor: pointer;
+        }
+        .current{
+            
+
+            background-color:brown;
+            color: white;
+
+        }
+        
+        .item{
+            display: none;
+        }
+        .currentItem{
+            display: block;
+        }
+    </style>
+
+    <div class="head">
+        <li class="switch current" index='0'>商品介绍</li>
+        <li class="switch" index='1'>规格与包装</li>
+        <li class="switch" index='2'>售后保障</li>
+        <li class="switch" index='3'>商品评价</li>
+        <li class="switch" index='4'>手机社区</li>
+    </div>
+
+
+    <div class="body">
+        <li class="item currentItem" index='0'>1</li>
+        <li class="item" index='1'>2</li>
+        <li class="item" index='2'>3</li>
+        <li class="item" index='3'>4</li>
+        <li class="item" index='4'>5</li>
+    </div>
+
+
+    <script>
+        var headswitch=document.getElementsByClassName('switch');
+        var item=document.getElementsByClassName('item');
+
+
+
+        for(var i=0;i<headswitch.length;i++){
+            
+            headswitch[i].onclick=function(){
+            
+               
+                for(var j=0;j<headswitch.length;j++){
+                    headswitch[j].className='switch';
+                } 
+                this.className='switch current';
+
+                for(var j=0;j<item.length;j++){
+                    item[j].className='item';
+
+                    // 难点：i、j的对应，解决方法：加一个自定义属性index
+                    if(this.getAttribute('index')==item[j].getAttribute('index'))item[j].className='item currentItem';
+                   
+                }
+                
+                
+                // for(var j=0;j<item.length;j++){
+                //     if(i==j){
+                //         this.className='switch current';
+                //         item[j].className='item currentItem';
+                //     }
+                //     else{
+                        
+                //         headswitch[j].className='switch';
+                //         item[j].className='item';
+                //     }
+                // }
+            }
+        }
+    </script>
+
+    <div index="1" id="d"></div>
+
+    <script>
+        var d=document.getElementById('d');
+        console.log(d.dataset.index);
+        // google chrom好像是undefined...
+    </script>
+</body>
+</html>

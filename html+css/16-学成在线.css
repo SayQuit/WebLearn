@@ -1,0 +1,684 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.testBorder{
+    border-style: solid;
+
+}
+.center{
+    text-align: center;
+    overflow: hidden;
+    /*background-color: rgb(243,245,247);*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.xuechengzaixianLogo{
+    text-align: center;
+    margin: 45px 0 0 60px;
+
+    width: 195px;
+    height: 40px;
+    line-height: 40px;
+
+    float: left;
+
+    background-image: url("学成网/logo.png");
+
+}
+
+.shouyelan{
+    margin: 45px 0 0 60px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+.shouyelan>a{
+
+    float: left;
+
+    margin-left: 150px;
+
+    text-decoration: none;
+
+    font-size:25px;
+
+    color: black;
+
+}
+.shouyelan>a:hover{
+
+    color: skyblue;
+
+}
+.search{
+    float: left;
+    margin: 45px 0 0 120px;
+
+    width: 500px;
+    height: 43px;
+
+    border-color: skyblue;
+    border-width: 1px;
+}
+.searchLogo{
+    background-image: url("学成网/search.png");
+
+    float: left;
+    margin: 45px 0 0 0;
+
+    width: 50px;
+    height: 40px;
+    
+}
+
+.logOnLogo{
+    background-image: url("学成网/登录状态.png");
+
+    float: left;
+    margin: 45px 0 0 100px;
+
+    width: 117px;
+    height: 30px;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav{
+    background-image: url("学成网/nav.png");
+
+    width: 1919px;
+    height: 420px;
+
+    margin-top: 100px;
+    margin-left: 60px;
+}
+
+.cebianlan{
+    width: 300px;
+    height: 420px;
+
+    background-color: rgb(19, 1, 75);
+
+    float: left;
+    margin-left: 90px;
+    
+
+}
+
+.cebianlan>a{
+    color: white;
+    background-color: rgb(19, 1, 75);
+
+    width: 270px;
+    height: 45px;
+    line-height: 45px;
+
+    text-decoration: none;
+    font-size: 20px;
+
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.cebianlan>a:hover{
+    color: skyblue;
+}
+
+.kechengbiao{
+    background-image: url("学成网/未登录.png");
+
+    float:right;
+    margin-right: 30px;
+    margin-top: 55px;
+
+    width: 228px;
+    height: 300px;
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.jinpintuijian{
+    display: inline-block;
+
+    margin-left: 150px;
+    margin-top:50px;
+
+    width:1739px;
+    height: 100px;
+    line-height: 100px;
+
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, .1);
+
+    
+
+    
+}
+
+.jinpintuijian>a{
+    display: inline-block;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: black;
+    font-size: 20px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #cccccc;
+
+}
+.jinpintuijian>.blueJPTJ{
+    border-left-style:none;
+    color: #00A4FF;
+
+    font-weight: 700;
+}
+.jinpintuijian>.xiugaixingqv{
+    display: inline-block;
+
+    border-left-style:none;
+
+    text-decoration: none;
+    color:blue;
+
+    line-height: 30px;
+    
+    margin-right: 30px;
+    margin-left: 330px;
+}
+.jinpintuijian>a:hover{
+    color: skyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.JPTJ{
+    float: left;
+
+    margin-left: 60px;
+    margin-top: 100px;
+
+    font-size:25px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    color: black;
+}
+.chakanquanbu{
+    float: right;
+    margin-right: 260px;
+    margin-top: 100px;
+
+    font-size:12px;
+    color: grey;
+
+    text-decoration: none;
+
+
+
+
+
+
+}
+.dakuang{
+    width: 1000px;
+    text-align: center;
+}
+.tuceng{
+    width: 228px;
+    height: 270px;
+
+
+    margin-left: 140px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+
+    float: left;
+
+    box-shadow:  0 5px 5px 5px rgba(0, 0, 0, .1);
+}
+.tuceng>a{
+    display: inline-block;
+
+    width: 180px;
+    height: 50px;
+
+    margin-top: 150px;
+    margin-left: 24px;
+
+    color: black;
+
+    text-decoration: none;
+}
+.tuceng>a:hover{
+    color: skyblue;
+}
+.tuceng>h1{
+    display: inline-block;
+
+    margin-left: 24px;
+
+    font-size: 12px;
+    font-weight: 400;
+    color: orange;
+}
+.tuceng>p{
+    display: inline-block;
+
+
+    font-size: 12px;
+    font-weight: 400;
+    color: grey;
+
+    margin-top: 5px;
+}
+.none{
+    float: right;
+
+    width: 40px;
+    height: 24px;
+
+
+    margin-top: 5px;
+}
+.hot{
+    float: right;
+
+    width: 40px;
+    height: 24px;
+
+    background-image: url("学成网/HOT.png");
+
+    margin-top: 5px;
+}
+.new{
+    float: right;
+
+    width: 40px;
+    height: 24px;
+
+    background-image: url("学成网/new.png");
+
+    margin-top: 5px;
+}
+.tc133{
+    background-image: url("学成网/图层\ 133.png");
+}
+.tc135{
+    background-image: url("学成网/图层\ 135.png");
+}
+.tc136{
+    background-image: url("学成网/图层\ 136.png");
+}
+.tc137{
+    background-image: url("学成网/图层\ 137.png");
+}
+.tc142{
+    background-image: url("学成网/图层\ 142.png");
+}
+.tc143{
+    background-image: url("学成网/图层\ 143.png");
+}
+.tc144{
+    background-image: url("学成网/图层\ 144.png");
+}
+.tc145{
+    background-image: url("学成网/图层\ 145.png");
+}
+.tc146{
+    background-image: url("学成网/图层\ 146.png");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.purpleNav{
+    
+
+
+    width: 228px;
+    height: 392px;
+
+    display: inline-block;
+
+    background-image: url("学成网/编程入门.png");
+
+    margin-left:60px;
+    margin-right: 1500px;
+    margin-top:100px;
+}
+
+
+.orangeNav{
+    width: 228px;
+    height: 392px;
+    display: inline-block;
+
+    background-image: url("学成网/数据分析师.png");
+
+    margin-left:60px;
+    margin-right: 1500px;
+    margin-top:100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.xialianglan{
+    margin-bottom: 200px;
+    display: inline-block;
+}
+
+
+
+
+.jiqixuexi{
+    margin-top: 100px;
+    text-align: center;
+    
+}
+
+
+.jiqixuexi>p{
+
+    float: left;
+
+    font-size:26px;
+    color: grey;
+
+    margin-left: 60px;
+
+}
+
+.jiqixuexi>div{
+
+    
+
+    display: inline-block;
+
+
+
+
+}
+.jiqixuexi>div>a{
+
+    
+
+    color: grey;
+    text-decoration: none;
+    font-size: 18px;
+
+
+
+    margin-left: 170px;
+
+}
+
+.jiqixuexi>div>a:hover{
+
+    
+
+    color: skyblue;
+
+
+}
+.jiqixuexi>a{
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.diceng{
+    margin-top: 50px;
+    margin-left: 140px;
+
+
+}
+.dicengzuo{
+    float: left;
+}
+.dicengyou{
+    display: inline-block;
+}
+.dicengzuoXuechengzaixian{
+    background-image: url("学成网/学成在线.png");
+ 
+    width: 195px;
+    height: 42px;
+
+    display: block;
+    
+    
+}
+.dicengzuo>p{
+    display: block;
+    width: 530px;
+
+
+    color: grey;
+    font-size: 14px;
+
+    margin-top: 20px;
+}
+.dicengzuo>a{
+    display: block;
+
+
+    margin-top: 20px;
+}
+
+.dicengyou>div{
+
+    float: left;
+
+    margin-left: 260px;
+
+
+}
+.dicengyou>div>p{
+
+   
+
+    font-size: 22px;
+    
+
+
+}
+
+.dicengyou>div>a{
+
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+
+    margin-top: 6px;
+
+    display: block;
+    
+
+
+}

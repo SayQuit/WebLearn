@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.事件处理</title>
+</head>
+
+<body>
+    
+    <div id="r1">
+        <h1>{{name}}</h1>
+        <button id="btn1">点我提示信息1</button>
+        <button v-on:click="showinfo" id="btn2">点我提示信息2</button>
+        <button @click="showinfo" id="btn2">点我提示信息3</button>
+
+        <br>
+        <a href="#" @click.prevent="showinfo">事件修饰符prevent</a>
+    
+        <!-- 
+            事件修饰符
+            1.prevent  阻止默认事件
+            2.stop 阻止事件冒泡
+            3.once 事件冒泡1次
+
+            4.capture
+            5.self
+            6.passive
+         -->
+         
+         
+         
+         <br>
+         
+         <!-- 键盘事件 -->
+         <input type="text" placeholder="111" id="input1" @keyup.enter="showinfo">
+
+    </div>
+
+
+
+    
+
+
+
+    <script src="js/vue.js"></script>
+
+
+    
+
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#r1',
+
+
+
+                data:{
+                    name:'尚硅谷'
+                },
+
+
+
+                // 事件绑定
+                methods:{
+                    // 这里也可以穿其他参数例如number，但是会把event搞丢
+                    //解决方法：showinfo（number，$event）
+                    showinfo(event){
+                       // event.preventDefault()
+                        console.log(event.target.value);
+                    }
+                }
+            },
+            
+            
+        );
+
+        var btn1=document.getElementById("btn1");
+        btn1.onclick=function(){
+            console.log('你好');
+        }
+
+
+        var input1=document.getElementById('input1');
+
+        
+    </script>
+</body>
+</html>

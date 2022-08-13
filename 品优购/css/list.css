@@ -1,0 +1,176 @@
+.nav{
+    margin-top: 50px;
+    overflow: hidden;
+
+    
+}
+.nav>li:nth-of-type(-n+3)>a{
+    color: black;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.nav>li{
+    float: left;
+    margin-left: 45px;
+
+    height: 45px;
+
+    line-height: 45px;
+    
+    
+}
+.nav>li>a{
+    color: #666666;
+    font-size: 16px;
+
+
+}
+.nav>li>a:hover{
+    color: #B1191A;
+}
+
+
+
+
+
+
+
+
+
+
+
+.column{
+    display: inline-block;
+
+    margin-top: 30px;
+}
+
+
+
+.container{
+    vertical-align: top;
+    width: 300px;
+
+    display: inline-block;
+    margin-right: 8px;
+
+    border-bottom: 1px solid #CCCCCC;
+    
+
+    
+}
+.container>img{
+
+
+    margin: 0 auto;
+    width: 300px;
+    display: block;
+
+    
+}
+.container>a{
+    color: #666666;
+    font-size: 16px;
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+
+    
+}
+.container>a:hover{
+    color: #B1191A;
+}
+
+.container>p{
+    color: #B1191A;
+    margin-bottom: 10px;
+}
+
+.pay{
+    margin-top: 10px;
+    position: relative;
+}
+
+.lowestPay{
+    display: block;
+    border-radius: 10px;
+    background-color: #CCCCCC;
+    color: #666666;
+
+    font-size: 12px;
+    text-align: center;
+
+    width: 120px;
+
+}
+.Price{
+    display: inline-block;
+}
+.discountPrice{
+    color: #B1191A;
+    font-size: 18px;
+
+    display: inline-block;
+    
+    margin-right: 20px;
+
+}
+.originalPrice{
+    color: #666666;
+    font-size: 12px;
+    text-decoration: line-through;
+    
+    display: inline-block;
+}
+.hasSold{
+    color: #666666;
+    font-size: 12px;
+
+    display: inline-block;
+
+    margin-right: 8px;
+}
+.immediatelyBuy{
+    display: block;
+    float: right;
+    position: absolute;
+    top: 100%;
+    margin-top: -40px;
+    left: 100%;
+    margin-left: -100px;
+
+
+
+
+    background-color: #B1191A;
+    
+
+    color: white;
+    text-align: center;
+    line-height: 40px;
+
+
+    width: 90px;
+    height: 40px;
+}
+
+.LoadingBar{
+    width: 90px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #CCCCCC;
+
+    display: inline-block;
+}
+.LoadingBar>div{
+    width: 34%;
+    height: 100%;
+    border-radius: 5px;
+
+    background-color: #B1191A;
+   
+}

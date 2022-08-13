@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-client和srcoll</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightslategrey;
+            border: 12px solid lightblue;
+            /* padding-left: 10px; */
+            overflow: auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+
+    </div>
+    <script>
+        var box=document.querySelector('.box');
+        console.log(box.clientWidth,box.clientHeight);
+        console.log(box.clientLeft,box.clientTop);
+
+        console.log(box.scrollWidth,box.scrollHeight);
+        console.log(box.scrollLeft,box.scrollTop);
+
+        box.addEventListener('scroll',function(){
+            console.log(box.scrollTop);
+        })
+    </script>
+</body>
+</html>

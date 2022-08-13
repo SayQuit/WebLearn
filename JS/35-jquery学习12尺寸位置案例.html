@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习10遍历和修改</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+
+
+        }
+
+        span {
+            height: 1000px;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .box {
+            width: 100%;
+            height: 1000px;
+            background-color: lightcoral;
+            box-sizing: border-box;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .asidebigbox {
+            position: fixed;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%) translateX(-150%);
+        }
+
+        .asidebox {
+
+            width: 60px;
+            height: 60px;
+            background-color: greenyellow;
+
+            cursor: pointer;
+
+            text-align: center;
+            line-height: 60px;
+
+
+        }
+
+        .current {
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <span></span>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+
+    <div class="asidebigbox">
+        <div class="asidebox current">1</div>
+        <div class="asidebox">2</div>
+        <div class="asidebox">3</div>
+        <div class="asidebox">4</div>
+        <div class="asidebox">5</div>
+    </div>
+</body>
+
+<script>
+    var index = 0;
+    var lock=true;
+    $('.asidebigbox').hide();
+    var gd = function () {
+
+            // var u=$(document).scrollTop()/1000-1
+            // console.log($('.asidebox').eq(0).offset().top);
+            if ($(document).scrollTop() <= 1000) {
+                $('.asidebigbox').fadeOut()
+            }
+            else {
+                $('.asidebigbox').fadeIn();
+            }
+
+            var lastindex = index;
+
+            if($(document).scrollTop() <= 1000){}
+            else if ($(document).scrollTop() <= 2000 && $(document).scrollTop() > 1000) {
+                index = 0;
+            }
+            else if ($(document).scrollTop() <= 3000) {
+                index = 1;
+            }
+            else if ($(document).scrollTop() <= 4000) {
+                index = 2;
+            }
+            else if ($(document).scrollTop() <= 5000) {
+                index = 3;
+            }
+            else if ($(document).scrollTop() <= 6000) {
+                index = 4;
+            }
+            else index=0;
+
+            // console.log(index,lastindex);
+
+            if (index != lastindex&&lock) {
+                $('.asidebox').removeClass('current');
+                $('.asidebox').eq(index).addClass('current')
+            }
+    }
+
+
+
+
+    $(document).scroll(gd)
+    $('.asidebox').click(function () {
+        lock=false;
+        var k = $(this).index();
+        $('.asidebox').removeClass('current');
+        $(this).addClass('current')
+        $('html,body').animate({
+            scrollTop: $('.box').eq(k).offset().top
+        },function(){lock=true;})
+        
+    })
+</script>
+
+</html>

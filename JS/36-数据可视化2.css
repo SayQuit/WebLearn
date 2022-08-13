@@ -1,0 +1,239 @@
+/* @media screen and (max-width:1024px) {
+    html {
+        font-size: 42.66px !important;
+    }
+} */
+
+/* @media screen and (min-width:750px) {
+    html {
+        font-size: 16px !important;
+    }
+} */
+
+body {
+    background: url('img/bg.jpg');
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-content: center;
+
+
+}
+
+.f {
+    flex: 5;
+    display: flex;
+}
+
+.column {
+    height: 100%;
+    flex: 3;
+    min-height: 1080px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.column:nth-of-type(2) {
+    flex: 4;
+}
+
+.viewport {
+    background: url('img/logo.png') no-repeat 0 0 /contain;
+    flex: 1;
+
+
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    min-height: 70px;
+
+    margin-bottom: 30px;
+}
+
+.panel {
+    border: 15px solid;
+    border-width: .6375rem .475rem .25rem 1.65rem;
+    border-image-slice: 51 38 20 132;
+    border-image-source: url('img/border.png');
+
+}
+
+.left {
+    margin: 10px;
+    position: relative;
+}
+
+.left:nth-of-type(1) {
+    flex: 1;
+
+}
+
+.left:nth-of-type(2) {
+    flex: 4;
+}
+
+.left:nth-of-type(3) {
+    flex: 3;
+}
+
+.mid {
+    margin: 10px;
+    position: relative;
+}
+
+.mid:nth-of-type(1) {
+    flex: 4;
+}
+
+.mid:nth-of-type(2) {
+    flex: 3;
+}
+
+.right {
+    margin: 10px;
+    position: relative;
+}
+
+.right:nth-of-type(1) {
+    flex: 2;
+}
+
+.right:nth-of-type(2) {
+    flex: 3;
+}
+
+.right:nth-of-type(3) {
+    flex: 3;
+}
+
+.right:nth-of-type(4) {
+    flex: 3;
+}
+
+.inner {
+
+
+    position: absolute;
+    top: -0.6375rem;
+    left: -1.65rem;
+    right: -0.475rem;
+    bottom: -0.25rem;
+
+    padding: .2rem .3rem;
+
+    display: flex;
+}
+
+
+.inner>div {
+    flex: 1;
+}
+
+.num {
+    color: white;
+    font-size: .375rem;
+
+    margin-bottom: .1rem;
+}
+
+.inner p {
+    color: rgb(0, 119, 255);
+    display: inline-block;
+    font-size: .2rem;
+    vertical-align: middle;
+}
+
+.blue {
+
+    background-color: rgb(0, 119, 255);
+
+
+
+}
+.lightgreen {
+
+    background-color: rgb(0, 255, 81);
+
+
+
+}
+.deepgreen {
+
+    background-color: rgba(0, 255, 81, 0.438);
+
+
+
+}
+.red{
+    background-color: tomato;
+}
+
+.round {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .1rem;
+    width: .125rem;
+    height: .2rem;
+}
+.error>div{
+    color: rgb(0, 119, 255);
+    display: inline-block;
+    margin: .125rem;
+    font-size: .25rem;
+    cursor: pointer;
+}
+.error{
+    color: rgb(0, 119, 255);
+    font-size: .25rem;
+    
+}
+.error>.currentError{
+    color: white;
+}
+.font{
+    color: white;
+    font-size: .25rem;
+}
+.margin{
+    margin: .125rem;
+}
+
+
+.day>div{
+    color: rgb(0, 119, 255);
+    display: inline-block;
+    font-size: .25rem;
+    cursor: pointer;
+}
+.day{
+    color: rgb(0, 119, 255);
+    font-size: .25rem;
+    
+}
+.day>.currentDay{
+    color: white;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.hot{
+
+}
+.hot span{
+    
+}
+.hot>div{
+    flex: 1;
+}
+.mouth{
+    float: right;
+    margin: 0;
+    color: lightskyblue;
+    font-size: .2rem;
+}

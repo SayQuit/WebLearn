@@ -1,0 +1,395 @@
+ .center{
+    width: 1300px;
+    margin: 0 auto;
+
+    overflow: hidden;
+} 
+
+
+.topnav{
+    height: 30px;
+    width: auto;
+    background-color: #F1F1F1;
+
+    font-size: 14px;
+
+    
+    
+   
+}
+
+.topnav div{
+    text-align: center;
+}
+
+.topnav>div>a:nth-of-type(1){
+    margin-right: 30px;
+    float: left;
+
+    color: gray;
+    line-height: 30px;
+}
+
+.topnav>div>a:nth-of-type(1):hover{
+    color: #C40000;
+}
+
+.topnav>div>a:nth-of-type(2){
+    float: left;
+
+
+    color: #C40000;
+    line-height: 30px;
+    
+    
+}
+
+
+.topnav>div>div{
+    float: right;
+
+    color: gray;
+    
+    
+
+    
+   
+   
+
+}
+.topnav>div>div>li{
+
+    display: inline-block;
+
+    height: 20px;
+
+    position: relative;
+
+   
+}
+
+.topnav>div>div>li>a{
+
+    float: right;
+    padding-left: 14px;
+    padding-right: 14px;
+
+    
+    color: gray;
+
+    
+    border-right: 1px solid grey;
+    margin-top: 5px;   
+}
+.topnav>div>div>li>a:hover{
+
+    color: #C40000;
+   
+}
+.topnav>div>div>li:last-of-type>a
+{
+    border-right: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search{
+    height: 65px;
+    margin-top: 30px;
+
+    position: relative;
+
+}
+.pinyougouIcon{
+ 
+
+    float: left;
+
+    margin-top: 50px;
+}
+.search>img{
+    float: left;
+
+
+}
+
+.search input{
+
+    float: left;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -320px;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+
+    width: 590px;
+    height: 40px;
+
+    border: 3px solid #C40000;
+    
+   
+}
+.search>a:nth-of-type(2){
+    
+    line-height: 40px;
+
+    position: absolute;
+    left: 50%;
+    margin-left: 200px;
+
+    width: 80px;
+    height: 40px;
+
+    text-align: center;
+    color: white;
+
+    background-color: #C40000;
+
+
+} 
+
+.search>a:last-of-type{
+    float: right;
+    display: block;
+    margin-right: 40px;
+    padding-right: 3px;
+    box-sizing: border-box;
+
+    height: 40px;
+    width: 150px;
+
+    border: 1px solid #EDEDED;
+
+    text-align: right;
+    line-height: 40px;
+    font-size: 8px;
+    color: #6C6C6C;
+    
+
+    background-color: #F7F7F7;
+
+
+}
+.icons{
+    background: url('C:/Users/x5012/Desktop/web前端/品优购/images/icons.png');
+}
+.smallshoppingcart{
+    float: left;
+    margin-left: 6px;
+
+   
+    width: 33px;
+    height: 20px;
+
+    background-position: -408px -86px;
+
+
+
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    
+
+    
+}
+.search>a:last-of-type:hover{
+    color: #C40000;
+
+
+}
+.search>div{
+    position: absolute;
+
+    width: 700px;
+    height: 20px;
+
+    left: 50%;
+    margin-left: -320px;
+    top: 100%;
+    margin-top: -18px;
+
+
+
+    
+}
+.search>div>li{
+    display: inline-block;
+   margin: 0 10px;
+
+}
+.search>div>li:first-of-type>a{
+    color: #C40000;
+
+}
+.search>div>li>a{
+    font-size: 14px;
+    color: grey;
+
+    line-height: 20px;
+
+}
+.search>div>li>a:hover{
+    color: #C40000;
+
+}
+
+
+
+
+
+
+.redline{
+    background-color: #B1191A;
+    height: 3px;
+    
+}
+
+
+
+
+
+
+
+.link{
+    text-align: center;
+
+    margin-top: 40px;
+
+    
+}
+.link>li{
+    display: inline-block;
+}
+.link>li>a{
+    font-size: 12px;
+    color: #6C6C6C;
+
+    padding-left: 9px;
+    padding-right: 10px;
+
+    border-right: 1px solid #6C6C6C;
+
+    
+
+   
+}
+.link>li:last-of-type>a{
+    border-right: hidden;
+}
+.link>li>a:hover{
+    color: #B1191A;
+}
+
+
+.copyright{
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+
+
+.copyright>p{
+    color: #666666;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.guild{
+    
+    border-bottom:1px solid #CCCCCC;
+
+    margin-top: 18px;
+
+
+    
+ 
+}
+
+.guild>div{
+    height: 170px;
+    width: 210px;
+
+    display: inline-block;
+
+    text-align: center;
+    vertical-align:top
+
+    
+
+
+}
+.guild>div>div{
+
+
+    display: inline-block;
+    
+    text-align: left;
+
+
+
+}
+.guild>div:last-of-type>div{
+    text-align: center;
+
+}
+.guild>div>div>li>a{
+    display: block;
+    color: #666666;
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+.guild>div>div>p{
+    display: block;
+    color: #666666;
+    font-size: 10px;
+
+}
+.guild>div>div>li>a:hover{
+    color: #B1191A;
+}
+.guild>div>div>h1{
+    display: block;
+
+    color: #666666;
+
+    margin-bottom: 15px;
+}
+.guild>div:last-of-type>div>h1{
+    margin-bottom: 5px;
+}

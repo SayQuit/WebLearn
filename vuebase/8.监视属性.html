@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.监视属性</title>
+</head>
+<body>
+    <div id="e">
+        <button @click="change">切换天气</button>,
+        <br><br><br><br>
+        <button @click="add">a++</button>
+        <p>a的值是{{number.a}}</p>
+    </div>
+
+
+
+    
+
+
+
+    <script src="js/vue.js"></script>
+
+
+    
+
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+
+
+
+                data:{
+                    isHot:true,
+
+                    //深度监视
+                    number:{
+                        a:1,
+                        b:1
+                    }
+                },
+
+                methods: {
+                    change(){
+                        this.isHot=!this.isHot
+                    },
+                    add(){
+                        this.number.a++
+                    }
+                },
+
+
+
+                watch:{
+
+                    //正常写法
+                    isHot:{
+                        handler(newValue,oldValue){
+                            console.log("ishot被修改",this.isHot,newValue,oldValue);
+                        },
+                        immediate:false,
+                    },
+                    //简写
+                    //只有hanlder的时候
+                    // isHot(newValue,oldValue){
+                    //     //
+                    // },
+
+
+
+
+                    //深度监视
+                    'number.a':{
+                        handler(){
+                            console.log('a被改变了');
+                        }
+                    },
+                    number:{
+                        deep:true,
+                        handler(){
+                            console.log('number被改变了');
+                        }
+                    }
+
+
+                    
+
+
+
+
+
+                }
+            }
+            
+            
+        );
+
+        vm.$watch('isHot',
+        {
+            // handler(newValue,oldValue){
+            //     console.log("ishot被修改",this.isHot,newValue,oldValue);
+            // },
+            // immediate:true,
+        })
+
+
+
+        //监视简写
+
+        // vm.$watch('isHot',function()
+        //     {
+                
+        //     }
+        // )
+        
+
+
+
+        
+    </script>
+</body>
+</html>

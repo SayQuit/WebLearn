@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.更新问题</title>
+</head>
+<body>
+
+
+    <div id="e">
+        <button @click="update">更新</button>
+        <li v-for="person in people" :key="person.id">
+            姓名:{{person.name}}-年龄:{{person.age}}-性别:{{person.sex}}
+        </li>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        const x=new Vue(
+            {
+                el:'#e',
+                data:{
+                    people:[
+                        {
+                            id:'001',
+                            name:'周冬雨',
+                            age:'18',
+                            sex:'女',
+                            // show:true,
+                            // 自己是用增加的属性决定是否显示
+
+                        },
+                        {
+                            id:'002',
+                            name:'马冬梅',
+                            age:'28',
+                            sex:'女',
+                            // show:true,
+
+                        },
+                        {
+                            id:'003',
+                            name:'周杰伦',
+                            age:'38',
+                            sex:'男',
+                            // show:true,
+
+                        },
+                        {
+                            id:'004',
+                            name:'温兆伦',
+                            age:'28',
+                            sex:'男',
+                            // show:true,
+
+                        },
+                        {
+                            id:'005',
+                            name:'周婕纶',
+                            age:'18',
+                            sex:'女',
+                            // show:true,
+
+                        },]
+                },
+                methods: {
+                    update(){
+                        // 以下方法可行
+                        // this.people[1].name='马保国';
+                        // this.people[1].sex="男";
+                        // this.people[1].age='50';
+
+                        this.people[1]={
+                            id:'002',
+                            name:'马保国',
+                            age:'50',
+                            sex:'男',
+                            // show:true,
+
+                        }
+                    }
+                },
+            }
+        );
+    </script>
+</body>
+</html>

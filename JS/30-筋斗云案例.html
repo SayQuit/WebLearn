@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-筋斗云案例</title>
+</head>
+<style>
+    .box {
+        background-color: lightgreen;
+        width: 100px;
+        height: 50px;
+        position: absolute;
+
+        color: green;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .nav {
+        width: 100px;
+        height: 50px;
+        display: inline-block;
+        text-align: center;
+        line-height: 50px;
+
+        cursor: pointer;
+        margin: 0;
+
+    }
+</style>
+
+<body>
+    <div id="k">
+        <div class="box"></div>
+        <div class="nav" index="0">首页新闻</div>
+        <div class="nav" index="1">师资力量</div>
+        <div class="nav" index="2">活动策划</div>
+        <div class="nav" index="3">企业文化</div>
+        <div class="nav" index="4">招聘信息</div>
+        <div class="nav" index="5">公司简介</div>
+        <div class="nav" index="6">上海校区</div>
+        <div class="nav" index="7">广州校区</div>
+    </div>
+
+    <script>
+        var index = 0;
+        var nav = document.querySelectorAll('.nav')
+        var box = document.querySelector('.box')
+        var k = document.querySelector('#k')
+
+        // console.log(nav,box);
+
+        box.innerHTML = nav[index].innerHTML;
+
+        var timer = null;
+        var timer2 = null;
+        for (var i = 0; i < nav.length; i++) {
+            nav[i].addEventListener('mouseenter', function () {
+                box.innerHTML = '';
+                index = this.getAttribute('index');
+                timer = setInterval(function () {
+                    if (box.offsetLeft < nav[index].offsetLeft) box.style.left = box.offsetLeft + 10 + 'px';
+                    else if (box.offsetLeft > nav[index].offsetLeft) box.style.left = box.offsetLeft - 10 + 'px';
+
+                    if (box.offsetLeft % 10 != 0) box.style.left = box.offsetLeft + 1 + 'px';
+
+                    if (box.offsetLeft >= index * 100 && box.offsetLeft < nav[index].offsetLeft) {
+                        box.innerHTML = nav[index].innerHTML;
+                        box.style.left = nav[index].offsetLeft + 'px';
+                        clearInterval(timer);
+                    }
+                }, 5)
+            })
+
+
+
+        }
+        k.addEventListener('mouseleave', function () {
+            box.innerHTML = '';
+            index = 0;
+            timer2 = setInterval(function () {
+                box.style.left = box.offsetLeft - 10 + 'px';
+                // if(box.style.left != box.offsetLeft+ 'px')box.style.left = box.offsetLeft+ 'px'
+                if (box.offsetLeft <= 0) {
+                    // if(box.style.left != box.offsetLeft+ 'px')box.style.left = box.offsetLeft+ 'px'
+                    index = 0;
+                    box.innerHTML = nav[index].innerHTML;
+                    box.style.left = 0 + 'px';
+                    clearInterval(timer2);
+                }
+            }, 5)
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

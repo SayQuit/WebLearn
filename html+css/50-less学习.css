@@ -1,0 +1,25 @@
+.back {
+  background-color: royalblue;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.box1 {
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+}
+.box1 div {
+  background-color: tomato;
+  width: 100px;
+  height: 100px;
+}
+.box1 div:hover {
+  background-color: red;
+}
+.box2 {
+  width: 400px;
+  height: 3px;
+  background-color: #444444;
+  margin-top: 20px;
+}

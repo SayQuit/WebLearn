@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36-缩放案例</title>
+
+    <style>
+        div{
+            margin: 300px;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+        }
+        div>img{
+            width: 400px;
+            height: 400px;
+
+            transition: all 1s;
+
+            
+
+
+        }
+        div>img:hover{
+            transform: scale(1.2);
+        }
+
+
+
+        .circle{
+            margin: 0;
+            overflow:visible;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+
+            border-radius: 50%;
+            border: 1px solid green;
+
+            text-align: center;
+            line-height: 40px;
+
+            transition: all 0.5s;
+            margin: 10px;
+        }
+        .circle:hover{
+            transform: scale(1.25);
+        }
+    </style>
+</head>
+
+<body>
+    <div><img src="不谓侠.webp.jpg" alt=""></div>
+
+    <div class="circle">1</div>
+    <div class="circle">2</div>
+    <div class="circle">3</div>
+    <div class="circle">4</div>
+    <div class="circle">5</div>
+    <div class="circle">6</div>
+</body>
+</html>

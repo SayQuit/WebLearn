@@ -1,0 +1,44 @@
+@color:royalblue;
+
+.back{
+    background-color: @color;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+
+
+// less嵌套
+.box1{
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    div{
+        background-color: tomato;
+        width: 100px;
+        height: 100px;
+
+        &:hover{
+            background-color: red;
+        }
+    }
+}
+
+
+
+
+
+
+
+// less运算
+@w:300px+100px;
+
+.box2{
+    width: @w;
+    height: (300px / 100);
+
+    background-color: #666-#222;
+
+    margin-top: 20px;
+}

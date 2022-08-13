@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习12事件</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+
+
+        }
+        header{
+            width: 100px;
+            height: 100px;
+            background-color: thistle;
+        }
+        .smallbox{
+            width: 50px;
+            height: 50px;
+            background-color: tan;
+            display: inline-block;
+        }
+        .big{
+            margin-top: 150px;
+            margin-left: 150px;
+            width: 300px;
+            height: 300px;
+
+            border: 1px solid;
+
+            padding: 30px;
+            
+        }
+        .fabu{
+            margin-bottom: 10px;
+        }
+        .del{
+            float: right;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="smallbox"></div>
+    </header>
+
+
+
+    <div class="big">
+        <p>微博发布</p>
+        <textarea id="txt" cols="43.5" rows="10"></textarea><br>
+        <button class="fabu">发布</button>
+        <div class="area">
+
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+
+    // 绑定多个事件
+    $('header').on({
+        mouseover:function(){
+            console.log('mouseover');
+        },
+        mouseenter:function(){
+            console.log('mouseenter');
+        },
+        mouseleave:function()
+        {
+            console.log('mouseleave');
+        },
+        click:function()
+        {
+            console.log('click');
+        }
+    
+    })
+    // 解绑
+
+    $('header').off('mouseover');
+
+
+
+
+
+    $('header').on('click','.smallbox',function(){
+        console.log('small');
+        $('header').off('click','.smallbox')
+        // 或者使用$('header').one
+    })
+
+
+    // 自动触发
+    $('.smallbox').trigger('click')
+    $('.smallbox').triggerHandler('click')
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 可以动态绑定
+
+    // $('.fabu').click(function(){
+    //     console.log(this);
+    // })
+    $('.fabu').on({
+        click:function(){
+            
+            if($('#txt').prop('value')!=''){
+                var appendTxt=$('<div class="line"></div>');
+                appendTxt.html($('#txt').prop('value'));
+                var del=$('<button class="del">删除</button>');
+                appendTxt.append(del);
+                $('.area').prepend(appendTxt);
+                $('#txt').prop('value','');
+                // console.log($('.del'));
+            }
+        }
+    })
+    $('.area').on('click','.del',function(){
+        // console.log($(this));
+        $(this).parent().remove()
+
+
+
+
+
+
+    })
+</script>
+
+</html>

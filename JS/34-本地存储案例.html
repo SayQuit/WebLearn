@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34-本地存储案例</title>
+</head>
+<body>
+    <input type="text" id="t">
+    <input type="checkbox" id="c">
+</body>
+
+<script>
+    var t=document.getElementById('t');
+    var c=document.getElementById('c');
+    if(localStorage.getItem('username')){
+        t.value=localStorage.getItem('username');
+        c.checked=true;
+    }
+    c.addEventListener('click',function(){
+        if(this.checked)localStorage.setItem('username',t.value)
+        else localStorage.removeItem('username')
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14</title>
+</head>
+<body>
+    <div id="e">
+        <button @click="addSex">增加性别信息</button>
+        <button @click="addAge">增加年龄</button>
+        <button @click="ChangeSex">修改性别</button>
+        <button @click.once="AddFriend">添加朋友</button>
+        <button @click.once="ChangeFName">改变朋友名字</button>
+        <button @click.once="AddHobby">添加爱好</button>
+        <button @click.once="ChangeHobby">修改第一个爱好为</button>
+        <button @click.once="RemoveHobby">去除跑步</button>
+        <div>姓名：{{student.name}}</div>
+        <div>年龄：{{student.age}}</div>
+        <div v-if="student.sex">性别：{{student.sex}}</div>
+
+        <li v-for="h in student.hobby">{{h}}</li>
+
+        <ul>
+            <li v-for="f in student.friends">{{f.name}}-{{f.age}}</li>
+        </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        const vm=new Vue(
+            {
+                el:'#e',
+                data:{
+                    student:{
+                        name:'小明',
+                        age:18,
+                        hobby:['学习','开车','跑步'],
+
+                        friends:[
+                            {
+                                name:'tom',
+                                age:20
+
+                            },
+                            {
+                                name:'jack',
+                                age:24
+
+                            },
+                            {
+                                name:'ali',
+                                age:21
+
+                            },
+                        ],
+
+                    }
+                },
+                methods: {
+                    addSex(){
+                        // set只能增加data内某个数据内的数据
+                        Vue.set(this.student,'sex','男')
+
+                        //set或者splice(数组)
+
+                        // 数组形式没给数据代理，但是在那七种修改数组方法是有效的
+                    },
+
+                    addAge(){
+                        this.student.age++;
+                    },
+
+                    ChangeSex(){
+                        Vue.set(this.student,'sex','女')
+                    },
+                    AddFriend(){
+                        this.student.friends.push({name:'bear',age:22});
+                    },
+                    ChangeFName(){
+                        this.student.friends[0].name='anne';
+                    },
+                    AddHobby(){
+                        this.student.hobby.push('足球');
+                    },
+                    ChangeHobby(){
+                        vm.student.hobby.splice(0,1,'飞盘')
+                    },
+                    RemoveHobby(){
+                        this.student.hobby=this.student.hobby.filter((h)=>{
+                            return h!='跑步';
+                        })
+                    }
+
+                },
+            }
+        );
+
+       
+    </script>
+</body>
+</html>

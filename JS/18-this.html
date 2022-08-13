@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-this</title>
+</head>
+<body>
+    <button id="this">点击</button>
+    <script>
+        console.log(this);
+        function fn(){
+            console.log('function',this);
+        }
+        fn();
+        setTimeout(() => {
+            console.log('setTimeout',this);
+        }, 0);
+
+
+        var object={
+            objectfn:function(){
+                console.log('object',this);
+            }
+        }
+        object.objectfn()
+
+        var t=document.getElementById('this');
+        t.addEventListener('click',function(){
+            console.log('addEventListener',this);
+        })
+
+        function fun(){
+            console.log('构造函数',this);
+        }
+        var f=new fun();
+    </script>
+</body>
+</html>

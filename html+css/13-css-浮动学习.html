@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动学习</title>
+    <style>
+        .f{
+            background-color: skyblue;
+            width: 180px;
+            height: 180px;
+            float: left;
+            /*纵向找标准(流)，横向找浮动*/
+        }
+        
+        .left{
+            background-color: green;
+            width: 180px;
+            height: 180px;
+            float: left;
+        }
+        .right{
+            background-color: grey;
+            width: 180px;
+            height: 180px;
+            float: right;
+        }
+        .tuofu{
+            background-color: skyblue;
+            width: 280px;
+            height: 280px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--浮动是上沿对齐-->
+    <div class="f">1</div>
+    <div class="f">2</div>
+    <div class="f">3</div>
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="left">左青龙</div>
+    <div class="right">右白虎</div>
+    <div class="tuofu">浮动特性脱浮</div>
+
+    <!--浮动只会影响后面的标准流-->
+    <!--有时候可以不给父盒子高度 但是会出现塌陷 可用清除浮动解决-->
+</body>
+<br><br><br><br><br><br><br><br><br>
+
+
+
+<!--浮动清除-->
+<style>
+    .qinchufudon{
+        width: 600px;
+
+    }
+    .fudon{
+        background-color: black;
+        height: 400px;
+    }
+</style>
+<body>
+    <div style="border-style: solid; border-color: red; overflow: hidden;">
+        <!--或者是给父元素添加伪元素
+        .xxx:after{
+            content:"";
+            display:block;
+            height:0;
+            clear:both;
+            visitibility:hidden;
+        }
+
+        .xxx:after{
+            *zoom:1;
+        }
+
+            或者是
+            .xxx:before,xxx:after{
+                content:"";
+                display:block;
+            }
+            .xxx:after{
+                 clear:both;
+            }
+            .xxx:after{
+                *zoom:1;
+            }
+
+
+       
+        
+        
+        -->
+        <div class="left">清除浮动</div>
+        <div class="left">清除浮动</div>
+        <div class="left">清除浮动</div>
+        <!--
+        <div style="clear: both;"></div>-->
+
+       
+    </div> 
+    <div class="fudon" >123</div>
+</body>
+</html>

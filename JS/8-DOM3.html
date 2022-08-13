@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-DOM3</title>
+    <style>
+        .mid{
+            margin: 0 auto;
+            width: 1000px;
+            margin-top: 50px;
+            height: 300px;
+
+            display: block;
+    
+        }
+        .mid>img{
+            width: 200px;
+            float: left;
+
+     
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div class="mid">
+        <img src="img/A1.jpg" alt="">
+        <img src="img/A2.jpg" alt="">
+        <img src="img/A3.jpg" alt="">
+        <img src="img/A4.jpg" alt="">
+        <img src="img/A5.jpg" alt="">
+    </div>
+    
+    <script>
+        var img=document.getElementsByTagName('img');
+        var body=document.querySelector('body');
+
+
+        for(var i=0;i<5;i++){
+            img[i].onclick=function(){
+                console.log("url('"+this.src+"')");
+                
+
+                body.style.background="url('"+this.src+"')";
+            }
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <style>
+        .box1{
+            display: block;
+
+            height: 50px;
+
+            border: 1px solid;
+            margin-top: -1px;
+        }
+        .box1:nth-of-type(1){
+            background-color: skyblue;
+        }
+    </style>
+
+    
+
+    <div>
+        <div class="box1">1</div>
+        <div class="box1">2</div>
+        <div class="box1">3</div>
+        <div class="box1">4</div>
+        <div class="box1">5</div>
+    </div>
+    <script>
+        var box1=document.getElementsByClassName('box1');
+        console.log(box1[0]);
+        for(var i=1;i<box1.length;i++){
+            
+           
+            box1[i].onmouseover=function(){
+                
+               
+               this.style.backgroundColor='skyblue'
+
+            }
+            box1[i].onmouseout=function(){
+                this.style.backgroundColor='white';
+            }
+        }
+    </script>
+
+
+
+
+    <style>
+        .head1{
+            background-color: skyblue;
+            display: block;
+            margin-top: 50px;
+
+            width: 183px;
+            height: 30px;
+        }
+        .body1{
+            display: block;
+            width: 183px;
+            height: 130px;
+        }   
+        li{
+            float: left;
+
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+
+            margin-left: -1px;
+            margin-top: -1px;
+
+            list-style: none;
+            
+
+            border: 1px solid;
+        }
+       
+    </style>
+
+
+    <div>
+        <div class="head1">
+            <li><input type="checkbox"></li>
+            <li>商品</li>
+            <li>价钱</li>
+        </div>
+        <div class="body1">
+
+            <li><input type="checkbox"></li>
+            <li>A</li>
+            <li>1000</li>
+
+            <li><input type="checkbox"></li>
+            <li>B</li>
+            <li>1222</li>
+
+            <li><input type="checkbox"></li>
+            <li>C</li>
+            <li>1531</li>
+   
+            <li><input type="checkbox"></li>
+            <li>D</li>
+            <li>1631</li>
+        </div>
+    </div>
+
+
+    <script>
+        var h1=document.querySelector('.head1');
+        var i1=h1.querySelector('input');
+
+       
+
+        var i2=document.querySelectorAll('input');
+        console.log(h1,i1,i2);
+
+        i1.onclick=function(){
+            
+                for(var i=1;i<i2.length;i++){
+                    i2[i].checked=this.checked;
+                }
+            
+           
+        }
+        for(var i=1;i<i2.length;i++)
+        {
+            i2[i].onclick=function(){
+                if(this.checked==false)i1.checked=false;
+
+                for(var j=1;j<i2.length;j++){
+
+                    
+
+                    if(i2[j].checked==false)
+                    {
+                       
+                        break;
+                    }
+                    if(j==i2.length-1&&i2[j].checked==true){
+                        i1.checked=true;
+                    }
+
+                    
+                }
+            }
+        }
+   
+        
+
+       
+
+
+    </script>
+
+
+
+</body>
+    
+
+
+
+
+
+    
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14-京东快递搜索框</title>
+    <style>
+        input {
+
+
+            width: 200px;
+            padding-left: 10px;
+            outline: none;
+            font-size: 18px;
+        }
+
+        div {
+            height: 40px;
+            width: 200px;
+            padding-left: 10px;
+            font-size: 18px;
+            background-color: lightsalmon;
+            margin-bottom: 10px;
+            visibility: hidden
+        }
+    </style>
+</head>
+
+<body style="margin:100px;">
+    <div></div>
+    <input type="text" placeholder="请输入">
+
+    <script>
+        var input = document.querySelector('input');
+        var div = document.querySelector('div');
+
+        input.addEventListener('keyup', function (e) {
+            div.style.visibility = 'visible';
+            if (input.value) div.innerText = input.value;
+            else div.style.visibility = 'hidden'
+        })
+        input.addEventListener('blur', function (e) {
+            div.style.visibility = 'hidden'
+        })
+
+    </script>
+</body>
+
+</html>

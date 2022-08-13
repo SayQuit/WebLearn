@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45-flex布局</title>
+
+
+    <style>
+
+
+    /* justify-content单行排列方式 */
+    .flexbox1{
+        
+        width: 80%;
+        height: 600px;
+        background-color: royalblue;
+
+
+        display: flex;
+        justify-content: space-around;
+
+        margin-bottom: 100px;
+        
+    }
+    .flexbox1>span{
+
+        height: 100px;
+        background-color: tomato;
+        
+        flex: 1;
+
+   
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* flex-direction行列排列 */
+    .flexbox2{
+        
+        width: 80%;
+        height: 600px;
+        background-color: royalblue;
+
+
+        display: flex;
+        justify-content: space-around;
+        flex-direction:column-reverse;
+
+        margin-bottom: 100px;
+        
+    }
+    .flexbox2>span{
+
+        width: 100px;
+        background-color: tomato;
+        
+        flex: 1;
+
+   
+    }
+
+
+
+
+
+
+
+
+
+    /* justify-content:space-between;格子相互之间间隔相同 */
+    .flexbox3{
+        
+        width: 80%;
+        height: 600px;
+        background-color: royalblue;
+
+
+        display: flex;
+        justify-content:space-between;
+
+
+        margin-bottom: 100px;
+        
+    }
+    .flexbox3>span{
+
+        height: 100px;
+        background-color: tomato;
+        
+        width: 200px;
+        display: inline-block;
+
+   
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* flex-wrap多行显示 */
+    .flexbox4{
+        
+        width: 500px;
+        height: 600px;
+        background-color: royalblue;
+
+
+        display: flex;
+        flex-wrap: wrap;
+  
+
+
+        margin-bottom: 100px;
+        
+    }
+    .flexbox4>span{
+
+        height: 100px;
+        background-color: tomato;
+        
+        width: 200px;
+        display: inline-block;
+        margin-right: 10px;
+
+   
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* align-items: center;侧轴对齐 */
+    .flexbox5{
+        
+        width: 700px;
+        height: 600px;
+        background-color: royalblue;
+
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+
+        align-items: center;
+  
+
+
+        margin-bottom: 100px;
+        
+        
+    }
+    .flexbox5>span{
+
+        height: 100px;
+        background-color: tomato;
+        
+        width: 200px;
+        display: inline-block;
+        margin-right: 10px;
+
+   
+    }
+
+
+
+
+
+
+
+
+    /* align-content: center;多行对齐 */
+    .flexbox6{
+        
+        width: 500px;
+        height: 600px;
+        background-color: royalblue;
+
+
+        display: flex;
+        flex-wrap: wrap;
+
+
+        align-content: center;
+  
+
+
+        margin-bottom: 100px;
+        
+    }
+    .flexbox6>span{
+
+        height: 100px;
+        background-color: tomato;
+        
+        width: 200px;
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+   
+    }
+    </style>
+</head>
+<body>
+
+    <!-- 容器 -->
+    <div class="flexbox1">
+
+
+        <!-- 项目 -->
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+
+    <div class="flexbox2">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+
+    </div>
+
+
+    <div class="flexbox3">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        
+
+    </div>
+
+
+
+
+
+
+    <div class="flexbox4">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+
+    </div>
+
+
+
+
+    <div class="flexbox5">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+
+
+    </div>
+
+
+
+    <div class="flexbox6">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+
+    </div>
+
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>46-子项flex</title>
+
+    <style>
+
+        .item{
+            width: 700px;
+            height: 800px;
+
+            border: 1px solid;
+            display: flex;
+
+            margin: 0 auto;
+        }
+        .item>span:nth-of-type(1){
+         
+            width: 20px;
+            height: 100px;
+            display: inline-block;
+            background-color: royalblue;
+
+
+
+            
+        }
+        .item>span:nth-of-type(2){
+         
+        
+         height: 100px;
+         display: inline-block;
+         background-color: yellowgreen;
+
+         flex: 1;
+
+         order: -1;
+
+
+
+         
+     }
+        .item>span:nth-of-type(3){
+         
+         width: 20px;
+         height: 100px;
+         display: inline-block;
+         background-color: tomato;
+
+         align-self: flex-end;
+
+
+
+         
+     }
+    </style>
+
+
+</head>
+<body>
+    <div class="item">
+        <span></span>
+        <span></span>
+        <span></span>
+     
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28-动画</title>
+    
+</head>
+<script src='28-动画.js'></script>
+<style>
+    .box1 {
+        background-color: lightblue;
+        width: 50px;
+        height: 50px;
+        display: block;
+        position: absolute;
+    }
+    .box2 {
+        position:absolute;
+        display: inline-block;
+        background-color: brown;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        vertical-align: middle;
+        z-index: 100;
+
+        position: fixed;
+        top: 50%;
+        left: 100%;
+        transform: translateX(-100%) translateY(-50%);
+        cursor: pointer;
+        /* width: 150px; */
+
+    }
+    .big{
+        
+    }
+    .box3{
+        display: inline-block;
+        position:absolute;
+        cursor: pointer;
+        background-color: lightcoral;
+        width: 100px;
+        height: 50px;
+        vertical-align: middle;
+
+        position: fixed;
+        top: 50%;
+        left: 100%;
+        transform: translateX(-34%) translateY(-50%);
+        cursor: pointer;
+        width: 150px;
+        
+
+    }
+</style>
+
+<body>
+    <button>点击倒回500</button>
+    <div class="box1"></div>
+
+    <div class="box2">&lt-</div>
+    <div class="box3"></div>
+
+
+    <script>
+        
+        var box1 = document.querySelector('.box1');
+        var button = document.querySelector('button');
+        var box3=document.querySelector('.box3');
+        var box2=document.querySelector('.box2');
+
+        // console.log(box2.innerText);
+        
+        button.addEventListener('click',function(){
+            anim(box1,500);
+        })
+
+        changeToleft=function(){
+            box2.innerHTML='<-'
+        }
+        changeToRight=function(){
+            box2.innerHTML='->'
+        }
+
+
+        // var timer1 = setInterval(anim(box1, 1700), 100)
+        anim(box1, 1700,function(){
+            box1.style.backgroundColor='lightgreen'
+        });
+
+        box2.addEventListener('mousemove',function(){
+            anim(box3,1900,changeToRight());
+        })
+        box2.addEventListener('mouseleave',function(){
+            anim(box3,2050,changeToleft());
+            
+        })
+    </script>
+</body>
+
+</html>

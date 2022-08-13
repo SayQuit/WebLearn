@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习10遍历和修改</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        div {
+            margin: 100px;
+        }
+
+        span {
+            display: block;
+            width: 120px;
+            height: 120px;
+            background-color: lightseagreen;
+
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <span>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </span>
+    <span></span>
+    <div>123</div>
+
+</body>
+
+<script>
+    var color = ['lightgrey', 'lightblue', 'lightgreen', 'tomato', 'lightyellow', 'royalblue']
+
+
+    // 外部添加元素
+    var span = $('<span>内部后面添加</span>');
+    var spanPre = $('<span>内部前面添加</span>');
+    $('body').append(span)
+    $('body').prepend(spanPre);
+
+    // 内部添加元素
+    var spanInside1 = $('<span>外部前面添加</span>');
+    var spanInside2 = $('<span>外部后面添加</span>');
+    $('body').before(spanInside1)
+    $('body').after(spanInside2);
+
+
+    // 删除元素
+    $('div').remove();
+    
+
+    // 清除子节点
+    $('span').empty();
+
+    // 遍历元素
+    $('span').each(function (i, dom) {
+        $(dom).css('background', color[i])
+    })
+
+
+    $.each($('span'), function (i, dom) {
+        $(dom).css('background', color[4 - i])
+    })
+
+    $.each(color, function (i, dom) {
+        // i在对象里是属性名，dom是属性值
+        console.log(dom);
+    })
+
+
+
+
+</script>
+
+</html>

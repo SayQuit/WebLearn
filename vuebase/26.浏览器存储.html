@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26.浏览器存储</title>
+
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    
+
+
+    <div id="r1">
+        
+        <h1>localstorage</h1>
+        <button onclick="saveData()">点我保存数据</button>
+        <button onclick="readData()">点我读取数据</button>
+        <button onclick="deleteData()">点我删除数据</button>
+        <button onclick="deleteAllData()">点我清空数据</button>
+        
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+
+        function saveData(){
+            window.localStorage.setItem('msg','helloworld')
+
+            // window.sessionStorage.setItem
+        }
+        function readData(){
+            console.log(localStorage.getItem("msg"));
+
+            // window.sessionStorage.getItem
+        }
+        function deleteData(){
+           localStorage.removeItem('msg');
+
+        //    sessionStorage.getItem
+        }
+        function deleteAllData(){
+            localStorage.clear();
+
+            // sessionStorage.clear
+        }
+
+        const x=new Vue(
+            {
+                el:'#r1',
+                data:{
+ 
+                }
+            }
+        );
+    </script>
+    
+
+
+
+    
+    
+    
+
+
+
+</body>
+</html>
+

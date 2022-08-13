@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素的显示与隐藏</title>
+
+    <style>
+        .Display_hide{
+            display:none;
+
+            /* 显示 display:block; */
+
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+
+            margin-top: 100px;
+        }
+        .Visibility_hide{
+
+            visibility: hidden;
+
+            /* 显示是visible */
+            background-color: greenyellow;
+            width: 200px;
+            height: 200px;
+                      
+            margin-top: 100px;
+        }
+        .Overflow_hide{
+
+            overflow: hidden;
+
+            background-color:tomato;
+            width: 200px;
+            height: 200px;
+                      
+            margin-top: 100px;
+        }
+        .Overflow_scroll{
+
+            overflow:scroll;
+
+            background-color:tomato;
+            width: 200px;
+            height: 200px;
+                      
+            margin-top: 100px;
+        }
+        .Overflow_auto{
+
+            overflow:auto;
+/* auto是只在超出的时候加滚动条， scroll总是会有滚动条*/
+            background-color:tomato;
+            width: 200px;
+            height: 200px;
+                      
+            margin-top: 100px;
+        }
+        .show{
+            background-color: skyblue;
+            width: 200px;
+            height: 200px;
+                      
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="Display_hide">Display隐藏</div>
+    <div class="Visibility_hide">Visibility隐藏</div>
+    <div class="Overflow_hide">Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+    </div>
+
+    <div class="Overflow_scroll">Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+    </div>
+
+    <div class="Overflow_auto">Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+        Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏Overflow隐藏
+    </div>
+
+    <div class="show">显示</div>
+</body>
+</html>

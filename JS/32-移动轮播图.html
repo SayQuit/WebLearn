@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32-移动轮播图</title>
+</head>
+<style>
+    .big {
+        width: 350px;
+        height: 466.667px;
+        position: absolute;
+
+        overflow: hidden;
+
+        margin: 100px;
+    }
+
+    div {
+        display: inline-block;
+        width: 2200px;
+        height: 466.667px;
+        /* position:absolute; */
+
+        position: absolute;
+
+
+
+    }
+
+    * {
+        margin: 0;
+    }
+
+    img {
+        width: 350px;
+        height: 466.667px;
+        display: inline-block;
+        /* position: absolute; */
+    }
+
+    button {
+        margin-top: 500px;
+    }
+
+    .arr {
+        width: 40px;
+        height: 70px;
+        background: rgba(80, 80, 80, 0.2);
+        text-align: center;
+        line-height: 70px;
+        cursor: pointer;
+        color: white;
+
+
+    }
+
+    .left {
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+    }
+
+    .right {
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%) translateX(-100%);
+        display: none;
+    }
+
+    .dot {
+        /* margin-left:10px; */
+        width: 12px;
+        height: 12px;
+        margin-top: 3px;
+        border-radius: 6px;
+        background-color: gray;
+
+
+        display: inline-block;
+
+        position: static;
+
+        cursor: pointer;
+
+        /* flex: 1; */
+
+
+
+    }
+
+    .dotBox {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-120%);
+        background-color: rgba(80, 80, 80, 0.4);
+        height: 18px;
+        width: 150px;
+
+        display: flex;
+        justify-content: space-evenly;
+        /* align-content: center; */
+
+
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <span class="big">
+        <div>
+            <img src="img/A1.jpg" id="A1"><img src="img/A2.jpg" id="A2"><img src="img/A3.jpg" id="A3"><img
+                src="img/A4.jpg" id="A4"><img src="img/A5.jpg" id="A5"><img src="img/A1.jpg" id="A6">
+        </div>
+        <!-- <div class="arr right">></div>
+        <div class="arr left"><</div> -->
+
+                <div class="dotBox">
+                    <div class="dot" dotIndex='0'></div>
+                    <div class="dot" dotIndex='1'></div>
+                    <div class="dot" dotIndex='2'></div>
+                    <div class="dot" dotIndex='3'></div>
+                    <div class="dot" dotIndex='4'></div>
+                </div>
+
+    </span>
+    <!-- <button>点击</button> -->
+
+</body>
+
+<script>
+
+    var div = document.querySelector('div');
+    // var right = document.querySelector('.right');
+    // var left = document.querySelector('.left');
+    var dot = document.querySelectorAll('.dot');
+    var big = document.querySelectorAll('.big');
+
+    var index = 0;
+    dot[0].style.backgroundColor = "black"
+
+
+    // 节流阀
+    var flag = true;
+
+
+    var t = 0;
+    var timerAuto = null;
+    var autoRun = function () {
+        timerAuto = setInterval(function () {
+            run(1);
+        }, 1500)
+    }
+    autoRun();
+
+    // big[0].addEventListener('mouseleave', function () {
+
+    //     right.style.display = 'none';
+    //     left.style.display = 'none';
+    //     autoRun();
+    // })
+
+    // big[0].addEventListener('mouseover', function () {
+    //     right.style.display = 'block';
+    //     left.style.display = 'block';
+    //     clearInterval(timerAuto);
+    // })
+
+
+    var startX=0;
+    var endX=0;
+    div.addEventListener('touchstart',function(e){
+        startX=e.targetTouches[0].pageX;
+    })
+    div.addEventListener('touchmove',function(e){
+        endX=e.targetTouches[0].pageX;
+        // console.log(endX);
+    })
+    div.addEventListener('touchend',function(e){
+        // endX=e.targetTouches[0].pageX;
+        // console.log(startX,endX);
+
+        // if(startX>endX)run(1);
+        // else if(startX<endX)run(-1);
+        // else {};
+        clearInterval(timerAuto);
+        setTimeout(autoRun(),5000);
+
+
+    })
+
+
+    for (var i = 0; i < 5; i++) {
+        dot[i].addEventListener('click', function () {
+            console.log(index);
+            dot[index].style.backgroundColor = "gray"
+            index = Number(this.getAttribute('dotIndex'));
+            // console.log(index);
+            div.style.left = -index * 350 + 'px';
+            dot[index].style.backgroundColor = "black"
+        })
+    }
+
+    // var button = document.querySelector('button');
+
+    function run(isRight) {
+        if (index == 0 && isRight == -1) {
+            index = 5;
+            div.style.left = -index * 350 + 'px';
+        }
+        else if (index == 5 && isRight == 1) {
+            index = 0;
+            div.style.left = -index * 350 + 'px';
+        }
+
+        var k = 0;
+        var timer = setInterval(function () {
+
+            // var step=10;
+            if (isRight > 0) div.style.left = Math.floor(div.offsetLeft - isRight * 10) + 'px';
+            else div.style.left = Math.ceil(div.offsetLeft - isRight * 10) + 'px';
+            k += 10;
+            if (div.offsetLeft % 10 != 0) {
+                div.style.left = div.offsetLeft - isRight + 'px'
+            }
+
+
+            if (k % 350 == 0) {
+                // console.log(k);
+                index += isRight;
+                div.style.left = -index * 350 + 'px';
+                k = 0;
+                // dot[index-isRight].style.backgroundColor="gray"
+
+                if (index - isRight <= 4) dot[index - isRight].style.backgroundColor = "gray"
+                else if (index - isRight == 5) dot[0].style.backgroundColor = "gray"
+
+                if (index <= 4) dot[index].style.backgroundColor = "black"
+                else if (index == 5) dot[0].style.backgroundColor = "black"
+                clearInterval(timer);
+
+            }
+
+        }, 1)
+    }
+
+    // right.addEventListener('click', function () {
+    //     if (flag) {
+    //         flag = false;
+    //         run(1);
+    //         flag = true
+    //     }
+    // })
+    // left.addEventListener('click', function () {
+    //     if (flag) {
+    //         flag = false;
+    //         run(-1);
+    //         flag = true
+    //     }
+    // })
+
+
+</script>
+
+</html>

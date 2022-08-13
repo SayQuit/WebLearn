@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习3</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        
+
+
+        *{
+            padding: 0;
+        }
+
+        div{
+            cursor: pointer;
+            background-color: lightcoral;
+            width: 100px;
+            height: 100px;
+
+            display: inline-block;
+        }
+
+
+
+
+
+
+
+
+
+        
+        li{
+            display: block;
+            width: 30px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            border: 1px solid;
+            box-sizing: border-box;
+            cursor: pointer;
+
+        }
+        ul{
+            display: inline-block;
+            height: 400px;
+
+            vertical-align: top;
+
+            margin: 0;
+        }
+        img{
+            width: 400px;
+            height: 400px;
+        }
+        span{
+            width: 500px;
+            height: 400px;
+        }
+
+       
+    </style>
+
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+    <span>
+        <ul>
+            <li index="1">1</li>
+            <li index="2">2</li>
+            <li index="3">3</li>
+            <li index="4">4</li>
+            <li index="5">5</li>
+        </ul><ul>
+            <img src="img/A1.jpg">
+        </ul>
+    </span>
+</body>
+
+<script>
+    index=1;
+    $('div').click(function(){
+        // console.log(this);
+        $('div').css('background','lightcoral');
+        $(this).css('background','tomato');
+    })
+
+    $('li').mouseenter(function(){
+        $(this).css('background','tomato');
+    })
+    $('li').mouseleave(function(){
+        $('li').css('background','white');
+    })
+    $('li').click(function(){
+        index=$(this).attr('index');
+        // console.log(index);
+        if(index==1)$('img').attr('src','img/A1.jpg');
+        else if(index==2)$('img').attr('src','img/A2.jpg');
+        else if(index==3)$('img').attr('src','img/A3.jpg');
+        else if(index==4)$('img').attr('src','img/A4.jpg');
+        else if(index==5)$('img').attr('src','img/A5.jpg');
+
+        // 可以直接用$(this).index()
+        
+    })
+</script>
+</html>

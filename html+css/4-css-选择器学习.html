@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-选择器学习</title>
+</head>
+<body>
+    <!--复合选择器：后代选择器,子选择器,链接伪类选择器，focus伪类选择器-->
+    <!--后代选择器-->
+<!---->
+    <style>
+        ol li{
+            color: pink;
+        }
+       
+        .nav li{
+            color: green;
+        }
+    </style>
+    <ol>
+        <li>ol</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+
+    <ol class="nav">
+        <li>ol</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+
+    <ul>
+        <li>ul</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <!--子元素选择器-->
+    <style>
+        .nav2>a{
+            color:rgb(255, 174, 0)
+        }
+    </style>
+
+    <ul class="nav2">
+        <a href="#">儿子</a>
+        <li><a href="#">孙子</a></li>
+    </ul>
+
+
+
+</body>
+
+<style>
+    .nav3 ul li a{
+        color:red;
+    }
+</style>
+<body>
+    <div class="nav3">
+        <ul>
+            <li><a href="#">baidu</a></li>
+            <li><a href="#">百度</a></li>
+        </ul>
+</div>
+
+
+
+<style>
+    .nav4>a{
+        color:red;
+    }
+</style>
+<body>
+    <div class="nav4">
+        <a href="#">百度</a>
+        <ul>
+            <li><a href="#">baidu</a></li>
+            
+        </ul>
+</div>
+    
+</body>
+
+
+
+<!--并集选择器-->
+<!--以下是常规方法-->
+<body>
+
+    <style>
+        .navRed{
+            color:red;
+        }
+        .navPink>li{
+            color:pink;
+        }
+    </style>
+
+
+    <div class="navRed">熊大</div>
+    <p class="navRed">熊二</p>
+    <span>光头强</span>
+    <ul class="navPink">
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+
+</body>
+
+<!--以下是并集选择器方法-->
+<body>
+    <style>
+
+        /*
+        div,p,span{
+            color:red;
+        }
+        .navPink2>li{
+            color:pink;
+        }*/
+    </style>
+
+
+    <div>熊大</div>
+    <p>熊二</p>
+    <span>光头强</span>
+    <ul>
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+</body>
+
+
+
+<!--伪类选择器-->
+<body>
+    <style>
+        /*未访问过的链接
+        a:link{
+        
+        }*/
+        a:visited{
+            color: green;
+        }
+        a:hover{
+            color:pink;
+        }
+        a:active{
+            color:purple;
+        }
+        
+    </style>
+
+    <a href="https://www.zhihu.com/hot" target="_blank">伪类选择器链接</a><br>
+</body>
+
+<!--focus伪类选择器-->
+<body>
+    <style>
+        input:focus{
+            background-color: darkorange;
+            color:red
+        }
+    </style>
+
+    <input type="text">
+</body>
+
+
+<body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20.生命周期</title>
+</head>
+<body>
+    <div id="root">
+        <h2 :style="{opacity:opa}">欢迎学习Vue</h2>
+
+        <button @click="stop">停止</button>
+        <button @click="bye">销毁</button>
+        <button @click="n++">n++</button>
+        <p>n的值是:{{n}}</p>
+    </div>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        const vm=new Vue(
+            {
+                el:'#root',
+                data:{
+                    opa:1,
+                    n:0,
+                },
+                // 生命周期函数
+
+                mounted() {
+                    this.timer=setInterval(() => {
+                        vm.opa-=0.01;
+                        if(vm.opa<-0.05)vm.opa=1;
+                    }, 20);
+                },
+
+
+                // 完成解析并且放入DOM调用mounted
+                // beforeCreate() {console.log("beforeCreate");},
+                // created() {console.log("created");},
+                // beforeMount() {console.log("beforeMount");},
+                // mounted() {console.log("mounted");},
+                // beforeUpdate() {console.log("beforeUpdate");},
+                // updated() {console.log("updated");},
+                // beforeDestroy() {console.log("beforeDestroy");},
+                // destroyed() {console.log("destroyed");},
+                
+
+                methods: {
+                    bye(){
+                        console.log("bye");
+                        this.$destroy();
+                    },
+                    stop(){
+                        clearInterval(this.timer);
+                        
+                    }
+                },
+            },
+            
+        );
+
+        
+    </script>
+</body>
+</html>

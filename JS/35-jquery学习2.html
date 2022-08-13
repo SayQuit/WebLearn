@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习2</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+
+            border: 1px solid;
+
+            margin: 50px;
+
+            display: inline-block;
+
+            vertical-align: bottom;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        li {
+            width: 100px;
+            height: 40px;
+            display: block;
+
+            text-align: center;
+            border: 1px solid orange;
+            line-height: 40px;
+            cursor: pointer;
+
+            box-sizing: border-box;
+        }
+
+        ul {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        ul>li:first-of-type {
+            border: none;
+
+        }
+
+        ul>li:nth-of-type(n+2) {
+            margin-top: -1px;
+            display: none;
+        }
+
+        ul>li:nth-of-type(2) {
+            border-top: none;
+        }
+
+        ul>li:first-of-type:hover {
+            background-color: lightgrey;
+        }
+
+        ul>li:nth-of-type(n+2):hover {
+            background-color: lightyellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <p>第一个盒子</p>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+
+    <ul>
+        <li>微博</li>
+        <li>私信</li>
+        <li>评论</li>
+        <li>@我</li>
+    </ul>
+    <ul>
+        <li>微博</li>
+        <li>私信</li>
+        <li>评论</li>
+        <li>@我</li>
+    </ul>
+    <ul>
+        <li>微博</li>
+        <li>私信</li>
+        <li>评论</li>
+        <li>@我</li>
+    </ul>
+    <ul>
+        <li>微博</li>
+        <li>私信</li>
+        <li>评论</li>
+        <li>@我</li>
+    </ul>
+
+
+
+
+
+
+</body>
+
+<script>
+    // console.log($('div'));
+    $('div').css('background', 'lightgreen')
+
+    // 筛选选择器
+    $('div:first').css('width', '150px')
+    $('div:eq(2)').css('height', '150px')
+    //eq另一种写法
+    $('div').eq(2)
+    $('div:odd').css('background', 'tomato');
+
+
+    // 选取父子元素
+    console.log('parent:',$('p').parent());
+
+    // 只找亲儿子
+    console.log('children:',$('div').children('p'));
+
+    // 找所有后代
+    console.log('find:',$('div').find('p'));
+
+    console.log(' ');console.log(' ');console.log(' ');
+    // 兄弟元素
+    console.log('siblings:',$('li:eq(1)').siblings('li'));
+    // 前面的同辈兄弟节点
+    console.log($('li:eq(1)').prevAll('li'));
+    // 后面的同辈兄弟节点
+    console.log($('li:eq(1)').nextAll('li'));
+
+    // hasClass
+
+
+
+
+
+
+
+
+    $('ul').mouseenter(function () {
+        $(this).children('li').css('display', 'block');
+        // 如果this换成ul会变成选择document里的全部ul
+    })
+
+    $('ul').mouseleave(function () {
+        $(this).children('li').css('display', 'none');
+        $(this).children('li:eq(0)').css('display', 'block');
+    })
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>

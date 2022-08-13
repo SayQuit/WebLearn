@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14</title>
+</head>
+<body>
+    <div id="e">
+        <button @click="getNowTime">获取时间</button>
+        <div>时间:{{time | timeformater1}}</div>
+        <div>修正时间:{{time | timeformater2}}</div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+
+
+        // 只能有一个过滤器，但是可以在全局声明，只能插值语法或者v-bind
+        Vue.filter('myslice',function(value)
+        {
+
+        })
+
+        const vm=new Vue(
+            {
+                el:'#e',
+                data:{
+                    time:'',
+                },
+
+                filters:{
+                    timeformater1(timestamp){
+                        // var timestamp=this.time;
+
+
+                        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+
+                        var Y = date.getFullYear() + '-';
+                        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                        var D = date.getDate() + ' ';
+                        var h = date.getHours() + ':';
+                        var m = date.getMinutes() + ':';
+                        var s = date.getSeconds();
+                        return Y+M+D+h+m+s;
+
+
+                    },
+                    timeformater2(timestamp){
+                        // var timestamp=this.time;
+
+
+                        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+
+                        var Y = date.getFullYear() + '-';
+                        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                        var D = date.getDate() + ' ';
+                        var h = date.getHours() + ':';
+                        var m = date.getMinutes() + ':';
+                        var s = date.getSeconds();
+                        return Y+M+D;
+
+
+                    }
+                },
+
+                methods: {
+                    getNowTime(){
+                        var d=new Date();
+                        this.time=d.getTime(d);
+
+
+                        
+                    }
+                },
+            }
+        );
+    </script>
+</body>
+</html>

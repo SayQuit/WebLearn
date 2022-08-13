@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-权重学习</title>
+
+    <style>
+        ul li{/*         0,0,0,1   +   0,0,0,1     */
+            color: green;
+        }
+        li{/*      0,0,0,1           */
+            color:red;
+
+        }
+
+        .nav li{/*     0,0,1,0   +   0,0,0,1        */
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>权重最大的那个是</li><!--nav里的li里优先选择pink-->
+    </ul>
+    <ul>
+        <li>权重最大的那个是</li><!--ul里的li里优先选择green-->
+    </ul>
+    
+    <li>权重最大的那个是</li><!--所有li里优先选择red-->
+    
+</body>
+
+
+    <style>
+        .nav2{/*     ul 权重是   0,0,1,0        但是下面li继承后权重为0       */
+            color:orange;
+        }
+        p{/*     0,0,0,1       */
+            color: skyblue;
+        }
+    </style>
+
+    <ul class="nav2">
+        <p>继承后权重较大的那个是</p>
+    </ul>
+</html>

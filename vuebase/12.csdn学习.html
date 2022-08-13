@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.csdn学习</title>
+</head>
+<body>
+    <div id="e">
+        <span v-text="msg1"></span>
+        <span v-html="msg2"></span>
+    </div>
+
+
+    <!-- 组件 -->
+    
+    
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+                // 钩子函数
+
+
+                beforeCreate(){
+                    console.log('生成前');
+                    
+                },
+                created(){
+                    console.log("生成vue");
+                },
+                beforeMount(){
+                    console.log("mount前");
+                },
+                mounted(){
+                    console.log("mounted");
+                },
+
+                data:{
+                    msg1:'1',
+                    msg2:'2'
+                },
+
+
+                // component:{
+                //     counter:zujian
+                // }
+
+                
+                
+            }
+            
+            
+        );
+
+
+        
+    </script>
+</body>
+</html>

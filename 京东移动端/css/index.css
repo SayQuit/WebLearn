@@ -1,0 +1,415 @@
+body{
+    width: 100%;
+    min-width: 320px;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+    color: #666666;
+}
+*{
+    margin: 0;
+}
+input{
+    outline: none;
+}
+.testborder{
+    border: 1px solid black;
+}
+
+a{
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.leftmid{
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+.topmid{
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.nav{
+    background-color: #333333;
+    width: 100%;
+    height: 40px;
+
+    position: relative;
+
+    
+
+}
+.fixPos{
+    position: fixed;
+
+    width: 100%;
+    min-width: 320px;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    
+}
+
+.nav>a{
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 10px;
+}
+.open{
+    background-color: #F63515;
+    height: 100%;
+    width: 15%;
+
+    float: right;
+
+  
+
+    display: inline;
+
+    
+}
+.close{
+    background: url("../img/close.png") no-repeat;
+    background-size: contain;
+
+    width: 8%;
+    height: 30%;
+    margin: 0 2%;  
+
+    float: left;
+
+     
+}
+.logo{
+    background: url("../img/logo.png") no-repeat;
+    background-size: contain;
+
+    width: 10%;
+    height: 80%;
+    margin: 0 2%;   
+
+    float: left;
+
+    left: 10%;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner{
+    /* background: url("../upload/banner.dpg") no-repeat;
+    background-size: contain;
+
+    height: 400px; */
+    width: 100%;
+
+    margin: 0 auto;
+    display: inline-block;
+
+    
+
+
+}
+.banner>img{
+    width: 100%;
+}
+.pic11{
+    background: url("../upload/pic11.dpg") no-repeat;
+
+    background-size: contain;
+
+    height: 220px;
+    width: 33%;
+
+    float: left;
+
+}
+.pic22{
+    background: url("../upload/pic22.dpg") no-repeat;
+
+    background-size: contain;
+
+    height: 220px;
+    width: 33%;
+
+    float: left;
+
+}
+.pic33{
+    background: url("../upload/pic33.dpg") no-repeat;
+
+    background-size: contain;
+
+    height: 220px;
+    width: 33%;
+
+    float: left;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search{
+    width: 100%;
+    height: 30px;
+
+
+
+    min-width: 320px;
+    max-width: 800px;
+    position: fixed;
+
+    
+  
+
+}
+
+.search>div{
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+
+    
+
+    left: 10%;
+   
+
+    border: 1px solid;
+    
+    position:absolute;   /* 1111 */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+
+    
+
+
+}
+.search>div>input{
+    
+    height: 80%;
+    width: 60%;
+
+    
+    border: none;
+}
+.sbtn{
+    background: url("../img/s-btn.png") no-repeat;
+    background-size: contain;
+
+    height: 50%;
+    width: 3%;
+    display: inline-block;
+
+    margin-left: 1%;
+
+    
+}
+
+.JDicon{
+    background: url(../img/jd.png) no-repeat;
+    background-size: contain;
+
+    width: 40px; 
+    height: 30px;
+    
+    
+    transform: scale(0.6) translateY(-19%);
+
+    display: inline-block;
+    vertical-align:top;
+    
+    border-right: 1px solid #666666;
+    padding-right: 4%;
+    
+    /* width: 5%;
+    height: 15px;
+    
+    margin-left: 1%;
+    
+
+    
+    */
+
+    
+
+    /*
+    
+    
+
+
+    
+
+     */
+
+
+}
+.searchIcon{
+    background: url(../img/jd-sprites.png) no-repeat;
+    background-position: -163px 0;
+
+
+    width: 35px;
+    height: 30px;
+
+
+    transform: scale(0.8) translateY(-10%);
+
+    display: inline-block;
+    vertical-align:top;
+
+    margin-left: -1%;
+
+
+
+
+    
+    
+
+}
+
+.login{
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 10px;
+
+    display: inline;
+    float: right;
+
+    margin-right: 2%;
+}
+
+
+
+
+
+
+
+
+
+.navicon1{
+    background: url("../upload/nav1.webp") no-repeat;
+}
+.navicon2{
+    background: url("../upload/nav2.webp") no-repeat;
+}
+.navicon3{
+    background: url("../upload/nav3.webp") no-repeat;
+}
+
+
+
+.navicon{
+    display: inline-block;
+    
+
+    height: 30px;
+    width: 18%;
+    
+
+    position: relative;
+
+    margin-bottom: 40px;
+
+
+}
+.navicon>a{
+    background-size: contain;
+    display: block;
+
+    height: 100%;
+    width: 20%;
+    
+}
+.navicon>p{
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    line-height: 30px;
+
+    top: 80%;
+
+}
+
+
+
+
+
+
+
+.pic{
+    display: inline-block;
+    height: 220px;
+
+    
+
+  
+}
+.pic1{
+    background: url("../upload/new1.dpg") no-repeat;
+    width: 45%;
+
+    
+    background-size:100% 100%;
+
+ 
+ 
+}
+.pic2{
+    background: url("../upload/new2.dpg") no-repeat;
+    width: 26%;
+
+
+    background-size:100% 100%;
+ 
+}
+.pic3{
+    background: url("../upload/new3.dpg") no-repeat;
+    width: 26%;
+
+
+    background-size:100% 100%;
+ 
+}

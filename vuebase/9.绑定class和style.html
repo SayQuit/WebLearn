@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.绑定class和style</title>
+
+    <style>
+
+        /* 绑定class style */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            margin-bottom: 30px;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            margin-bottom: 30px;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: royalblue;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="e">
+        <div :class="box" @click="changebox"></div>
+
+        <!-- {fontSize: fsize+'px'} -->
+        <div class="box1" :style="{fontSize: fsize +'px'}">1</div>
+        <div class="box2" :style="styleObj">2</div>
+        <div class="box3">3</div>
+    </div>
+
+
+
+    
+
+
+
+    <script src="js/vue.js"></script>
+
+
+    
+
+    <script type="text/javascript">
+        // const x={fontSize: fsize+'px'};
+        const vm=new Vue(
+            {
+                el:'#e',
+
+
+
+                data:{
+                   j:1,
+                   box:'box1',
+
+                   fsize:40,
+
+                   styleObj:{
+                    fontSize:'40px',
+                    backgroundColor:'lightgreen'
+                    },
+
+                    styleArr:[
+                        {
+
+                        },
+                        {
+                            
+                        }
+                    ]
+                },
+
+                
+
+                methods: {
+                    changebox(){
+                        
+
+                        this.j+=1;
+                        if(this.j==4)this.j=1;
+                        
+                        if(this.j==1)this.box='box1';
+                        else if(this.j==2)this.box='box2';
+                        else if(this.j==3)this.box='box3';
+                    }
+                },
+
+             
+
+
+            }
+            
+            
+            
+        );
+
+     
+
+
+
+        
+    </script>
+</body>
+</html>

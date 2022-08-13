@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.收集表单数据</title>
+</head>
+<body>
+    <div id="e">
+        <div>账号---<input type="number" v-model.number="account"></div>
+        <!-- number -->
+        <div>密码---<input type="password" v-model.trim="pwd"></div>
+        <div>性别---<input type="radio" value="male" v-model="sex">男---<input type="radio" value="female" v-model="sex">女</div>
+        <div>爱好
+            ---抽烟<input type="checkbox"  value="smoke" v-model="hobby">
+            ---喝酒<input type="checkbox" value="drink" v-model="hobby">
+            ---烫头<input type="checkbox" value="head" v-model="hobby">
+        </div>
+        <div>所属校区---
+            <select v-model="school">
+                <option value="wushan">五山</option>
+                <option value="daxuecheng">大学城</option>
+                <option value="guoji">国际</option>
+            </select>
+        </div>
+        <div>其他信息---</div>
+        <textarea name="" id="" cols="30" rows="10" v-model.lazy="other"></textarea>
+        <!-- lazy -->
+        <div><input type="checkbox" v-model:value="agree">同意并且接受<a href="#">用户协议</a></div>
+        <button @click="submit"type='submit'>提交</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        const x=new Vue(
+            {
+                el:'#e',
+                data:{
+                    account:0,
+                    pwd:'',
+                    other:'',
+                    sex:'',
+                    school:'',
+                    hobby:[
+
+                    ],
+                    agree:''
+
+                },
+
+                methods: {
+                    submit(){
+                        console.log(this.account);
+                        console.log(this.pwd);
+                        console.log(this.hobby);
+                        console.log(this.school);
+                        console.log(this.sex);
+                        console.log(this.other);
+                    }
+                },
+            }
+        );
+    </script>
+</body>
+</html>

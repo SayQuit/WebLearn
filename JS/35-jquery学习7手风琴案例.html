@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习7手风琴案例</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .box {
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+        }
+
+        .color1 {
+            background-color: lightblue;
+        }
+
+        .color2 {
+            background-color: lightcoral;
+        }
+
+        .color3 {
+            background-color: lightgreen;
+        }
+
+        .color4 {
+            background-color: lightsalmon;
+        }
+
+        .color5 {
+            background-color: lightseagreen;
+        }
+        .current{
+            width: 140px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="margin:100px ;">
+        <div class="box color1" style="width:140px ;"></div>
+        <div class="box color2"></div>
+        <div class="box color3"></div>
+        <div class="box color4"></div>
+        <div class="box color5"></div>
+    </div>
+</body>
+
+<script>
+    $('.box').mouseenter(function(){
+        $('.box').stop().animate({
+            width:70
+        })
+        $(this).stop().animate({
+            width:140
+        })
+    })
+</script>
+
+</html>

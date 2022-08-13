@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-倒计时</title>
+
+    <style>
+        div {
+            display: inline-block;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hour"></div>
+    <div id="min"></div>
+    <div id="second"></div>
+    <script>
+
+        var daojishi = function () {
+            var h = document.getElementById('hour')
+            var m = document.getElementById('min')
+            var s = document.getElementById('second')
+
+            var time = new Date();
+            var ddl = new Date(2022, 7, 27, 23, 0, 0)
+            var t = ddl.getTime() - time.getTime();
+            t /= 1000
+            h.innerText = parseInt(t / 60 / 60 % 24) + ' hours'
+            m.innerText = parseInt(t / 60 % 60) + ' minutes'
+            s.innerText = parseInt(t % 60) + ' seconds'
+        }
+
+        
+        window.onload = function () {
+            daojishi();
+        }
+
+
+
+        var timer = setInterval(daojishi, 1000)
+
+
+    </script>
+</body>
+
+</html>

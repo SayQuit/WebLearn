@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26-布局技巧</title>
+    <style>
+        /*********************** margin 的技巧使用 -1px ***********************/
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .bigbox{
+            margin: 100px;
+
+            
+            height: 300px;
+        }
+        .marginleftUse{
+            border: 1px solid grey;
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin-left: -1px;   
+        }
+        .firstbox{
+            margin: 0;
+        }
+        .marginleftUse:hover{
+
+            border: 1px solid blue;  
+
+
+            position: relative;/* 相对定位压住其他盒子 ，如果加了relative，则使用z-index*/
+        }
+
+
+
+
+
+        /*********************** 文字环绕 ***********************/
+        .bbox{
+            margin: 100px;
+            width: 300px;
+            height: 200px;
+
+            background-color: tomato;
+        }
+        .box{
+            width: 200px;
+     
+         
+
+            float: left;
+            
+        }
+        .box>img{
+            width: 100%;
+        }
+        .box p{
+            float: left;
+
+        }
+
+
+
+
+
+
+
+
+
+        /*********************** 三角强化 ***********************/
+        .sanjiao{
+
+            float: left;
+
+            border-top: 60px solid transparent;
+   
+            border-right: 60px solid transparent;
+            border-left: 30px solid skyblue;
+
+            position: relative;
+            right: -100px;
+
+            
+
+            
+
+        }
+        .leftbox{
+            float: left;
+            height: 60px;
+            width: 100px;
+            background-color: skyblue;
+
+            border: 1px solid black;
+        }
+        .rightbox{
+            float: left;
+            height: 60px;
+            width: 130px;
+            background-color: white;
+
+            border: 1px solid black;
+
+            margin-left: -1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="marginleftUse"></div>
+        <div class="marginleftUse"></div>
+        <div class="marginleftUse"></div>
+        <div class="marginleftUse"></div>
+        <div class="marginleftUse"></div>
+    </div>
+
+    <div class="bbox">
+        <div class="box">
+            <img src="img/928260a552206d43.jpg" alt="">
+        </div>
+        <p>只能写中文只能写中文只能写中文只能写中文只能写中文只能写中文只能写中文只能写中文</p>
+    </div>
+
+
+
+    <div style="margin: 100px;">
+        <div class="leftbox">
+            <div class="sanjiao"></div>
+        </div>
+        
+        <div class="rightbox"></div>
+    </div>
+
+
+
+
+</body>
+</html>

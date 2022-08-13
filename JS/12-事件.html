@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-事件</title>
+
+    <style>
+        .box {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            margin-top: 100px;
+            color: white;
+        }
+        .boxOuter {
+            background-color: lightblue;
+            height: 300px;
+            width: 300px;
+            margin-top: 100px;
+
+        }
+        .boxMe {
+            background-color: lightcoral;
+            height: 200px;
+            width: 200px;
+
+ 
+        }
+        .boxInner {
+            background-color: lawngreen;
+            height: 100px;
+            width: 100px;
+
+ 
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 注册事件,例如:onclick -->
+
+    <button id="register1">addEventListener监听器按钮</button>
+    <button id="register2">attach监听器按钮</button>
+
+    <script>
+        // 可以多个addEventListener
+        var listener1 = document.getElementById('register1');
+        listener1.addEventListener('click', function () {
+            console.log('addEventListener监听1');
+        });
+        listener1.addEventListener('click', function () {
+            console.log('addEventListener监听2');
+        });
+        // 有第三个参数，如果true则是捕获阶段，false或省略，则是冒泡阶段
+
+        // var listener2=document.getElementById('register2');
+        // listener2.attachEvent('onclick',function(){
+        //     console.log('attachEvent监听1');
+        // });
+        // listener2.attachEvent('onclick',function(){
+        //     console.log('attachEvent监听2');
+        // });
+
+
+    </script>
+
+
+
+
+
+    <!-- 删除事件 -->
+
+    <div class="box" id="delete">删除事件</div>
+    <script>
+        var deleteFun = function () {
+            alert('我只弹出一次');
+            deleteBox.removeEventListener('click', deleteFun)
+        }
+        var deleteBox = document.getElementById('delete');
+        deleteBox.addEventListener('click', deleteFun);
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 事件对象 -->    
+
+    <button id="eventObj" style="margin-top:100px">事件对象</button>
+
+    <script>
+
+        var eventObj = document.getElementById('eventObj');
+        eventObj.onclick=function(event){
+            console.log('onclick',event);
+        }
+        eventObj.addEventListener('click',function(event){
+            console.log('addEventListener',event);
+        })
+
+
+    </script>
+
+
+    <ul id="ul" style="margin-top: 100px;">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var ul=document.getElementById('ul');
+        ul.addEventListener('click',function(e){
+            console.log(this);
+            console.log(e.currentTarget);
+
+            console.log(e.target);
+
+            console.log(e.type);
+        })
+    </script>
+
+
+
+    <!-- 阻止默认事件 -->
+    <!-- 例如a的跳转 -->
+    <a href="https://www.baidu.com/?tn=88093251_83_hao_pg" id="a">跳转</a>
+    <script>
+        var a=document.getElementById('a');
+        a.addEventListener('click',function(e){
+            e.preventDefault();
+            console.log(e.returnValue);
+            // return false;
+        })
+    </script>
+
+
+    <!-- 阻止事件冒泡 -->
+    <div id="outer" class="boxOuter">
+        <div id="me" class="boxMe">
+            <div id="inner" class="boxInner"></div>
+        </div>
+    </div>
+
+    <script>
+        var outer=document.getElementById('outer');
+        var me=document.getElementById('me');
+        var inner=document.getElementById('inner');
+
+        outer.addEventListener('click',function(e){
+            console.log('outer');
+        })
+        me.addEventListener('click',function(e){
+            console.log('me');
+            e.stopPropagation();
+            // e.cancelBubble=true;
+        })
+        inner.addEventListener('click',function(e){
+            console.log('inner');
+        })
+    </script>
+
+
+
+    <!-- 事件委托:使用e.target -->
+    <ul id="boxFather">
+        <div class="boxInner"></div>
+        <div class="boxInner"></div>
+        <div class="boxInner"></div>
+        <div class="boxInner"></div>
+        <div class="boxInner"></div>
+    </ul>
+
+    <script>
+        var boxFather=document.getElementById('boxFather');
+        boxFather.addEventListener('click',function(e){
+            e.target.style.backgroundColor='lightblue';
+        })
+    </script>
+
+
+    <!-- 右键菜单取消 --><!-- 禁止复制 -->
+    <script>
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();
+        })
+    </script>
+
+    <!-- 禁止选中 -->
+    <div style="margin-top: 100px;" id="copy">我是一段文字</div>
+    <script>
+        var copy=document.getElementById('copy');
+        copy.addEventListener('selectstart',function(e){
+            e.preventDefault();
+        })
+    </script>
+
+
+
+
+    <!-- 鼠标事件 -->
+
+    <button id="mouse">鼠标事件</button>
+    <img src="img/A1.jpg" alt="">
+
+    <style>
+        img{
+            width: 50px;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        var mouse =document.getElementById('mouse');
+        mouse.addEventListener('click',function(e){
+            console.log('client',e.clientX,e.clientY);
+            console.log('page',e.pageX,e.pageY);
+            console.log('screen',e.screenX,e.screenY);
+        })
+
+        var img=document.querySelector('img');
+        
+
+        document.addEventListener('mousemove',function(e){
+            img.style.top=e.pageY+'px';
+            img.style.left=e.pageX+'px';
+            // console.log(img);
+        })
+        
+    </script>
+
+
+
+
+    <!-- 键盘事件 -->
+
+    <div class="boxOuter" id="key"></div>
+    <script>
+        document.onkeyup=function(e){
+            console.log('keyup')
+        }
+
+        document.onkeydown=function(e){
+            console.log(e.key);
+            console.log(e.keyCode);
+            console.log('keydown')
+
+        }
+
+        document.onkeypress=function(e){
+            console.log('keypress');
+        }
+
+        
+        
+    </script>  
+</body>
+
+</html>

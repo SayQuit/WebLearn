@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34-本地存储</title>
+</head>
+
+<body>
+    <h1>sessionStorage</h1>
+    <input type="text">
+    <button>存储数据</button>
+    <button>获取数据</button>
+    <button>删除数据</button>
+    <button>清空所有数据</button>
+    <span></span>
+
+    <script>
+        var input = document.querySelector('input');
+        var span = document.querySelector('span');
+        var btn = document.querySelectorAll('button');
+        index = 0;
+
+        btn[0].addEventListener('click', function (e) {
+            if (input.value != '') {
+                sessionStorage.setItem(index, input.value);
+                index++;
+                input.value = '';
+
+            }
+        })
+        btn[1].addEventListener('click', function (e) {
+
+            for (var i = 0; i < index; i++) {
+                var d = document.createElement('div');
+                d.innerHTML = sessionStorage.getItem(i);
+                span.appendChild(d);
+            }
+
+
+        })
+        btn[2].addEventListener('click', function (e) {
+
+
+            sessionStorage.removeItem(index - 1)
+            index--;
+
+        })
+        btn[3].addEventListener('click', function (e) {
+
+
+
+            sessionStorage.clear();
+            // span.appendChild(d);
+            index = 0;
+
+        })
+
+    </script>
+
+
+    
+</body>
+
+</html>

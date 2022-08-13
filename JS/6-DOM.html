@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-DOM</title>
+
+    <script src="6-DOM.js"></script>
+
+    <style>
+        .box1{
+            display: inline-block;
+        }
+        .box2{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- 通过id -->
+    <div id="date">2022-11-9</div>
+    <script>
+        var element1=document.getElementById("date");
+        console.log(element1);
+        console.dir(element1);
+        
+    </script>
+
+
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+
+
+    <!-- 通过标签名 -->
+    <script>
+        var element2=document.getElementsByTagName('li');
+        console.log(element2);
+        console.log(element2[0]);
+    </script>
+
+    <ol>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+    </ol>
+
+
+    <script>
+        var ol=document.getElementsByTagName('ol');
+        var li=ol[0].getElementsByTagName('li');
+        console.log(li);
+        console.log(li[0]);
+    </script>
+
+
+
+
+    <div class="box1">122</div>
+
+
+    <!-- 通过类名 -->
+    <script>
+        var class1=document.getElementsByClassName("box1");
+        console.log(class1[0]);
+    </script>
+
+
+
+
+
+    <div class="box2">123</div>
+
+    <!-- 通过选择器 -->
+    <script>
+        // querySelectorAll
+        var selector=document.querySelector('.box2');
+        console.log(selector);
+        // id用'#box2' 标签直接，例如'‘'li'
+    </script>
+
+
+
+
+
+
+    <!-- 获取html、body -->
+    <script>
+        var b=document.body;
+        console.log(b);
+
+        var h=document.documentElement;
+        console.log(h);
+    </script>
+
+
+
+
+
+
+
+<!-- 事件三要素 :事件源、事件类型、事件处理程序-->
+
+<br><br><br><br><br>
+
+
+    <p>事件源</p>
+
+    <button id="btn">按钮</button>
+    <br><br><br><br><br>
+    <button id="time">获取时间</button>
+    <div id="in"></div>
+
+
+    <script>
+        var btn=document.getElementById('btn');
+
+        // 事件类型：点击、滑过、键盘按下
+        btn.onclick=function(){
+            alert("已点击");
+        }
+
+
+        var timebtn=document.getElementById('time');
+        var inner=document.getElementById('in');
+
+
+
+        timebtn.onclick=function(){
+            inner.innerText=new Date();
+            // innerHTML
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+
+
+
+
+
+    <!-- 修改属性 -->
+    <button id="btn1">点击改变图片1</button>
+    <button id="btn2">点击改变图片2</button>    <br><br><br>
+    <img src="" alt="" id="img1" class="imgk">
+    <style>
+        .imgk{
+            width: 300px;
+        }
+    </style>
+
+    <script>
+        var img1=document.getElementById("img1");
+        var btn1=document.getElementById("btn1");
+        var btn2=document.getElementById("btn2");
+
+        
+        btn1.onclick=function(){
+
+            img1.src='img/1.jpeg'; 
+            btn1.disabled=true;
+       
+        }
+
+        btn2.onclick=function(){
+            img1.src='img/2.jpeg';
+            btn2.disabled=true;
+   
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 分时案例 -->
+    <p id="FP">1</p>
+    <img src="" alt="" id="FIMG" style="width:300px ;">
+
+    <script>
+        var fp=document.getElementById('FP');
+        var fimg=document.getElementById('FIMG');
+        var time=new Date();
+        if(time.getHours()<=12)
+        {
+          
+                fp.innerText='上午好';
+                fimg.src='img/1.jpeg';
+            
+        }
+        else{
+            
+                fp.innerText='下午好';
+                fimg.src='img/2.jpeg';
+            
+        }
+    </script>
+
+
+<br><br><br><br>
+
+
+
+    <!-- 密码案例 -->
+    <input type="text" id='mm'>
+    <button id='btn3'>隐藏/显示</button>
+
+    <script>
+        var btn3=document.getElementById('btn3');
+        var mm=document.getElementById('mm');
+
+        btn3.onclick=function(){
+            if(mm.type==='text')mm.type='password';
+            else if(mm.type==='password')mm.type='text';
+        }
+    </script>
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+
+
+
+
+    <!-- 修改样式 -->
+
+    <style>
+        .box10{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+
+            
+        }
+    </style>
+
+    <div class="box10" id="box10"></div>
+
+    <script>
+        var box10=document.getElementById('box10');
+        box10.onclick=function(){
+            this.style.backgroundColor='green';
+        }
+    </script>
+
+<br><br><br><br>
+
+
+    <button id="btn11">×</button><br>
+    <img src="img/1.jpeg" alt="" style="width: 300px;" id="img5">
+
+
+    <script>
+        var btn11=document.getElementById('btn11');
+        var img5=document.getElementById('img5');
+
+        btn11.onclick=function(){
+            if(this.innerText=='×'){
+                img5.style.visibility='hidden';
+                this.innerText='√';
+            }
+            else{
+                img5.style.visibility='visible';
+                this.innerText='×'
+            }
+        }
+    </script>
+
+    <br><br><br><br>
+</body>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29-属性选择器和伪类选择器</title>
+
+    <style>
+        /*************************** 属性选择器 权重为10 ***************************/
+        input[value]{
+            color: red;
+        }
+
+
+        /*  */
+         input[value="请输入用户名"]
+         {
+             font-style: italic;
+         }
+
+
+         /* 以XX开头 */
+         input[value^='请输入用']
+         {
+             font-size: large;
+         }
+
+
+         /* 以XX结尾 */
+         input[value$='名']
+         {
+             background-color: skyblue;
+         }
+
+
+
+         /* 包含XX */
+         input[value*='您']
+         {
+             width: 500px;
+         }
+    </style>
+
+
+    <style>
+        /*************************** 伪类选择器 ***************************/
+
+        /* 选择ul的第一个孩子,注意ul后面的空格 */
+        ul :first-child{
+            color: red;
+        }
+
+        ul :last-child{
+            color: skyblue;
+        }
+
+        ul :nth-child(5)
+        {
+            color: yellowgreen;
+        }
+
+        li:nth-child(3)
+        {
+            color: pink;
+        }
+
+        ul li:nth-child(4)
+        {
+            color: tomato;
+        }
+
+        ul>li:nth-child(2)
+        {
+            color: royalblue;
+        }
+
+
+
+
+
+
+        div>div:nth-child(even)
+        {
+            color: tomato;
+        }
+
+        div>div:nth-child(odd)
+        {
+            color: royalblue;
+        }
+
+        div>div:nth-child(3n)
+        {
+            font-style: italic;
+        }
+
+
+
+
+
+
+
+
+
+        /* XXX of type */
+
+        /* oftype和child的不同
+
+        1.child是对所有进行排序，然后看指定的和排列的是否一致，不一致则略过，n+1
+        2.oftype是拿出所有指定的进行排序，然后进行
+
+
+         */
+
+        div>p:nth-of-type(3)
+        {
+            color: tomato;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <input type="search" name="" id="" value="请输入用户名">
+    <input type="search" name="" id="" value="请输入您的用户名">
+    <input type="search" name="" id="" value="请输入用">
+    <input type="search" name="" id="">
+
+
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+
+    <div>
+
+        <div>我是第1个孩子</div>
+        <div>我是第2个孩子</div>
+        <div>我是第3个孩子</div>
+        <div>我是第4个孩子</div>
+        <div>我是第5个孩子</div>
+        <div>我是第6个孩子</div>
+        <div>我是第7个孩子</div>
+        <div>我是第8个孩子</div>
+        <div>我是第9个孩子</div>
+        <div>我是第10个孩子</div>
+    </div>
+
+    <br><br><br><br>
+    <div>
+        <p>我是第1个孩子</p>
+        <p>我是第2个孩子</p>
+        <p>我是第3个孩子</p>
+        <p>我是第4个孩子</p>
+        <p>我是第5个孩子</p>
+    </div>
+
+ 
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-盒子模型学习</title>
+
+    <style>
+        *{
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        .borderL1{
+            width: 300px;
+            height: 200px;
+
+
+            /*盒子边框border*/
+            border-width: 5px;
+            border-color:cornflowerblue;
+            border-style: solid;       /*solid实线 dashed虚线 dotted虚点线*/
+
+           /*          border-collapse: collapse合并        */
+
+
+            border-top-color: forestgreen;
+
+
+            /*内边距padding学习*/
+            padding-top:10px;
+            padding-left: 10px;
+
+
+            /*        外边距margin             */
+
+            margin-left: 100px;
+            margin-right: 30px;
+
+
+
+        
+        }
+
+        .cen
+        {
+            width: 300px;
+            margin: auto;
+            /*           行内元素和行内块元素居中给父亲添加text-align:center      */
+
+            border-color: red;
+            border-style: solid;
+        }
+
+        .hebing1{
+            background-color: blue;
+            width: 300px;
+            height: 300px;
+
+            margin-top: 50px;
+
+        }
+        .hebing2{
+            background-color: green;
+
+            width: 200px;
+            height: 200px;
+
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cen">
+        水平居中
+    </div>
+    <div class="borderL1">
+        盒子内容
+    </div>
+
+
+    <div class="hebing1">
+        <div class="hebing2"></div> 
+        <!--父子元素塌陷问题：当父元素有一个100的top-margin，子元素有200top-margin，则父元素top-margin也变成200-->
+        <!--解决方法:-->
+        <!--1.父元素增加上边框  border-top -->
+        <!--2.父元素增加上内边框  padding-top-->
+        <!--3.overflow:hidden-->
+    </div>
+
+
+    
+
+
+
+
+
+
+    
+
+    
+</body>
+
+<style>
+    .clear
+    {
+        padding: 0;
+        margin: 0;
+    }
+</style>
+
+<body class="clear"> 
+    <!--清除内外边距-->
+    123
+
+    
+</body><br>
+<body class="clear"> 
+    <!--清除内外边距-->
+    123
+
+    <ul class="clear">
+        清除内外编剧
+        <li class="clear">
+            清除内外边距
+        </li>
+    </ul>
+</body>
+<br><br><br><br><br><br><br>
+
+
+
+ <!--圆角边框学习-->
+ <style>
+     .yuanjiao{
+         background-color: black;
+         border-radius: 10px;
+
+         width:100px;
+         height: 100px;
+     }
+ </style>
+
+<body>
+    <div class="yuanjiao">
+        
+    </div>
+</body>
+
+
+<br><br><br><br><br><br>
+
+<!--阴影学习:盒子阴影、文字阴影-->
+<style>
+    .sha{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        background-color: skyblue;
+        
+    }
+    a:hover{
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .3);
+        /*文字阴影text-shadow:5px 5px 5px rgba(0, 0, 0, .3);*/
+    }
+</style>
+
+<body>
+    <a href="#" class="sha"></a>
+</body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</html>

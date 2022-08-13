@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18.内置指令</title>
+    
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="e">
+        <div v-text="msg1" v-cloak></div>
+        <div v-html="msg2" v-cloak></div>
+        <button @click="n++">n++</button>
+
+        <h2 v-once>初始的n值是:{{n}}</h2>
+        <h2>当前的n值是:{{n}}</h2>
+        <h2 v-pre>当前的n值是:{{n}}</h2>
+
+        
+
+
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        const vm=new Vue(
+            {
+                el:'#e',
+                data:{
+                    msg1:'text',
+                    msg2:'<h1>html</h1>',
+                    n:0
+                },
+                
+                directives:{
+
+                }
+            }
+        );
+    </script>
+</body>
+</html>

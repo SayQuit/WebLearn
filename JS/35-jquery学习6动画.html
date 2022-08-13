@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习6动画</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightsalmon;
+            position: absolute;
+
+        }
+
+        div {
+            margin: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box"></div>
+    <div>
+        <button>显示</button>
+        <button>隐藏</button>
+        <button>切换</button>
+
+        <button>滑动下拉</button>
+        <button>滑动上拉</button>
+        <button>滑动切换</button>
+
+        <button>淡入</button>
+        <button>淡出</button>
+        <button>淡入淡出切换</button>
+        <button>修改透明度</button>
+
+        <button>自定义动画</button>
+    </div>
+</body>
+
+<script>
+    $('button').click(function () {
+        if ($(this).index() == 0) {
+            $('.box').show(1000);
+        }
+        else if ($(this).index() == 1) {
+            $('.box').hide(1000);
+        }
+        else if ($(this).index() == 2) {
+            $('.box').toggle();
+        }
+
+
+
+        else if ($(this).index() == 3) {
+            $('.box').slideDown();
+        }
+        else if ($(this).index() == 4) {
+            $('.box').slideUp();
+        }
+        else if ($(this).index() == 5) {
+            $('.box').stop().slideToggle();
+        }
+
+
+        else if ($(this).index() == 6) {
+            $('.box').fadeIn(1000)
+        }
+        else if ($(this).index() == 7) {
+            $('.box').fadeOut(1000)
+        }
+        else if ($(this).index() == 8) {
+            $('.box').fadeToggle(1000)
+        }
+        else if ($(this).index() == 9) {
+            $('.box').fadeTo(1000,0.3)
+        }
+
+
+        else if ($(this).index() == 10) {
+            $('.box').animate({
+                left:200
+            })
+        }
+
+    })
+
+
+    $('.box').hover(function()
+    {
+        console.log('鼠标经过的函数');
+        $('.box').css('background','lightgreen')
+    },function(){
+        console.log('鼠标离开的函数');
+        $('.box').css('background','lightsalmon')
+    })
+    // 只写一个的话那么经过和离开都会触发这个函数
+</script>
+
+</html>

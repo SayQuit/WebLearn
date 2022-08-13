@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27-淘宝侧边栏</title>
+</head>
+<style>
+    .big{
+        position:fixed;
+        top: 50%;
+        left: 100%;
+        transform: translateX(-200%) translateY(-50%);
+    }
+    .box1{
+        background-color: lightblue;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+    .box2{
+        background-color: lightcoral;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+    .box3{
+        background-color: lightgreen;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+    .box4{
+        background-color: lightgoldenrodyellow;
+        width: 50px;
+        height: 50px;
+        display: block;
+        display: none;
+
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="big">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box4"></div>
+        <div class="box3"></div>
+    </div>
+    
+    <script>
+        var big=document.querySelector('.big');
+        var box4=document.querySelector('.box4');
+        var b=document.querySelector('body');
+
+        // console.log(big.scrollTop);
+
+        document.addEventListener('scroll',function(){
+            // console.log(big.style.top);
+            if(window.pageYOffset<=400){
+                box4.style.display='none'
+                big.style.top=500-window.pageYOffset+'px'
+                
+            }
+            else{
+                box4.style.display='block'
+            }
+        })
+
+        box4.addEventListener('click',function(){
+            var k=window.pageYOffset;
+            var timer= setInterval(function(){
+                // console.log(k);
+                k-=10;
+                if(k<0)k=0;
+                window.scroll(0,k);
+                if(k<=0)clearInterval(timer);
+            },7)
+        })
+
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习8属性操作与案例</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        div {
+            margin-left: 100px;
+
+        }
+
+        span {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        button {
+            width: 40px;
+            display: inline-block;
+        }
+
+        input {
+            width: 70px;
+            padding-left: 10px;
+        }
+
+        p {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+        }
+
+        .del {
+            background-color: brown;
+            color: white;
+            width: 80px;
+            text-align: center;
+            height: 50px;
+            cursor: pointer;
+            line-height: 50px;
+
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="#" index="0">属性操作</a>
+
+
+    <div>
+        <input type="checkbox" id="checkAll" class="ac">全选
+    </div>
+
+
+    <div index="1" class="big">
+        <input type="checkbox" id="check" class="c">选择1
+        <button class=".sub">-</button>
+        <input class="num" type="text" value="1">
+        <button class=".add">+</button>
+        <span p="12">12</span>
+        <button class="">删除</button>
+    </div>
+    <div index="2" class="big">
+        <input type="checkbox" id="check" class="c">选择2
+        <button class=".sub">-</button>
+        <input class="num" type="text" value="1">
+        <button class=".add">+</button>
+        <span p="16">16</span>
+        <button class="">删除</button>
+    </div>
+    <div index="3" class="big">
+        <input type="checkbox" id="check" class="c">选择3
+        <button class=".sub">-</button>
+        <input class="num" type="text" value="1">
+        <button class=".add">+</button>
+        <span p="20">20</span>
+        <button class="">删除</button>
+    </div>
+
+
+    <div>
+        <input type="checkbox" id="checkAll" class="ac">全选
+    </div>
+
+
+
+    <div class="del" id="delall">删除所有</div>
+    <div class="del" id="delselect">删除选中</div>
+    <div class="All">0</div>
+    <div class="AllPrice">0</div>
+
+
+
+
+
+
+
+
+
+    <div class="one">
+        <div>
+            <div>
+                <div class="four"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $('a').prop('href', '@');
+    console.log($('a').prop('href'));
+    //    不能获取自定义属性
+
+    $('a').attr('index', '1');
+    console.log($('a').attr('index'));
+
+
+    // 数据缓存data
+    $('a').data('name', 'andy');
+    console.log($('a').data('name'));
+
+
+
+
+
+    $('.ac').click(function () {
+
+
+        // 这里被id唯一原则坑了。。。
+
+        var value = $(this).prop('checked');
+        // var index = $('input').attr('index');
+
+        $('.ac').prop('checked', value)
+        $('.c').prop('checked', value)
+
+        if (value) $('.big').css('background', 'brown')
+        else $('.big').css('background', 'white')
+
+        AllChange();
+
+
+    })
+
+    $('.c').click(function () {
+        if ($('.c:checked').length == $('.c').length)
+            $('.ac').prop('checked', true);
+
+        else
+            $('.ac').prop('checked', false);
+
+
+        // console.log($(this).prop('checked'));
+        if ($(this).prop('checked') == true) $(this).parent().css('background', 'brown')
+        else $(this).parent().css('background', 'white')
+
+        AllChange();
+
+    })
+
+
+
+    $('button').click(function () {
+        var index = $(this).index();
+        var num = Number($(this).siblings('.num').val());
+        if (num != 0) var price = $(this).siblings("span").html()
+        price = Number(price / num);
+
+        if (index == 1) {
+            num -= 1;
+            if (num <= 0) return;
+            $(this).siblings('.num').val(num);
+
+        }
+        else if (index == 3) {
+            num += 1;
+            $(this).siblings('.num').val(num);
+        }
+
+        else if (index == 5) {
+            $(this).parent().remove();
+            if ($('.c:checked').length == $('.c').length)
+                $('.ac').prop('checked', true);
+            else
+                $('.ac').prop('checked', false);
+
+        }
+        price *= num;
+        $(this).siblings('span').html(price);
+        AllChange();
+
+
+    })
+
+    // $('button').click(function(){
+    //     var index=$(this).index();
+    //     var num=Number($(this).siblings('.num').val());
+    //     if(num!=0)var price=$(this).siblings("span").html()
+    //     price=Number(price/num);
+
+    //     // console.log($(this).siblings('.number'));
+    //     if(index==1){
+    //         // console.log($(this).siblings('.num').val());
+
+    //         num-=1;
+    //         if(num<=0)return;
+    //         $(this).siblings('.num').val(num);
+
+    //     }
+    //     else if(index==3){
+    //         // console.log($(this).siblings('.num').val());
+    //         num+=1;
+    //         $(this).siblings('.num').val(num);
+    //     }
+    //     price*=num;
+    //     $(this).siblings('span').html(price);
+    //     AllChange();
+
+
+    // })
+
+
+    $('.num').change(function () {
+        var num = Number($(this).val());
+        if (num <= 0) {
+            num = 1;
+            $(this).val(num);
+            AllChange();
+            return
+        }
+        var PriceN = Number($(this).siblings("span").attr('p'));
+        console.log(PriceN);
+
+        $(this).siblings('span').html(PriceN * num);
+        AllChange();
+    })
+
+
+    console.log($('.four').parents('.one').html());
+
+
+    var AllChange = function () {
+        var sum = 0;
+        var sumPrice = 0;
+
+        $('.num').each(function (i, ele) {
+            if ($(this).siblings('.c').prop('checked') == true) sum += Number($(this).val());
+        })
+        $('span').each(function (i, ele) {
+            if ($(this).siblings('.c').prop('checked') == true) sumPrice += Number($(this).html());
+        })
+
+        $('.All').html(sum);
+        $('.AllPrice').html(sumPrice);
+
+    }
+
+    $('#delall').click(function () {
+        $('.big').remove();
+        AllChange();
+        $('.ac').prop('checked', false)
+    })
+    $('#delselect').click(function () {
+        if ($('.big').children('.c').prop('checked') == true) {
+            $('.big').children('.c:checked').parent().remove();
+        }
+
+
+
+        AllChange();
+        $('.ac').prop('checked', false)
+    })
+
+
+
+
+
+</script>
+
+</html>

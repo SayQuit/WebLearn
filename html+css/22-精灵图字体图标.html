@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22-精灵图</title>
+
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 60px;
+            height: 60px;
+            margin: 100px;
+            background: url('img/sprites.png');
+            background-position: -182px 0;
+        }
+
+
+
+        .alpha{
+            background: url('img/abcd.jpg');
+            display: inline-block;
+        }
+        .Aa{
+            background-position: 0px -10px;
+            width:105px;
+            height: 105px;
+          
+        }
+        .Xx{
+            background-position: -254px -561px;
+            width:105px;
+            height: 105px;
+        }
+        .Ii{
+            background-position: -328px -138px;
+            width:60px;
+            height: 120px;
+        }
+        .Oo{
+            background-position: -371px -278px;
+            width:110px;
+            height: 110px;
+        }
+        .Cc{
+            background-position: -241px -9px;
+            width:100px;
+            height: 110px;
+        }
+        .Hh{
+            background-position: -219px -143px;
+            width:102px;
+            height: 105px;
+        }
+        .Ee{
+            background-position: -486px -10px;
+            width:93px;
+            height: 105px;
+        }
+        .Nn{
+            background-position: -256px -275px;
+            width:110px;
+            height: 110px;
+        }
+        .Gg{
+            background-position: -100px -141px;
+            width:101px;
+            height: 107px;
+        }
+        .Dd{
+            background-position: -364px -9px;
+            width:96px;
+            height:105px;
+        }
+        .jiange{
+            background-image: url('img/white.jpg');
+            width:105px;
+            height: 105px;
+            display: inline-block;
+        }
+/****************************** 字体图标 ******************************/
+    @font-face 
+    {
+        font-family: 'icomoon';
+        src:  url('fonts/icomoon.eot?p4ssmb');
+        src:  url('fonts/icomoon.eot?p4ssmb#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?p4ssmb') format('truetype'),
+        url('fonts/icomoon.woff?p4ssmb') format('woff'),
+        url('fonts/icomoon.svg?p4ssmb#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+}
+    span{
+        font-family: 'icomoon';
+        font-size: 100px;
+    }
+
+
+
+
+/******************************  三角形  ******************************/
+    .sanjiao{
+        width: 0;
+        height: 0;
+
+        border-left: 100px solid green;
+        border-right: 100px solid transparent;
+
+        border-top: 100px solid transparent;
+        border-bottom: 100px solid transparent;
+
+    }
+
+
+    .da{
+        margin: 100px;
+        width: 300px;
+        height: 300px;
+        background-color: red;
+
+    }
+    .da>div{
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent;
+        border-left: 30px solid transparent;
+        border-bottom: 30px solid red;
+        border-right: 30px solid transparent;
+
+        position: relative;
+
+        left: 200px;
+        top: -60px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <br>
+    <div class="alpha Xx"></div>
+    <div class="alpha Ii"></div>
+    <div class="alpha Aa"></div>
+    <div class="alpha Oo"></div>
+    <div class="jiange"></div>
+    <div class="alpha Cc"></div>
+    <div class="alpha Hh"></div>
+    <div class="alpha Ee"></div>
+    <div class="alpha Nn"></div>
+    <div class="alpha Gg"></div>
+    <div class="jiange"></div>
+    <div class="alpha Dd"></div>
+    <div class="alpha Oo"></div>
+    <div class="alpha Nn"></div>
+    <div class="alpha Gg"></div>
+
+    <br>
+
+
+    <span></span>
+
+
+
+    <div class="sanjiao"></div>
+
+    <div class="da">
+        <div></div>
+    </div>
+
+
+</body>
+</html>

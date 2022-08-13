@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习5</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        
+
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav{
+            width: 130px;
+            height: 40px;
+            display: inline-block;
+            background-color: lightslategray;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .main{
+            width: 650px;
+            height: 400px;
+            border: 1px solid;
+            display: block;
+            box-sizing: border-box;
+            display: none;
+        }
+        div{
+            margin: 100px;
+        }
+        
+       
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <nav class="nav">商品介绍</nav><nav class="nav">规格与包装</nav><nav class="nav">售后保障</nav><nav class="nav">商品评价(9999+)</nav><nav class="nav">手机社区</nav>
+
+        <span class="main">商品介绍 板块</span>
+        <span class="main">规格与包装 板块</span>
+        <span class="main">售后保障 板块</span>
+        <span class="main">商品评价 板块</span>
+        <span class="main">手机社区 板块</span>
+    </div>
+
+
+
+
+
+    
+</body>
+
+<script>
+    $('.nav').click(function(){
+        // console.log($(this).index());
+        $('.main').css('display','none')
+        $('.main').eq($(this).index()).css('display','block')
+
+        $('.nav').css('background','lightslategray')
+        $(this).css('background','brown')
+
+        
+    })
+</script>
+</html>

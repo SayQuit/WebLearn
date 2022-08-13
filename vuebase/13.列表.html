@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.列表</title>
+</head>
+<body>
+    <div  id="e"><br><br><br><br>
+        <input type="text" v-model:value="inp">
+        <button @click="sortByAge">年龄排序</button>
+        <ul>
+            <li v-for="person in fpeople" :key="person.id">
+                姓名:{{person.name}}-年龄:{{person.age}}-性别:{{person.sex}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+                // 钩子函数
+
+
+         
+            
+                data:{
+                    inp:"",
+                    fpeople:[],
+                    needSort:0,
+                    people:[
+                        {
+                            id:'001',
+                            name:'周冬雨',
+                            age:'18',
+                            sex:'女',
+                            // show:true,
+                            // 自己是用增加的属性决定是否显示
+
+                        },
+                        {
+                            id:'002',
+                            name:'马冬梅',
+                            age:'28',
+                            sex:'女',
+                            // show:true,
+
+                        },
+                        {
+                            id:'003',
+                            name:'周杰伦',
+                            age:'38',
+                            sex:'男',
+                            // show:true,
+
+                        },
+                        {
+                            id:'004',
+                            name:'温兆伦',
+                            age:'28',
+                            sex:'男',
+                            // show:true,
+
+                        },
+                        {
+                            id:'005',
+                            name:'周婕纶',
+                            age:'18',
+                            sex:'女',
+                            // show:true,
+
+                        },
+                    ]
+                },
+
+                methods: {
+                    sortByAge(){
+                        this.needSort=1;
+                        if(this.needSort){
+                                this.fpeople.sort((a,b)=>{
+                                    return a.age-b.age
+                                })
+                        }
+                    }
+                },
+                
+                watch:{
+                    inp:{
+                        immediate:true,
+                        handler(){
+                            
+                            // 使用过滤器,这里computed里面写也行
+                            this.fpeople=this.people.filter((p)=>{
+                                return p.name.indexOf(this.inp)!=-1;
+                            })
+
+                            
+                            
+
+
+
+                            // for(var i=0;i<5;i++)
+                            // {
+                                
+                            //     const arr=this.people[i].name;//这里是名字
+                            //     if(arr.indexOf(this.inp)==-1){
+                            //         this.people[i].show=false
+                            //     }
+                            //     else this.people[i].show=true;
+                                
+                            // }
+                        }
+                    }
+                }
+                
+            }
+            
+            
+        );
+
+
+        
+    </script>
+</body>
+</html>

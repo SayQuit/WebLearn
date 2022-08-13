@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.渲染</title>
+    <style>
+            .box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="e">
+        <div class="box1" v-show="true"></div>
+        <div class="box1" v-if="false"></div>
+
+
+        <button @click="add">点我加一</button>
+
+        <!-- 高切换用show 低切换用if -->
+        <div v-if="n==0">angular</div>
+        <div v-else-if="n==1">react</div>
+        <div v-else-if="n==2">vue</div>
+        <div v-else>哈哈</div>
+
+
+        <!-- 减少if重复，并且不破坏结构 -->
+        <template>
+            <div v-if="n==0">0</div>
+            <div v-if="n==1">1</div>
+            <div v-if="n==2">2</div>
+            <div v-if="n>2">n</div>
+        </template>
+
+
+
+        <!-- v-for -->
+        <!-- id也可以是index -->
+        <!-- <ul>
+            
+            <br><br>
+            <li v-for="(a,b) in people" :key="b">{{a}}   {{b}}</li>
+            <br><br>
+            <li v-for="(value,key) in str" :key="key">{{value}}:{{key}}</li>
+        </ul> -->
+
+        <ul>
+            <button @click="addPerson">添加</button>
+            <li v-for="person in people" :key="index">姓名:{{person.name}}  年龄:{{person.age}}<input type="text"></li><br><br><br><br>
+            <li v-for="person in people" :key="person.id">姓名:{{person.name}}  年龄:{{person.age}}<input type="text"></li>
+        </ul>
+    </div>
+
+
+
+    
+
+
+
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+                data:{
+                    n:0,
+
+
+
+                    people:[
+                        {
+                            id:'001',
+                            name:'李四',
+                            age:19
+                        },
+                        {
+                            id:'002',
+                            name:'张三',
+                            age:29
+                        },
+                        {
+                            id:'003',
+                            name:'王五',
+                            age:22
+                        },
+                    ],
+                    str:'hello'
+                },
+                methods: {
+                    add(){
+                        this.n++;
+                        // if(this.n==3)this.n=0;
+                    },
+                    addPerson(){
+                        const p={
+                            id:'004',
+                            name:'赵六',
+                            age:27
+                        }
+                        this.people.unshift(p);
+                        console.log(p);
+                    }
+                },
+
+            
+            }
+            
+            
+        );
+
+
+        
+    </script>
+</body>
+</html>

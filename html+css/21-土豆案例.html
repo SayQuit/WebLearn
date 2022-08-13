@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21-土豆案例</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .tu{
+            position: relative;
+            margin: 100px;
+            width: 448px;
+            height: 252px;
+            background-image: url("img/tudou.jpg");
+
+            
+        }
+        .toumin{
+            width: 448px;
+            height: 252px;
+
+            background: rgba(0, 0, 0, .4);
+
+            display: none;
+
+        }
+        .tu:hover>.toumin{
+            display: block;
+        }
+        .toumin>div{
+            display: block;
+            width: 34px;
+            height: 34px;
+            background-image: url("img/arr.png");
+
+            position:absolute;
+            top: 50%;
+            margin-top: -17px;
+            left: 50%;
+            margin-left: -17px;
+            
+          
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="tu">
+        <a class="toumin" href="#">
+            <div></div>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-短信案例</title>
+</head>
+<style>
+
+</style>
+
+<body style="margin:100px ;">
+    <input type="text" id="input">
+    <button id="btn">点击发送</button>
+
+    <script>
+        var input = document.getElementById('input')
+        var button = document.getElementById('btn')
+        var timer3 = null;
+        var timer4 = null;
+        button.addEventListener('click', function () {
+
+
+            if (input.value) {
+                console.log(input.value);
+                input.value = '';
+
+                var timeLen = 5000;
+                var tmpTimeLen = timeLen / 1000;
+                button.disabled = true;
+                button.innerText = '还剩' + tmpTimeLen + '秒可再次发送';
+
+
+
+                
+                timer4 = setInterval(function () {
+                    tmpTimeLen -= 1
+                    button.innerText = '还剩' + tmpTimeLen + '秒可再次发送';
+                }, 1000)
+
+
+
+
+                timer3 = setTimeout(function () {
+                    button.disabled = false;
+                    button.innerText = '点击发送';
+                    clearInterval(timer4);
+                }, timeLen)
+
+
+            }
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

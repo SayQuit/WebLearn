@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动案例1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .center{
+            text-align: center;
+        }
+        .block{
+            width: 1500px;
+            height: 750px;
+            display: inline-block;
+
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        .daohanglanBlock
+        {
+            width: 250px;
+            height: 750px;
+            background-color: grey;
+            float: left;
+
+        }
+        .daohanglanBlock>a{
+                    width: 250px;
+                    height: 60px;
+                    background-color: grey;
+                    color: white;
+                    margin: 13px 0 0 0;
+                    display: inline-block;
+                    line-height: 60px;
+                    text-decoration: none;
+                    text-align: center;
+        }
+        .daohanglanBlock>a:hover{
+            background-color: orange;
+            color: black;
+        }
+
+
+        
+        .imgShow{
+          
+            
+            background-image: url("img/小米电视.jfif");
+            width: 1250px;
+            height: 750px;
+
+
+            background-position: center center;
+           
+            float: left;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <div class="daohanglanBlock">
+
+            <a href="#">手机 电话卡</a>
+            <a href="#">电视 盒子</a>
+            <a href="#">电脑 平板</a>
+            <a href="#">家电 插电板</a>
+            <a href="#">出行 穿戴</a>
+            <a href="#">智能 路由器</a>
+            <a href="#">电源 配件</a>
+            <a href="#">健康 儿童</a>
+            <a href="#">耳机 音响</a>
+            <a href="#">生活 箱包</a>
+
+        </div>
+
+        <div class="imgShow"></div>
+
+    </div>
+</body>
+
+
+</html>

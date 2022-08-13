@@ -1,0 +1,531 @@
+.nav{
+    margin-top: 50px;
+    overflow: hidden;
+
+    
+}
+.nav>p{
+    float: left;
+    width: 210px;
+    height: 45px;
+
+    background-color: #B1191A;
+
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+}
+.nav>li{
+    float: left;
+    margin-left: 45px;
+
+    height: 45px;
+
+    line-height: 45px;
+    
+    
+}
+.nav>li>a{
+    color: #666666;
+    font-size: 18px;
+
+
+}
+.nav>li>a:hover{
+    color: #B1191A;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.leftsidebar{
+    float: left;
+
+    height: 465px;
+    width: 210px;
+
+    
+
+
+}
+.leftsidebar>li{
+    height: 31px;
+    width: 210px;
+    background-color: #C81623;
+}
+.leftsidebar>li>a{
+    height: 31px;
+    width: 208px;
+
+    float: right;
+
+    padding-left: 10px;
+    box-sizing: border-box;
+
+    background-color: #C81623;
+
+    font-size: 14px;
+    color: white;
+    line-height: 31px;
+}
+.leftsidebar>li>a:hover{
+ 
+
+    background-color: white;
+    color: #C81623;
+}
+
+
+
+
+
+
+.advimg{
+    margin-top: 10px;
+    margin-left: 69.5px;
+    float: left;
+
+}
+
+
+
+
+.bulletin{
+    width: 230px;
+    height: 455px;
+
+    border: 1px solid #e4e4e4;
+
+    float: right;
+
+    margin-top: 10px;
+
+
+}
+.bulletinhead{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #e4e4e4;
+
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666666;
+    
+    box-sizing: border-box;
+    padding-left: 20px;
+
+}
+
+.bulletinhead>a{
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #666666;
+
+    float: right;
+    margin-right: 30px;
+
+}
+.bulletinhead>a:hover{
+    color: #B1191A;
+
+}
+.news{
+    width: 100%;
+    height: 130px;
+
+    border-bottom: 1px solid #e4e4e4;
+
+    line-height: 25px;
+    font-size: 12px;
+    color: #666666;
+
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.news>li{
+
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news>li>a{
+    font-weight: normal;
+    color: #666666;
+
+    margin-left: 2px;
+}
+.news>li>a:hover{
+    color: #B1191A;
+}
+.rightsidebar{
+    color: black;
+}
+.rightsidebar>li{
+    width: 56.5px;
+    height: 70px;
+
+    display: inline-block;
+
+    border-right:1px solid #e4e4e4;
+    border-bottom:1px solid #e4e4e4;
+
+    font-size: 14px;
+    text-align: center;
+
+    position: relative;
+
+    
+
+    
+    
+}
+.rightsidebar>li>a{
+    color: #666666;
+
+    position: relative;
+
+    top: 60%;
+    
+}
+.rightsidebar>li>a:hover{
+    color: #B1191A;
+}
+.rightsidebar>li:nth-of-type(4n)
+{
+    border-right:hidden
+}
+
+.bargain>img{
+    width: 230px;
+    margin-top: 7px;
+}
+
+
+
+
+
+
+
+
+.shoppingicon_1{
+    background-position: 0 -5px;
+}
+.shoppingicon_2{
+    background-position: -63px -5px;
+}
+.shoppingicon_3{
+    background-position: -126px -5px;
+}
+.shoppingicon_4{
+    background-position: -189px -5px;
+}
+.shoppingicon_5{
+    background-position: 0 -75px;
+}
+.shoppingicon_6{
+    background-position: -63px -75px;
+}
+.shoppingicon_7{
+    background-position: -126px -75px;
+}
+.shoppingicon_8{
+    background-position: -189px -75px;
+}
+.shoppingicon_9{
+    background-position: 0 -145px;
+}
+.shoppingicon_10{
+    background-position: -63px -145px;
+}
+.shoppingicon_11{
+    background-position: -126px -145px;
+}
+.shoppingicon_12{
+    background-position: -189px -145px;
+}
+
+
+
+
+
+
+
+
+
+
+.recom
+{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13.27px 0 0 0;
+
+    width: 273.25px;
+    height: 180px;
+    
+    background-color: #EBEBEB;
+}
+
+
+
+.recom>a{
+    
+    
+
+    float: left;
+    
+    border-left: 1px solid #DDDDDD;
+    
+
+ 
+
+
+}
+.recom:first-of-type
+{
+
+    width: 207px;
+    background-color: #5C5251;
+
+}
+.recom:first-of-type>a
+{
+    
+    width: 207px;
+    display:flex;
+
+    border: hidden;
+}
+.recom:nth-of-type(2)>a
+{
+    border: hidden;
+}
+
+
+
+
+
+
+
+
+.footer{
+    background-color: #F5F5F5;
+}
+
+
+
+.service{
+    border-bottom:1px solid #CCCCCC;
+
+
+    
+}
+
+.service>div{
+    width: 258px;
+    /* width: 260px; */
+    height: 110px;
+
+
+    float: left;
+
+    position: relative;
+
+    
+}
+.service>div>h1{
+    font-size: 14px;
+    font-weight: 600;
+    color: #666666;
+
+    position: absolute;
+    top: 32%;
+
+    margin-left: 40%;
+}
+.service>div>p{
+    font-size: 12px;
+    color: #666666;
+
+    position: absolute;
+    top: 52%;
+
+    margin-left: 40%;
+}
+.serviceicon{
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 15%;
+
+    width: 50px;
+    height: 50px;
+}
+.serviceicon_1{
+    background-position: -252px -2px;
+
+    
+}
+.serviceicon_2{
+    background-position: -253px -53px;
+
+    
+}
+.serviceicon_3{
+    background-position: -255px -104px;
+
+    
+}
+.serviceicon_4{
+    background-position: -257px -156px;
+
+    
+}
+.serviceicon_5{
+    background-position: -256px -208px;
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.floor{
+    margin-top: 30px;
+
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+.floor>.redline{
+    margin-top: 5px;
+}
+.floor>p{
+    display: inline-block;
+
+    font-size: 18px;
+    color: #B1191A;
+}
+
+.floornav{
+    float: right;
+
+    text-align: center;
+}
+.floornav>li{
+    display: inline-block;
+
+    line-height: 15px;
+    border-left: 1px solid #666666 ;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.floornav>li:first-of-type>a{
+    color: #B1191A;
+}
+.floornav>li:first-of-type{
+    border: hidden;
+}
+.floornav>li>a{
+   
+    color: #666666;
+    font-size: 12px;
+}
+.floornav>li>a:hover{
+   
+    color:#B1191A
+    
+}
+
+
+
+
+
+
+.floorimg{
+    
+    height: 360px;
+}
+
+.floorimg>div{
+    display: inline-block;
+
+    width: 230px;
+
+    vertical-align: top;
+
+    
+}
+.floorimg>div>div{
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+.floorimg>div:nth-of-type(2)>div{
+    border: hidden;
+}
+.floorimg>div:nth-of-type(2){
+    width: 330px;
+
+}
+.floorimg>div:first-of-type>div{
+    border: hidden;
+}
+.floorimg>div:first-of-type>div>li{
+    display: inline-block;
+    width: 90px;
+    height: 20px;
+    padding:10px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    text-align: center;
+    
+    border-bottom: 1px solid #CCCCCC;
+
+    
+    
+}
+.floorimg>div:first-of-type>div>li>a{
+    font-size: 12px;
+    color: #666666;
+    
+    
+}
+.floorimg>div:first-of-type>div>li>a:hover{
+    color:#B1191A;
+}

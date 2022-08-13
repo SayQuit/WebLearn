@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-BOM</title>
+</head>
+
+<body>
+    <script>
+        // 页面加载事件
+        window.onload = function () {
+            // alert('onload')
+            // addEventListener
+        }
+        document.addEventListener('load', function () {
+            // addEventListener
+        })
+        document.addEventListener('DOMContentLoaded', function () {
+            // addEventListener
+        })
+
+
+
+
+
+        // 窗口大小事件
+        window.addEventListener('resize', function () {
+            console.log('变化了');
+        })
+
+
+        // 定时器
+        var timer1 = window.setTimeout(function () {
+            console.log('定时器');
+        }, 3000)
+    </script>
+
+
+
+    <button>点击clearTimeout</button>
+    <img src="img/A2.jpg" alt="" id="img">
+
+
+    <script>
+        var img=document.getElementById('img');
+        var btn=document.getElementsByTagName('button');
+        var timer2=setTimeout(function(){
+            img.style.visibility='hidden';
+        },3000)
+  
+        btn[0].addEventListener('click',function(){
+            clearTimeout(timer2)
+        })
+        
+    </script>
+
+
+    <button id="IntervalBtn">点击clearInterval</button>
+
+    <script>
+        var i=setInterval(function(){
+            console.log('setInterval');
+        },500)
+
+        var IBtn=document.getElementById('IntervalBtn');
+        IBtn.addEventListener('click',function(){
+            clearInterval(i);
+        })
+
+        
+    </script>
+</body>
+
+</html>

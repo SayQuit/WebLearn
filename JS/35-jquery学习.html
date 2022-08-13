@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习</title>
+    <script src="jquery.min.js"></script>
+
+</head>
+<body>
+    <span style="width: 50px;height: 50px;background-color: lightseagreen;display: inline-block;" class="sp" id="s"><div></div></span>
+</body>
+
+<script>
+    $('.sp').hide();
+    $(document).ready(function(){
+
+    })
+    $(function(){
+
+    })
+    jQuery(function(){
+
+    })
+    var dom=document.querySelector('span');
+    console.dir(dom);
+    console.dir($('span'));
+
+    // dom->jquery
+    $(dom)
+    console.dir($(dom));
+
+
+    // jquery->dom
+    var toDom=$('span')[0];
+    var toDom2=$('span').get(0);
+    console.dir(toDom);
+    console.dir(toDom2)
+
+
+
+    // 选择器
+    $('span');
+    $('.sp');
+    $('#s')
+    $('span div');
+</script>
+
+
+</html>

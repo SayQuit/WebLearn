@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS学习网页</title>
+        <link rel="stylesheet" href="css学习.css">
+<!--选择器：标签、类、id、通配符-->
+<!--标签：p{}-->
+<!--类：如下.XXX 可以多类选择器-->
+<!--id：如下#XXX 只能用一个-->
+<!--通配符：如下* 给所有未使用选择器的定义默认-->
+        <style>
+            .black{  
+                background-color: black;        
+            }
+            .red{
+                color: red;
+            }
+            .pxchoose{
+                width: 100px;
+                height: 50px;
+            }
+
+
+
+            #pink{
+                color:pink
+            }
+
+/*
+            *{
+                color:blue;就是将字体默认蓝色
+            }
+            */
+
+            /*字体类型：字体、大小、粗细、斜体*/
+            h4{
+                font-family:'Courier New', Courier, monospace;
+                font-size: 50px;
+                font-weight: 10;
+                font-style: italic;
+                /*可以font:'Courier New', Courier, monospace 50px 10 italic顺序要一定*/
+            }
+
+
+            /*文本类型：颜色 对齐 划线 缩进 行距*/
+            h3{
+                color:gray;
+                text-align: l;
+                text-decoration: underline;
+                text-indent: 2em;
+                line-height: 30px;
+            }
+        </style>
+        
+    </head>
+
+
+
+    <body>
+        <div class="black">黑色背景</div>
+        <div class="red">红色</div>
+        <div class="black pxchoose red">红色+黑色背景</div><br>
+        <div class="black pxchoose" id="pink">粉色</div>
+
+    </body>
+
+
+
+    <body>
+        <h1>字体类型</h1>
+        <h4>字体ABC123</h4>
+    </body>
+
+
+    <body>
+        <h1>文本类型</h1>
+        <h3>雷门中学的足球部是一个仅有7名部员的弱小队伍。社团活动室内聚集了一批拥有各自爱好,度过糜烂每一日的部员。
+            热血足球少年的队长·円堂守激励部员们“为了明天的比赛练习吧!”。其中居然有强队帝国学园那里发来的比赛邀请。
+            但是要比赛的话还缺少4人。而且如果不参赛的话将会关系到足球部的存活。所以无论如何为了要实现与帝国学园的比赛,
+            円堂开始致力于一个人练习。某一天,円堂与拥有必杀射门技“火焰龙卷”的“传说中的前锋”豪炎寺修也相遇了,且游说他入队。
+            其它成员找齐了。在比赛当日円堂守他们以大比数落后,在一位队员退场以后,豪炎寺修也代替他加入比赛并进了一球。
+            最后帝国学园竟然放弃比赛,因此算是雷门中获胜。为此雷门中学足球部得以保留,这班足球少年又可以向全国大会进发。
+        </h3>
+    </body>
+    <body>
+        <!--内部样式表 如上head或者body内部-->
+        <!--行内样式表 不建议这样写-->
+        
+        <div style="color:brown">红色</div>
+        <div>原色</div>
+        
+        <!--外部样式表 -->
+
+        <p class="whiteColor">这是外部样式表</p>
+
+
+    </body>
+
+    <body>
+        <!--emmet语法-->
+        <div class="black"></div>
+        <p></p>
+        <div></div>
+    </body>
+
+
+    
+
+
+
+
+
+
+
+
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+
+
+    
+</html>

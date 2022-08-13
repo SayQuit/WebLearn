@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习14todolist</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .btnTop {
+            float: right;
+        }
+
+        .todo {
+            width: 120px;
+            margin: 10px 0;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body style="margin: 100px;">
+    <input type="text" id="add" placeholder="添加todo">
+    <h1>正在进行<div id="inProcessNum">0</div>
+    </h1>
+    <div id="inProcess"></div>
+    <h1>已完成<div id="FinishedNum">0</div>
+    </h1>
+    <div id="Finished"></div>
+
+
+
+
+</body>
+
+<script>
+
+    var index = 0
+
+
+
+
+    var localGet = function () {
+        if (localStorage.getItem('index')) index = localStorage.getItem('index');
+        else localStorage.setItem('index', index);
+        var n = 0;
+        for (var i = 0; i < index; i++) {
+            if (localStorage.getItem(i)) {
+                var todo = $('<div class="todo"></div>');
+                todo.html(localStorage.getItem(i));
+                todo.append('<button class="btnTop">删除</button>');
+                todo.prepend('<input type="checkbox" class="check">')
+                $('#inProcess').append(todo);
+                var num = Number($('#inProcessNum').html());
+                num++;
+                $('#inProcessNum').html(num);
+                n++;
+            }
+            
+            
+        }
+        
+    }
+    var localSet = function () {
+        localStorage.setItem('index', index);
+
+
+    }
+
+    localGet()
+
+
+    $('#add').keyup(function (e) {
+        if ($(this).val() != '' && e.key == 'Enter') {
+            var todo = $('<div class="todo"></div>');
+            todo.html($(this).val());
+            todo.append('<button class="btnTop">删除</button>');
+            todo.prepend('<input type="checkbox" class="check">')
+            $('#inProcess').append(todo);
+            var num = Number($('#inProcessNum').html());
+            num++;
+            $('#inProcessNum').html(num);
+
+
+            localStorage.setItem(index, $(this).val());
+            index++;
+            localSet();
+
+
+            $(this).prop('value', '')
+
+
+        }
+    })
+
+    $('#inProcess').on('click', '.check', function () {
+        $('#Finished').append($(this).parent());
+
+        var num = Number($('#inProcessNum').html());
+        num--;
+        $('#inProcessNum').html(num);
+
+        var num2 = Number($('#FinishedNum').html());
+        num2++;
+        $('#FinishedNum').html(num2);
+
+    })
+    $('#Finished').on('click', '.check', function () {
+        $('#inProcess').append($(this).parent());
+
+        var num = Number($('#FinishedNum').html());
+        num--;
+        $('#FinishedNum').html(num);
+
+        var num2 = Number($('#inProcessNum').html());
+        num2++;
+        $('#inProcessNum').html(num2);
+
+    })
+
+
+
+
+    
+    $('#inProcess').on('click', '.btnTop', function () {
+
+        localStorage.removeItem($(this).parent().index());
+
+        $(this).parent().remove()
+        var num = Number($('#inProcessNum').html());
+        num--;
+        $('#inProcessNum').html(num);
+
+
+
+
+
+        localSet();
+
+    })
+    $('#Finished').on('click', '.btnTop', function () {
+
+
+        localStorage.removeItem($(this).parent().index());
+
+        $(this).parent().remove()
+        var num = Number($('#FinishedNum').html());
+        num--;
+        $('#FinishedNum').html(num);
+
+
+
+
+        localSet();
+    })
+</script>
+
+</html>

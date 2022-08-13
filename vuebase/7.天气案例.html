@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.天气案例</title>
+</head>
+<body>
+    <div id="e">
+        <h1>今天天气很{{TQ}}</h1>
+        <button @click="change">切换天气</button>
+    </div>
+
+
+
+    <script src="js/vue.js"></script>
+
+
+    
+
+    <script type="text/javascript">
+         const vm=new Vue(
+            {
+                el:'#e',
+
+
+
+                data:{
+                    TQ:'凉爽',
+                    TQJ:0
+
+                },
+
+                computed:{
+                    
+                },
+
+                methods:{
+                    change(){
+                        if(this.TQJ==0){
+                            this.TQ='炎热',
+                            this.TQJ=1
+                        }
+                        else if(this.TQJ==1){
+                            this.TQ='凉爽',
+                            this.TQJ=0
+                        }
+                    }
+                }
+            }
+            
+            
+        );
+
+
+
+        
+    </script>
+</body>
+</html>

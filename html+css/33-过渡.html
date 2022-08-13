@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33-过渡</title>
+
+    <style>
+        .guodu{
+            transition: all 1s linear 0s;
+        /*  transition：过度属性 花费时间 运动曲线 何时开始  */
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 100px;
+        }
+        .box:hover{
+            width: 600px;
+            height: 600px;
+            background-color: royalblue;
+        }
+
+
+
+
+
+
+        .jindutiao{
+            margin: 100px;
+            width: 300px;
+            height: 14px;
+            border: 1px solid red;
+            border-radius: 7px;
+
+            
+        }
+        
+        .jindutiao>div{
+            width: 50%;
+            height: 100%;
+            border-radius: 15px;
+            transition: all 1s ease 0s;
+            background-color: red;
+        }
+        .jindutiao>div:hover{
+            width: 100%;
+            background-color: red;
+        }
+        
+        /* .jindutiao:hover>div{
+            width: 50%;
+            height: 100%;
+            border-radius: 15px;
+            transition: all 1s ease 0s;
+            background-color: red;
+
+        } */
+
+        /* p296作业 */
+    </style>
+</head>
+<body>
+    <div class="guodu box"></div>
+
+    <div class="jindutiao">
+        <div></div>
+    </div>
+</body>
+</html>

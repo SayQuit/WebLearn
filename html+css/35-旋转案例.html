@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转案例</title>
+
+    <style>
+        .backg{
+            display: block;
+            background-color: royalblue;
+
+            width: 70px;
+            height: 70px;
+
+            color: white;
+            line-height: 70px;
+            text-align: center;
+
+            overflow: hidden;
+
+
+            
+        }
+        .backg::before{
+
+            display: block;
+            background-color: skyblue;
+
+            width: 70px;
+            height: 70px;
+
+      
+            transition: all 0.5s;
+
+            
+            transform: rotate(90deg);
+            transform-origin: 0 100%;
+
+            
+
+            content:"传媒";
+            
+            
+            
+
+        }
+        .backg:hover::before{
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="backg"></div>
+   
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35-jquery学习10遍历和修改</title>
+    <script src="jquery.min.js"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .box{
+            width: 100px;
+            height: 120px;
+            padding: 10px;
+            margin: 100px;
+            border: 5px solid;
+
+            background-color: lightsteelblue;
+        }
+        .bigbox{
+            width: 500px;
+            height: 3000px;
+            background-color: crimson;
+        }
+        .asidebox{
+            position: fixed;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%) translateX(-150%);
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+
+            cursor: pointer;
+
+            text-align: center;
+            line-height: 100px;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="bigbox"></div>
+    <div class="asidebox">返回顶部</div>
+
+</body>
+
+<script>
+    // 尺寸
+    console.log($('.box').width(),$('.box').height());
+    console.log($('.box').innerWidth(),$('.box').innerHeight());
+    console.log($('.box').outerWidth(),$('.box').outerHeight());
+    console.log($('.box').outerWidth(true),$('.box').outerHeight(true));
+    $('.box').width(150)
+    console.log($('.box').width(),$('.box').height());
+
+
+    // 偏移
+    console.log($('.box').offset());
+    console.log($('.box').position());
+    // console.log($('.box').scroll());
+
+
+
+    $('.asidebox').hide();
+    $(window).scroll(function(){
+
+    })
+
+
+    $(document).scroll(function(){
+
+        if($(document).scrollTop()>=$('.bigbox').offset().top){
+            $('.asidebox').fadeIn();
+        }
+        else $('.asidebox').fadeOut();
+    })
+    $('.asidebox').click(function(){
+        $('body,html').animate({
+            scrollTop:0
+        })
+    })
+</script>
+
+</html>

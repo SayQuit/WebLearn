@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    
+
+
+    <div id="r1">
+        <!-- 模板语法：插值语法 -->
+        <h1>插值语法：hello {{name}}</h1>
+
+        <h1>指令语法</h1>
+        <a v-bind:href="url">转到#</a>
+        <a :href="url">转到#</a>
+
+
+
+
+
+
+
+
+        <br><br>
+         <!-- 数据绑定 -->
+         <div>单项数据绑定</div><input type="text" name="" id="" v-bind:value="box1name1">
+         <div>双项数据绑定</div><input type="text" name="" id="" v-model:value="box1name2">
+         <!-- v-model只能用在包含value的标签类 -->
+         <div>{{box1name1}}</div>
+         <div>{{box1name2}}</div>
+
+
+
+
+
+
+
+
+
+         <!-- mvvm -->
+
+         <h1>学校名称：{{schoolname}}</h1>
+         <h1>学校地址：{{schooladdress}}</h1>
+
+        
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.productionTip=false;
+        const x=new Vue(
+            {
+                el:'#r1',
+                data:{
+                    name:'you',
+                    url:'#',
+
+                    box1name1:'尚硅谷',
+                    box1name2:'尚硅谷',
+
+                    schoolname:'平远中学',
+                    schooladdress:'广东省梅州市平远县'
+                }
+            }
+        );
+    </script>
+    
+
+
+
+    
+    
+    
+
+
+
+</body>
+</html>

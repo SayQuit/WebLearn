@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.数据代理</title>
+</head>
+<body>
+
+    <div id="r1"></div>
+
+
+
+
+    <script src="js/vue.js">
+
+    </script><script type="text/javascript">
+
+        let number=18;
+        let person={
+            name:'张三',
+            sex:'男',
+        }
+
+
+        // 数据代理
+        Object.defineProperty(person,'age',{
+            // value:'18',
+            // enumerable:true,
+            // writable:true,
+            // configurable:true,
+
+            get:function(){
+                return number;
+                // 双向绑定
+            },
+            set:function(value){
+                number=value
+            }
+
+
+        });
+
+        console.log(person);
+
+
+
+
+
+
+        // VUE中的数据代理
+
+
+
+
+        Vue.config.productionTip=false;
+        const vm=new Vue(
+            {
+                el:'#r1',
+                data:{
+                    name:'小米'
+                }
+            }
+        );
+        console.log(vm._data);
+        console.log(vm._data.name);
+    </script>
+</body>
+</html>

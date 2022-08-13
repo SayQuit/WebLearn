@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23-拖动模态框</title>
+
+    <style>
+        .greyBackground {
+            background-color: grey;
+        }
+
+        .mid {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+
+        .box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            width: 550px;
+            height: 300px;
+            border: 1px solid;
+
+            display: flex;
+
+            flex-direction: column;
+
+            visibility: hidden;
+            background-color: white;
+
+            cursor: move;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .close {
+            position: absolute;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            border: 1px solid;
+            text-align: center;
+            line-height: 30px;
+            left: 100%;
+            transform: translateX(-50%) translateY(-20%);
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="mid" id="clickBtn">点击弹出对话框</h1>
+    <div class="box" id="box">
+        <h3 class="item">登录会员</h3>
+        <div class="item">
+            <span>用户名:</span><input type="text" placeholder="请输入用户名">
+        </div>
+        <div class="item">
+            <span>密码:</span><input type="password" placeholder="请输入密码">
+        </div class="item">
+        <div class="item"><button style="width:100px">登录</button></div>
+        <div class="close" id="close">×</div>
+    </div>
+
+
+    <script>
+        var btn = document.getElementById('clickBtn');
+        var box = document.getElementById('box');
+        var b = document.querySelector('body');
+        btn.addEventListener('click', function () {
+            box.style.visibility = 'visible';
+            b.style.backgroundColor = 'grey'
+        })
+        var close = document.getElementById('close');
+        close.addEventListener('click', function () {
+            box.style.visibility = 'hidden';
+            b.style.backgroundColor = 'white'
+        })
+
+
+
+
+        box.addEventListener('mousedown', function (e) {
+            var x = e.pageX - box.offsetLeft;
+            var y = e.pageY - box.offsetTop;
+            // console.log('1:',e.pageX, e.pageY);
+
+            document.addEventListener('mousemove', moveWindow)
+
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', moveWindow)
+            })
+
+
+            function moveWindow(e) {
+                // console.log(e.pageX,e.pageY);
+
+                box.style.top = e.pageY - y + 'px';
+                box.style.left = e.pageX - x + 'px';
+                
+
+
+
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>
