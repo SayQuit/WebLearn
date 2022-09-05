@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .allow{ 
+            color: green;
+        }   
+        .unallow{ 
+            color: red;
+        }   
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <span>请输入</span>
+</body>
+<script>
+    var r=/123/;
+    console.log(r.test('123'));
+    console.log(r.test('1'));
+    var r1=/^123$/;
+    console.log(r1.test('12345i74567763123'));
+
+    // 字符类
+    var r2=/[123]/;
+    // 是否包含某个字符
+    console.log(r2.test('1'));
+    var r3=/^[123]$/;
+    console.log(r3.test('1'));
+    var r4=/^[a-z]$/;
+    console.log(r4.test('b'));
+    var r5=/[a-zA-Z0-9_-]/;
+    console.log(r5.test('ASKLGAFHSkl-dshl90093275109386-26v_KLgKJGlgbby943gy26y8egg98G9G98g98g98Gg7r6RA79d56'));
+
+    var r6=/[^a-zA-Z0-9_-]/;    //^表示取反
+
+    var r7=/1*/;    //0-n
+    console.log(r7.test(''));
+    console.log(r7.test('11'));
+    var r7=/1+/;      //1-n
+    console.log(r7.test('111111111111'));
+    var r7=/1?/;    //0-1
+    console.log(r7.test('1'));
+    var r7=/1{3}/;    //3
+    console.log(r7.test('111'));
+    var r7=/1{3,16}/;    //3-16
+    console.log(r7.test('111111111'));
+    var r7=/1{3,}/;    //3-n
+    console.log(r7.test('111111111'));
+
+
+    var r5=/^[a-zA-Z0-9_-]{3,16}$/;
+    console.log(r5.test('1111111111111111'));
+
+
+    var input=document.querySelector('input')
+    var span=document.querySelector('span')
+
+    input.addEventListener('keyup',function(){
+        var v=input.value 
+        if(v==''){
+            span.innerHTML='请输入'
+            span.classList.remove('allow')
+            span.classList.remove('unallow')
+            return
+        }
+        var r=/^[a-zA-Z0-9_-]{6,16}$/
+        if(r.test(v)){
+            span.classList.remove('unallow')
+            span.classList.add('allow')
+        }
+        else if(!r.test(v)){
+            span.classList.remove('allow')
+            span.classList.add('unallow')
+        }
+    })
+
+
+
+
+
+    var r6=/^\w{3,16}$/;
+    console.log(r6.test('1111hgdh1111111'));
+
+    // 预定类
+    // \d \D \w \W \s \S
+
+    var r6=/^\d{3}-\d{8}|\d{4}-\d{7}$/;
+    console.log(r6.test('0101-1235678'));   
+
+
+    var str='0101-1235678---'
+    console.log(str.replace(/-/g,'0'));
+
+    let a=0;
+    if(true){
+        console.log(a);
+        let a=10
+    }
+
+
+
+    
+</script>
+</html>

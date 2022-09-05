@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="margin:200px">
+    价格<input type="number" id="begin">-<input type="number" id="end"><button id="price">查询</button><br><br><br>
+    名称<input type="text" id="name"><button id="namesearch">查询</button><br><br><br>
+    <table border="1" id="table">
+        <tr>
+            <th>id</th>
+            <th>商品名称</th>
+            <th>价格</th>
+        </tr>
+
+    </table>
+</body>
+<script>
+    var data = [
+        {
+            id: 1,
+            name: '小米',
+            price: 3999
+        },
+        {
+            id: 2,
+            name: 'oppo',
+            price: 399
+        },
+        {
+            id: 3,
+            name: '荣耀',
+            price: 1299
+        },
+        {
+            id: 4,
+            name: '华为',
+            price: 1999
+        },
+    ]
+    var beginnum = document.getElementById('begin')
+    var endnum = document.getElementById('end')
+    var pricebtn = document.getElementById('price')
+    var namebtn = document.getElementById('namesearch')
+    var nametext = document.getElementById('name')
+    var table = document.getElementById('table')
+
+    data.forEach(function (value, index, array) {
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td')
+        td1.innerHTML = value.id
+        var td2 = document.createElement('td')
+        td2.innerHTML = value.name
+        var td3 = document.createElement('td')
+        td3.innerHTML = value.price
+        tr.appendChild(td1)
+        tr.appendChild(td2)
+        tr.appendChild(td3)
+        table.appendChild(tr)
+    })
+
+    namebtn.addEventListener('click', function () {
+        if (!nametext.value) {
+            return;
+        }
+        else {
+            v = nametext.value
+            var data1=[]
+            data1 = data.filter(function (value, index, array) {
+                return value.name == v
+            })
+
+            tr = table.querySelectorAll('tr')
+            tr.forEach(function (value, index, array) {
+                if (index != 0) {
+                    table.removeChild(value)
+
+                }
+            })
+
+            data1.forEach(function (value, index, array) {
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td')
+                td1.innerHTML = value.id
+                var td2 = document.createElement('td')
+                td2.innerHTML = value.name
+                var td3 = document.createElement('td')
+                td3.innerHTML = value.price
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                table.appendChild(tr)
+            })
+
+
+        }
+    })
+
+    pricebtn.addEventListener('click', function () {
+        if (!(beginnum.value && endnum.value)) {
+            return;
+        }
+
+
+        else {
+            var b = beginnum.value;
+            var e = endnum.value;
+
+            var data1 = []
+            data1 = data.filter(function (value, index, array) {
+                return value.price >= b && value.price <= e
+            })
+
+
+            tr = table.querySelectorAll('tr')
+            tr.forEach(function (value, index, array) {
+                if (index != 0) {
+                    table.removeChild(value)
+
+                }
+            })
+
+            data1.forEach(function (value, index, array) {
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td')
+                td1.innerHTML = value.id
+                var td2 = document.createElement('td')
+                td2.innerHTML = value.name
+                var td3 = document.createElement('td')
+                td3.innerHTML = value.price
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+                table.appendChild(tr)
+            })
+
+
+        }
+    })
+
+</script>
+
+</html>

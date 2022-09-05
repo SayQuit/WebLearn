@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var Arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+
+    Arr.forEach(function (value, index, array) {
+        console.log('值:' + value);
+        console.log('索引:' + index);
+        // console.log('数组:'+array);
+    })
+
+    var tmpArr = Arr.filter(function (value, index, array) {
+        return value % 2 == 0
+    })
+    console.log(tmpArr);
+
+
+    var containZero = Arr.some(function (value) {
+        return value === 0
+    })
+    console.log(containZero);
+
+
+    var str = String('  12 31  4 ')
+    str = str.trim();
+    console.log(str);
+
+
+    var obj = {
+        id: 1,
+        name: '小米',
+        price: 3999
+    }
+
+
+
+    Object.defineProperty(obj,'id',{value:2})
+    Object.defineProperty(obj,'num',{value:2000,enumerable:true})
+    console.log(obj);
+    Object.defineProperty(obj,'id',{writable:false})
+    obj.id=3
+    console.log(obj);
+
+
+    console.log(Object.keys(obj))
+
+
+    Object.defineProperty(obj,'address',{value:'cn',enumerable:true,configurable:false})
+    console.log(Object.keys(obj))
+    delete obj.address
+    console.log(Object.keys(obj))
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,82 @@
+<script>
+    class person{
+        constructor(name){
+            this.name=name
+        }
+        say(){
+            console.log('hello world');
+        }
+    }
+    var me=new person('小明')
+    console.log(me);
+    me.say()
+
+
+    // 继承
+    class animal{
+        constructor(){
+            this.eyenum=2
+        }
+        move(){
+            console.log('移动');
+        }
+        eat(){
+            console.log('吃');
+        }
+
+
+    }
+
+    class bird extends animal{
+
+    }
+
+    var b=new bird
+    b.move()
+    b.eat()
+    console.log(b.eyenum); 
+
+
+
+
+
+
+
+
+    // super
+    class father{
+        constructor(x,y){
+            this.x=x
+            this.y=y
+        }
+        sum(){
+            console.log(this.x+this.y);
+        }
+        say(){
+            console.log('say');
+        }
+
+
+    }
+
+    class son extends father{
+
+        constructor(x,y){
+            super(x,y)
+            // this.x=x
+            // this.y=y
+        }
+        say(){
+            super.say()
+        }
+        sub(){
+            console.log(this.x-this.y);
+            console.log(this);
+        }
+
+    }
+    var s=new son(6,5)
+    s.sum()
+    s.say()
+    s.sub()
+</script>

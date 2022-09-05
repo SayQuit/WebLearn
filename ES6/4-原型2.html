@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 扩展内置对象
+    var a=[]
+    Array.prototype.sum=function(){
+        var s=0;
+        for(var i=0;i<this.length;i++){
+            s+=Number(this[i])
+        }
+        return s
+    }
+
+    for(var i=1;i<=5;i++){
+        a.push(i)
+    }
+    console.log(a);
+    console.log(a.sum());
+    a.push(6)
+    console.log(a.sum());
+
+
+    var b=new Array()
+    b.push(1)
+    b.push(2)
+    b.push(4)
+    console.log(b.sum());
+
+
+
+
+
+
+
+    // 继承
+    // call
+    var fn=function(x,y){
+        console.log('call');
+        console.log(this);
+    }
+    fn.call()
+
+    // call改变this
+    fn.call(b,1,2)
+
+
+
+
+
+
+
+
+
+    // 父构造函数 继承
+
+    function Father(uname,uage){
+        this.name=uname
+        this.age=uage
+    }
+
+    function Son(uname,uage,score){
+        Father.call(this,uname,uage)
+        this.score=score
+    }
+    
+    
+    // 原型对象继承
+    Father.prototype.money=function(){
+        console.log('money:1000000000000');
+    }
+    Father.prototype.m=1000000;
+    Son.prototype=new Father();
+    Son.prototype.constructor=Son
+
+
+    var k=new Son('mike',19,100)
+    console.log(k);
+    k.money()
+    console.log(k.m);
+
+
+
+
+
+
+
+    // 
+    class F{ 
+
+    }
+
+    class S{ 
+
+    }
+
+    console.dir(F);
+    // 可以看作是构造函数
+    F.prototype.sing=function(){
+        console.log('sing');
+    }
+    var f=new F
+    f.sing()
+
+
+
+
+</script>
+</html>

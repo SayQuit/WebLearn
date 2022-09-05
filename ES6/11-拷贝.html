@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var k={
+        name:'小明',
+        age:18,
+        score:{ 
+            math:100
+        }
+    }
+console.log(k);
+    // var u=k
+    var u={}
+
+    for(var i in k){
+        u[i]=k[i]
+    }
+
+    u.age=19
+    console.log(u);
+    
+
+    u.score.math=99
+
+
+    var o={}
+    // 也是浅拷贝
+    Object.assign(o,k)
+    o.score.math=50
+    console.log(o);
+
+
+
+    // 深拷贝
+
+    var deep={}
+    // deep=
+    var deepCopy=function(deep,k){
+        for(var item in k){
+            var j=item
+            if(j instanceof Array){
+                deep[j]=k[j]
+            }
+            else if(j instanceof Object){
+                deepCopy(deep,j)
+            }
+            else{ 
+                deep[j]=k[j]
+            }
+        }
+    }
+    deepCopy(deep,k)
+    deep.score=70
+    console.log(deep);
+</script>
+</html>

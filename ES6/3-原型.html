@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Star(uname,uage){
+        this.name=uname
+        this.uage=uage
+    }
+    Star.prototype.sing=function(){
+        console.log('唱歌');
+    }
+    var l=new Star('1','2')
+    
+    
+    // console.dir(Object);
+    // console.dir(Star);
+    // console.dir(l);
+    
+    // console.dir(Star.prototype);
+    // console.dir(Star.prototype);
+    
+    // l.sing()
+
+
+    // console.dir(Star.__proto__);
+
+
+
+
+    // test.__proto__==Test.prototype
+    // Test.prototype.__proto__==Object.prototype
+
+    console.dir(Star);
+    console.log(l);
+    console.log(l.__proto__);
+    console.log(l.__proto__.__proto__);
+    console.log(l.__proto__.__proto__.__proto__);
+
+    // class animal{ 
+
+    // }
+    // console.log(animal.prototype);
+
+    // var k=new l
+    // console.log(k);
+
+</script>
+</html>
