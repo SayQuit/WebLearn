@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <style>
+        .testbor {
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+
+        .padding0 {
+            padding: 0;
+        }
+
+        .margin0 {
+            margin: 0;
+        }
+
+        .wrap {
+            width: 33%;
+            height: 0;
+            padding-top: 33%;
+            margin: 100px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: aqua;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-container {
+            height: 0px;
+            padding-bottom: 100%;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+
+        .img-container>div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .title{
+            text-align: center;
+            margin-top: 35px;
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 125%;
+            letter-spacing: 0.03em;
+            color: #434343;
+
+
+        }
+        .desc{
+            display: block;
+            width: 22rem;
+            margin: 0 auto;
+            /* padding-left: 5%;
+            padding-right: 5%; */
+            margin-top: 2rem;
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 175%;
+            letter-spacing: 0.03em;
+            color: #8C8C8C;
+        }
+        .date{
+            float: left;
+           
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 150%;
+            letter-spacing: 0.02em;
+            color: #BFBFBF;
+            padding: .3125rem 0;
+            
+            vertical-align: middle;
+        }
+        .block{
+            width: 22rem;
+            display: block;
+            margin: 0 auto;
+            margin-top: 2rem;
+
+            
+        }
+        .button{
+            float: right;
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.8rem;
+            line-height: 150%;
+            letter-spacing: 0.25em;
+            color: #FFFFFF;
+            background: #000000;
+            border-radius: .9375rem;
+            padding: .625rem 2.6rem .625rem 1.5rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+
+ 
+    <!-- 这里加上注释，以防后面的人看不懂 -->
+
+    <div class="container padding0" style="width:100%;margin: 0 auto;">
+
+        <div class="testbor">
+            <div class="img-container" style="width:100%;padding-bottom:57%;">
+                <div>123</div>
+            </div>
+        </div>
+
+        <div class="row margin0">
+            <div class="col-lg-3 col-md-3 col-sm-6  testbor padding0">
+                <div class="img-container" style="padding-bottom:200%;">
+                    <div>1</div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                <div class="row margin0">
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>2</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container">
+                                <p class="title">谷歌开发者大会演讲现场</p>
+                                <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                <span class="block">
+                                    <p class="date">2022年10月</p>
+                                    <div class="button">生成画作</div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                <div class="row margin0">
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>4</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container">
+                                <p class="title">谷歌开发者大会演讲现场</p>
+                                <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                <span class="block">
+                                    <p class="date">2022年10月</p>
+                                    <div class="button">生成画作</div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                <div class="row margin0">
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>6</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container">
+                                <p class="title">谷歌开发者大会演讲现场</p>
+                                <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                <span class="block">
+                                    <p class="date">2022年10月</p>
+                                    <div class="button">生成画作</div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row margin0">
+            <div class="col-lg-6 col-md-6 col-sm-6 padding0">
+                <div class="row margin0">
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12  padding0">
+                        <div class="testbor">
+                            <div class="img-container" style="padding-bottom:200% ;">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/GuangzhouMemory.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12  testbor padding0">
+                        <div class="img-container">
+                            <img src="./img/chen.png">
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12  testbor padding0">
+                        <div class="img-container" style="padding-bottom:50% ;">
+                            <div>123</div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="row margin0">
+                            <div class="col-lg-6 col-md-6 col-sm-6 testbor padding0">
+                                <div class="img-container" style="padding-bottom:200% ;">
+                                    <img src="./img/long1.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 testbor padding0">
+                                <div class="img-container" style="padding-bottom:200% ;">
+                                    <img src="./img/long2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12  testbor padding0">
+                        <div class="img-container" style="padding-bottom:50% ;">
+                            <div>123</div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6 col-md-6 col-sm-6 padding0">
+                <div class="row margin0">
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container" style="padding-bottom:100% ;">
+                                <img src="./img/Rectangle 5833 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/activity1.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/activity2.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/activity3.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/activity4.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/activity5.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 padding0">
+                        <div class="testbor">
+                            <div class="img-container"><img src="./img/activity6.png"></div>
+                        </div>
+                        <div class="testbor">
+                            <div class="img-container">
+                                <div>123</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row margin0">
+                <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                    <div class="row margin0">
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <div>1</div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <p class="title">谷歌开发者大会演讲现场</p>
+                                    <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                    <span class="block">
+                                        <p class="date">2022年10月</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                </div>
+    
+    
+                <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                    <div class="row margin0">
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <div>2</div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <p class="title">谷歌开发者大会演讲现场</p>
+                                    <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                    <span class="block">
+                                        <p class="date">2022年10月</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                </div>
+    
+    
+                <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                    <div class="row margin0">
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <div>4</div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <p class="title">谷歌开发者大会演讲现场</p>
+                                    <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                    <span class="block">
+                                        <p class="date">2022年10月</p>
+                                        <div class="button">生成画作</div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+                    <div class="row margin0">
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <div>6</div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="col-lg-12 col-md-12 col-sm-12 padding0">
+                            <div class="testbor">
+                                <div class="img-container">
+                                    <p class="title">谷歌开发者大会演讲现场</p>
+                                    <p class="desc">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</p>
+                                    <span class="block">
+                                        <p class="date">2022年10月</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                </div>
+            </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
