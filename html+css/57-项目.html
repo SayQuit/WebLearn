@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
-    <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-    <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <!-- <script src="https://fastly.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script> -->
     <style>
         .testbor {
             border: 1px solid;
@@ -68,7 +68,7 @@
             height: 100%;
         }
 
-        .title{
+        .title {
             text-align: center;
             margin-top: 35px;
             font-family: 'DM Sans';
@@ -81,7 +81,8 @@
 
 
         }
-        .desc{
+
+        .desc {
             display: block;
             width: 22rem;
             margin: 0 auto;
@@ -96,9 +97,10 @@
             letter-spacing: 0.03em;
             color: #8C8C8C;
         }
-        .date{
+
+        .date {
             float: left;
-           
+
             font-family: 'DM Sans';
             font-style: normal;
             font-weight: 700;
@@ -107,18 +109,20 @@
             letter-spacing: 0.02em;
             color: #BFBFBF;
             padding: .3125rem 0;
-            
+
             vertical-align: middle;
         }
-        .block{
+
+        .block {
             width: 22rem;
             display: block;
             margin: 0 auto;
             margin-top: 2rem;
 
-            
+
         }
-        .button{
+
+        .button {
             float: right;
             font-family: 'DM Sans';
             font-style: normal;
@@ -132,19 +136,102 @@
             padding: .625rem 2.6rem .625rem 1.5rem;
             vertical-align: middle;
         }
+        .backgroundTitle{
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            letter-spacing: 0.05em;
+            color: #FFFFFF;
+        }
+        .backgroundContent{
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 175%;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+
+        }
+        .ascFont{
+            font-family: 'Abel';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.02em;
+            color: #597EF7;
+
+        }
+        @media screen and (max-width:767px){
+            .backgroundTitle{
+                font-size: 8px;
+            }
+            .backgroundContent{
+                font-size: 4px;
+            }
+            .ascFont{
+                font-size: 3px;
+            }
+            
+        }
+        @media screen and (min-width:768px){
+            
+            .backgroundTitle{
+                font-size: 14px;
+            }
+            .backgroundContent{
+                font-size: 8px;
+            }
+            .ascFont{
+                font-size: 6px;
+            }
+        }
+        @media screen and (min-width:992px){
+            .backgroundTitle{
+                font-size: 20px;
+            }
+            .backgroundContent{
+                font-size: 12px;
+            }
+            .ascFont{
+                font-size: 9px;
+            }
+        }
+        @media screen and (min-width:1200px){
+            .backgroundTitle{
+                font-size: 26px;
+            }
+            .backgroundContent{
+                font-size: 16px;
+            }
+            .ascFont{
+                font-size: 12px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
- 
+
+
     <!-- 这里加上注释，以防后面的人看不懂 -->
 
     <div class="container padding0" style="width:100%;margin: 0 auto;">
 
-        <div class="testbor">
-            <div class="img-container" style="width:100%;padding-bottom:57%;">
-                <div>123</div>
+        <div>
+            <div class="img-container background" style="width:100%;padding-bottom:57%;">
+                <img src="./img/bluebackgournd.png">
+                <img src="./img/blackbagournd.png">
+                <img src="./img/li.png" style="width:72%;height: 74%;top: 15%;left:100% ;transform: translateX(-102%);">
+                <img src="./img/Frame.png" style="width:3%;height: 7.75%;top: 2%;left:1% ;">
+                <img src="./img/ARCdesc.png" style="width:16%;height: 5%;top: 3%;left:5% ;">
+                <img src="./img/meau.png" style="width:2.5%;height: 4%;top: 3%;left:100% ;transform: translateX(-200%);">
+                <div style="top: 7.75%;left:5.5% ;height: 1.5%;"class="ascFont">建筑是凝固的音乐</div>
+                <div style="top: 50%;left:7% ;" class="backgroundTitle">建筑是凝固的音乐</div>
+                <div style="top: 57.5%;left:7% ;width: 20%;" class="backgroundContent">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</div>
             </div>
         </div>
 
@@ -420,8 +507,8 @@
             <div class="row margin0">
                 <div class="col-lg-3 col-md-3 col-sm-6 padding0">
                     <div class="row margin0">
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -429,8 +516,8 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -442,16 +529,16 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                     </div>
                 </div>
-    
-    
+
+
                 <div class="col-lg-3 col-md-3 col-sm-6 padding0">
                     <div class="row margin0">
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -459,8 +546,8 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -472,16 +559,16 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                     </div>
                 </div>
-    
-    
+
+
                 <div class="col-lg-3 col-md-3 col-sm-6 padding0">
                     <div class="row margin0">
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -489,8 +576,8 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -503,15 +590,15 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                     </div>
                 </div>
-    
+
                 <div class="col-lg-3 col-md-3 col-sm-6 padding0">
                     <div class="row margin0">
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -519,8 +606,8 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -532,13 +619,13 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                     </div>
                 </div>
             </div>
-    
-    
+
+
 
 
 
