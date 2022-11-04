@@ -80,6 +80,8 @@
             color: #434343;
 
 
+
+
         }
 
         .desc {
@@ -136,80 +138,262 @@
             padding: .625rem 2.6rem .625rem 1.5rem;
             vertical-align: middle;
         }
-        .backgroundTitle{
+
+        .backgroundTitle {
             font-family: 'DM Sans';
             font-style: normal;
             font-weight: 700;
-            font-size: 32px;
             letter-spacing: 0.05em;
             color: #FFFFFF;
         }
-        .backgroundContent{
+
+        .backgroundContent {
             font-family: 'DM Sans';
             font-style: normal;
             font-weight: 500;
-            font-size: 18px;
             line-height: 175%;
             letter-spacing: 0.03em;
             color: #FFFFFF;
 
         }
-        .ascFont{
+
+        .ascFont {
             font-family: 'Abel';
             font-style: normal;
             font-weight: 400;
-            font-size: 12px;
             letter-spacing: 0.02em;
             color: #597EF7;
 
         }
-        @media screen and (max-width:767px){
-            .backgroundTitle{
-                font-size: 8px;
-            }
-            .backgroundContent{
-                font-size: 4px;
-            }
-            .ascFont{
-                font-size: 3px;
-            }
-            
+
+        .ascBottomFont {
+            font-family: 'Abel';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+            color: #597EF7;
         }
-        @media screen and (min-width:768px){
-            
-            .backgroundTitle{
-                font-size: 14px;
+
+        @media screen and (max-width:767px) {
+            .backgroundTitle {
+                font-size: 1rem;
             }
-            .backgroundContent{
-                font-size: 8px;
+
+            .backgroundContent {
+                font-size: .8rem;
             }
-            .ascFont{
-                font-size: 6px;
+
+            .ascFont {
+                font-size: .5rem;
             }
+
         }
-        @media screen and (min-width:992px){
-            .backgroundTitle{
-                font-size: 20px;
+
+        @media screen and (min-width:768px) {
+
+            .backgroundTitle {
+                font-size: 1.2rem;
             }
-            .backgroundContent{
-                font-size: 12px;
+
+            .backgroundContent {
+                font-size: 1rem;
             }
-            .ascFont{
-                font-size: 9px;
-            }
-        }
-        @media screen and (min-width:1200px){
-            .backgroundTitle{
-                font-size: 26px;
-            }
-            .backgroundContent{
-                font-size: 16px;
-            }
-            .ascFont{
-                font-size: 12px;
+
+            .ascFont {
+                font-size: 0.9rem;
             }
         }
 
+        @media screen and (min-width:992px) {
+            .backgroundTitle {
+                font-size: 1.5rem
+            }
+
+            .backgroundContent {
+                font-size: 1.2rem;
+            }
+
+            .ascFont {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            .backgroundTitle {
+                font-size: 1.8rem;
+            }
+
+            .backgroundContent {
+                font-size: 1.5rem;
+            }
+
+            .ascFont {
+                font-size: 1.3rem;
+            }
+        }
+
+        .line {
+            border-top: 1px solid;
+            margin: 31.25rem 3% 0;
+        }
+
+        .scut {
+            position: relative;
+
+        }
+
+        .scut .scutImg {
+            width: 31.25%;
+            height: 31.25%;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 15%;
+            left: 50%;
+        }
+
+        .scut .gmwlImg {
+            width: 60%;
+            height: 20%;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 22.5%;
+            left: 50%;
+        }
+
+        .scutDesc {
+            text-align: center;
+            font-family: 'Abel';
+            font-style: normal;
+            font-weight: 400;
+            font-size: .80rem;
+            color: #434343;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 50%;
+            left: 50%;
+            width: 100%;
+        }
+
+        .lrMid {
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+        }
+
+        .tbMid {
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+        }
+
+        .about {
+            font-family: 'Inter';
+            font-style: normal;
+            font-size: .9375rem;
+            letter-spacing: 0.1em;
+            color: #000000;
+        }
+
+        .copyRight {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: .8125rem;
+            color: #8C8C8C;
+        }
+
+        .qrcode {
+            width: 30%;
+            height: 30%;
+        }
+
+
+        .followus {
+
+
+            display: inline-block;
+
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2rem;
+            text-align: center;
+            color: #000000;
+
+
+        }
+
+        .phone {
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: .875rem;
+            color: #000000;
+        }
+
+        .verticalLine {
+            position: absolute;
+            top: 10%;
+            height: 40%;
+            border-left: 1.5px solid rgba(117, 74, 188, 0.4);
+
+        }
+
+        .progress {
+
+
+            width: 4%;
+            height: 80%;
+            left: 10%;
+
+            background: linear-gradient(180deg, #754ABC 0%, rgba(0, 159, 232, 0.8) 100%);
+            opacity: 0.8;
+            border-radius: 10px;
+        }
+
+        .processList {
+            left: 10%;
+            padding: 35% 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .processItem {
+            flex: 1;
+            position: relative;
+        }
+
+        .processItem div {
+            width: 80%;
+            height: 30%;
+            display: flex;
+        }
+
+        .processItem img {
+            transform: translateX(-25%);
+            flex: 1;
+            width: 10%;
+            height: auto;
+
+        }
+        .processItem span {
+            font-family: 'DM Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.875rem;
+            color: #531DAB;
+
+            padding-left: 20%;
+       
+            flex: 6;
+        }
+
+        /* .asc{
+            pos
+        } */
     </style>
 </head>
 
@@ -220,33 +404,50 @@
     <!-- 这里加上注释，以防后面的人看不懂 -->
 
     <div class="container padding0" style="width:100%;margin: 0 auto;">
-
-        <div>
-            <div class="img-container background" style="width:100%;padding-bottom:57%;">
-                <img src="./img/bluebackgournd.png">
-                <img src="./img/blackbagournd.png">
-                <img src="./img/li.png" style="width:72%;height: 74%;top: 15%;left:100% ;transform: translateX(-102%);">
-                <img src="./img/Frame.png" style="width:3%;height: 7.75%;top: 2%;left:1% ;">
-                <img src="./img/ARCdesc.png" style="width:16%;height: 5%;top: 3%;left:5% ;">
-                <img src="./img/meau.png" style="width:2.5%;height: 4%;top: 3%;left:100% ;transform: translateX(-200%);">
-                <div style="top: 7.75%;left:5.5% ;height: 1.5%;"class="ascFont">建筑是凝固的音乐</div>
-                <div style="top: 50%;left:7% ;" class="backgroundTitle">建筑是凝固的音乐</div>
-                <div style="top: 57.5%;left:7% ;width: 20%;" class="backgroundContent">我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</div>
-            </div>
+        <div class="img-container background" style="width:100%;padding-bottom:57%;">
+            <img src="./img/bluebackgournd.png">
+            <img src="./img/blackbagournd.png">
+            <img src="./img/li.png" style="width:72%;height: 74%;top: 15%;left:100% ;transform: translateX(-102%);">
+            <img src="./img/Frame.png" style="width:3%;height: 7.75%;top: 2%;left:1% ;">
+            <img src="./img/ARCdesc.png" style="width:16%;height: 5%;top: 3%;left:5% ;">
+            <img src="./img/meau.png" style="width:2.5%;height: 4%;top: 3%;left:100% ;transform: translateX(-200%);">
+            <div style="top: 7.75%;left:5.5% ;height: 1.5%;" class="ascFont">建筑是凝固的音乐</div>
+            <div style="top: 50%;left:7% ;" class="backgroundTitle">建筑是凝固的音乐</div>
+            <div style="top: 57.5%;left:7% ;width: 20%;" class="backgroundContent">
+                我们认为互联网时代，文化教育传承过程要有趣、可参与、有收获，最好能形成可持续发展的社区。</div>
         </div>
+
 
         <div class="row margin0">
             <div class="col-lg-3 col-md-3 col-sm-6  testbor padding0">
                 <div class="img-container" style="padding-bottom:200%;">
-                    <div>1</div>
+                    <div>
+                        <div class="progress tbMid"></div>
+                    </div>
+                    <div class="processList">
+                        <div class="processItem">
+                            <div class="tbMid"><img src="./img/p1.png"><span>城市印象&记忆</span></div>
+                        </div>
+                        <div class="processItem">
+                            <div class="tbMid"><img src="./img/p2.png"><span>生成艺术</span></div>
+                        </div>
+                        <div class="processItem">
+                            <div class="tbMid"><img src="./img/p3.png"><span>2022谷歌开发者大会</span></div>
+                        </div>
+                        <div class="processItem">
+                            <div class="tbMid"><img src="./img/p4.png"><span>教育部/谷歌资助项目</span></div>
+                        </div>
+                        <div class="processItem">
+                            <div class="tbMid"><img src="./img/p5.png"><span>CitiMeM@华南理工</span></div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
 
             <div class="col-lg-3 col-md-3 col-sm-6 padding0">
                 <div class="row margin0">
-
-
                     <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                         <div class="testbor">
                             <div class="img-container">
@@ -597,8 +798,6 @@
 
                 <div class="col-lg-3 col-md-3 col-sm-6 padding0">
                     <div class="row margin0">
-
-
                         <div class="col-lg-12 col-md-12 col-sm-12 padding0">
                             <div class="testbor">
                                 <div class="img-container">
@@ -634,6 +833,82 @@
 
 
 
+
+
+        </div>
+
+
+        <div class="line"></div>
+
+        <div class="row margin0">
+            <div class="col-lg-2 col-md-2 col-sm-4 padding0">
+
+                <div class="img-container" style="padding-bottom:100% ;">
+                    <div>
+                        <span style="top:20%;" class="lrMid about">
+                            <div style="font-weight:700;">媒格魅方</div>收藏&周边<br>活动<br>关于CitiMeM
+                        </span>
+                        <span style="top:45%;" class="lrMid copyRight">Copyright © 2022<br>华智互联 版权所有</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-2 col-md-2 col-sm-4 padding0">
+
+                <div class="img-container scut" style="padding-bottom:100% ;">
+                    <img src="./img/scut.png" class="scutImg">
+                    <p class="scutDesc">华南理工大学</p>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-2 col-md-2 col-sm-4 padding0">
+
+                <div class="img-container scut" style="padding-bottom:100% ;">
+                    <img src="./img/gongmaweilai.png" class="gmwlImg">
+                    <p class="scutDesc" style="top:47.5%;">2022 GDS 谷歌开发者大会<br>9月14-15日，上海</p>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+
+                <div class="img-container" style="padding-bottom:100% ;">
+                    <div style="position:absolute;top:15%;height:8%;width: 45%;left: 20%;"><img
+                            src="./img/Archi&Casca@2x.png"></div>
+                    <div style="position:absolute;top:15%;height:25%;width: 15%;left: 70%;"><img src="./img/Frame.png">
+                    </div>
+                    <div style="position:absolute;top:24%;left: 20%;" class="ascBottomFont">
+                        <div style="display:inline-block ;">建筑是凝固的音乐</div>
+                    </div>
+                    <div class="copyRight" style="width:36%;left:20%;top:30%">Archi 刻画建筑几何与色彩特征的元素符号，
+                        凝聚建筑局部之美。
+                        Casca 由计算机以层叠交
+                        汇形式布局到画布中，迭代优化和谐美丽的画作。</div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-6 padding0">
+
+                <div class="img-container" style="padding-bottom:100% ;">
+                    <span class="verticalLine"></span>
+                    <span style="position:absolute;top:15%;left:7.5%" class="qrcode"><img
+                            src="./img/activity1.png"></span>
+                    <span style="position:absolute;top:15%;left:50%" class="followus">Follow us</span>
+                    <span style="position:absolute;top:30%;left:50%" class="phone">
+                        相关事务联系请发邮件至我<br>站公共邮箱：chunhuachen@scut.edu.cn<br>联系电话：15013153445
+                    </span>
+
+
+                </div>
+
+            </div>
 
 
         </div>
